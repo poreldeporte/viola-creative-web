@@ -18,11 +18,14 @@ That was deliberately **not** done: the brief said to keep the Google Fonts link
 as they are, and it is a real change to the `<head>`. It would also resolve the
 Google Fonts disclosure in the privacy page. Worth a decision.
 
-**One thing is not finished:** Cloudflare Email Routing is still not enabled, so
-`violacreative.com` has no MX records. The launch smoke test through the contact
-form was accepted by Resend and currently sits at `delivery_delayed` — Amazon SES
-will keep retrying for a while and will deliver once MX exists, but until then no
-lead email can arrive. See item 5.
+**Leads are arriving** — the enquiry email is CC'd to a direct address, verified
+`delivered` end to end through the live form.
+
+**One thing is still not finished:** Cloudflare Email Routing is not enabled, so
+`violacreative.com` has no MX records and the `hello@violacreative.com` leg of
+every notification is undeliverable. The CC covers the studio for now, but the
+address printed in the contact section, the footer and the form's own fallback
+copy still bounces for anyone who emails it directly. See item 5.
 
 # What still needs real material
 
@@ -80,10 +83,10 @@ is a honeypot field, a sub-2-second dwell-time reject and a per-IP throttle — 
 third-party CAPTCHA. If the function is unreachable or Resend rejects, the
 browser falls back to the original `mailto:` handoff so a brief is never lost.
 
-It will not actually deliver until (a) Resend's three DNS records are added and
-the domain verifies, and (b) `hello@violacreative.com` can receive mail. Both are
-in the DNS notes. Until then a valid submission returns `502 send_failed` and
-silently falls back to `mailto:`.
+Resend's domain is verified and the form is delivering. Notifications go to
+`hello@violacreative.com` with a CC to a direct address — the CC is what is
+actually landing today, since the `hello@` leg needs Email Routing (item 5).
+Remove the CC from `api/lead.js` once `hello@` works, if you want it gone.
 
 ## Not built, because it needs a decision or real content
 
