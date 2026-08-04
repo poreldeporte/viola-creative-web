@@ -1,3 +1,29 @@
+# Launch state
+
+Live at **https://www.violacreative.com** — apex 308-redirects to www, Let's
+Encrypt certificate issued for both, Cloudflare DNS-only (grey cloud).
+
+Lighthouse on the production domain:
+
+| | Performance | Accessibility | Best Practices | SEO |
+|---|---|---|---|---|
+| Desktop | 98 | 100 | 100 | 100 |
+| Mobile | 84 | 100 | 100 | 100 |
+
+Total page weight 259 KB. The remaining mobile gap is first contentful paint at
+3.2s, and it is almost entirely the render-blocking Google Fonts stylesheet — a
+cross-origin round trip to `fonts.googleapis.com` before anything can paint.
+Self-hosting the three families would remove it and likely take mobile past 90.
+That was deliberately **not** done: the brief said to keep the Google Fonts links
+as they are, and it is a real change to the `<head>`. It would also resolve the
+Google Fonts disclosure in the privacy page. Worth a decision.
+
+**One thing is not finished:** Cloudflare Email Routing is still not enabled, so
+`violacreative.com` has no MX records. The launch smoke test through the contact
+form was accepted by Resend and currently sits at `delivery_delayed` — Amazon SES
+will keep retrying for a while and will deliver once MX exists, but until then no
+lead email can arrive. See item 5.
+
 # What still needs real material
 
 The design is finished and the site is built to it. These are the places where the
