@@ -40,19 +40,38 @@ placeholders a visitor would recognise — they read as unfinished copy.
 **4. No social links.** The footer has none, because none were supplied. There is
 space for them under GET IN TOUCH.
 
+**5. `hello@violacreative.com` does not receive mail.** The DNS zone has no MX
+records, so the address published in the contact section, the footer and the
+form's fallback copy is currently dead. Cloudflare Email Routing is the fix and
+is free — see the DNS notes. Until it is enabled, mail sent to that address
+bounces, and the lead notification from the contact form has nowhere to land.
+
+## Built, but needs your input to finish
+
+**6. Contact form.** Now posts to `api/lead.js`, a Vercel function that sends
+through Resend (provisioned on the free plan, 3,000 emails/month). Spam handling
+is a honeypot field, a sub-2-second dwell-time reject and a per-IP throttle — no
+third-party CAPTCHA. If the function is unreachable or Resend rejects, the
+browser falls back to the original `mailto:` handoff so a brief is never lost.
+
+It will not actually deliver until (a) Resend's three DNS records are added and
+the domain verifies, and (b) `hello@violacreative.com` can receive mail. Both are
+in the DNS notes. Until then a valid submission returns `502 send_failed` and
+silently falls back to `mailto:`.
+
 ## Not built, because it needs a decision or real content
 
-**5. Privacy page.** The contact form collects a name and an email address. A
+**7. Privacy page.** The contact form collects a name and an email address. A
 privacy page is required before launch. `privacy.html` describes the data flow
 this build actually implements, but the legal entity name, registered address,
 governing jurisdiction and retention period are marked `[TO CONFIRM]` and must be
 filled in by you or your counsel.
 
-**6. No analytics.** Nothing is installed and no vendor was chosen. If you want
+**8. No analytics.** Nothing is installed and no vendor was chosen. If you want
 page-level numbers, Vercel Web Analytics is a one-line script tag with no cookie
 banner implication; anything session-based will need a consent decision first.
 
-**7. Cost/benefit chart.** The behaviour brief lists "cost/benefit chart — line
+**9. Cost/benefit chart.** The behaviour brief lists "cost/benefit chart — line
 draws in on intersection". **There is no such markup in the approved design file.**
 `main.js` keeps the `setupChart()` handler, which finds zero `[data-chart-line]`
 elements and no-ops safely. Either the chart was removed between design revisions
