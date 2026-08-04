@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<title>Viola Creative — Design, engineering and AI agent workflows</title>
+<meta name="description" content="Viola Creative is a design and engineering studio. We build websites, web apps and mobile apps, design them around how your business actually works, and set up AI agent workflows to handle the repetitive operations.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Viola Creative — Design, engineering and AI agent workflows">
+<meta property="og:description" content="A design and engineering studio building websites, web apps, mobile apps and the AI agent workflows behind them.">
+<meta property="og:image" content="assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2315130E'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23FF3D23'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:#F1ECE2;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  ::selection{background:#FF3D23;color:#fff}
+  a{color:#BE2D18}
+  a:hover{color:#15130E}
+  footer a:hover{color:#FF3D23}
+  :focus-visible{outline:2.5px solid #FF3D23;outline-offset:3px;border-radius:4px}
+  summary::-webkit-details-marker{display:none}
+  summary{list-style:none;cursor:pointer}
+  details[open] [data-chev]{transform:rotate(45deg)}
+  @keyframes vc-pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.62)}}
+  @keyframes vc-glow{0%,100%{box-shadow:0 0 0 1px #BE2D18,0 0 18px rgba(190,45,24,.12)}50%{box-shadow:0 0 0 1px #BE2D18,0 0 30px rgba(190,45,24,.26)}}
+  @keyframes vc-flow{to{stroke-dashoffset:-24}}
+  @media (max-width:980px){
+    header[data-hero]{grid-template-columns:1fr!important;min-height:auto!important;gap:40px!important;padding-top:5vh!important}
+    [data-two]{grid-template-columns:1fr!important;gap:38px!important}
+    [data-acts]{grid-template-columns:1fr!important}
+    [data-proc]{grid-template-columns:repeat(2,1fr)!important}
+    [data-secondhead]{text-align:left!important;max-width:none!important}
+    [data-svc-body]{grid-template-columns:1fr!important;gap:24px!important;padding-left:4px!important}
+  }
+  @media (max-width:760px){
+    [data-navlinks]{display:none!important}
+    [data-org-lines]{display:none!important}
+    [data-org-row]{flex-wrap:wrap!important;gap:12px!important}
+    [data-proc]{grid-template-columns:1fr!important}
+    [data-formgrid]{grid-template-columns:1fr!important}
+    [data-card]{flex:0 0 84vw!important}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  }
+</style>
+</helmet>
+
+<div data-progress style="position:fixed;top:0;left:0;height:3px;width:0%;background:#FF3D23;z-index:10000;pointer-events:none"></div>
+
+<div data-screen-label="Viola Creative" style="background:#F1ECE2;color:#15130E;font-family:'Space Grotesk',sans-serif;min-height:100vh">
+
+  <a href="#main" style="position:absolute;left:-9999px;top:8px;z-index:9999;background:#15130E;color:#F1ECE2;padding:12px 18px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none" style-focus="left:16px">Skip to content</a>
+
+  <nav style="position:sticky;top:0;z-index:400;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 5vw;background:rgba(241,236,226,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(21,19,14,.1)">
+    <a href="#main" aria-label="Viola Creative — home" style="text-decoration:none;display:flex;align-items:center;flex:none"><img data-logo src="assets/logo-dark.png" alt="Viola Creative" width="842" height="207" style="height:26px;width:auto;display:block;transition:height .3s ease"></a>
+    <div style="display:flex;align-items:center;gap:26px;font-size:14.5px;font-weight:500">
+      <div data-navlinks style="display:flex;align-items:center;gap:26px">
+        <a href="#services" style="text-decoration:none;color:#5d574c">Services</a>
+        <a href="#work" style="text-decoration:none;color:#5d574c">Work</a>
+        <a href="#agents" style="text-decoration:none;color:#5d574c">Agents</a>
+        <a href="#process" style="text-decoration:none;color:#5d574c">Process</a>
+      </div>
+      <a href="#contact" data-magnetic style="text-decoration:none;background:#15130E;color:#F1ECE2;padding:11px 20px;border-radius:999px;font-weight:600;white-space:nowrap">Start a project</a>
+    </div>
+  </nav>
+
+  <main id="main">
+
+  <header data-hero style="padding:6vh 5vw 8vh;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;min-height:78vh;overflow-x:clip">
+    <div>
+      <div data-reveal style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.16em;color:#BE2D18;margin-bottom:14px">(DESIGN · ENGINEERING · AI AGENT WORKFLOWS)</div>
+      <h1 data-hero-h1 style="font-size:clamp(44px,6.6vw,104px);line-height:.98;letter-spacing:-.035em;font-weight:700;margin:0">We design and build the software your business <span style="font-family:'Instrument Serif',serif;font-weight:400;font-style:italic;letter-spacing:-.01em;white-space:nowrap">runs on.</span></h1>
+      <p data-reveal data-delay="140" style="font-size:clamp(16px,1.4vw,20px);line-height:1.55;color:#5d574c;max-width:48ch;margin:40px 0 26px;text-wrap:pretty">Most software disappoints because nobody asked how the work actually happens. We start there — your people, your process, your awkward edge cases — and design out from what we find.</p>
+      <div data-reveal data-delay="260" style="display:flex;gap:14px;flex-wrap:wrap;align-items:center">
+        <a href="#contact" data-magnetic style="text-decoration:none;background:#BE2D18;color:#fff;padding:16px 30px;border-radius:999px;font-weight:600;font-size:15px;display:inline-flex;align-items:center;gap:10px">Start a project <span style="font-family:'Space Mono',monospace">→</span></a>
+        <a href="#work" style="text-decoration:none;color:#15130E;padding:16px 24px;border-radius:999px;font-weight:600;font-size:15px;border:1.5px solid rgba(21,19,14,.22)">See the work</a>
+      </div>
+    </div>
+    <div data-reveal="scale" data-delay="120">
+      <div style="position:relative;background:linear-gradient(180deg,#ffffff,#faf7f0);border:1px solid rgba(21,19,14,.1);border-radius:22px;box-shadow:0 34px 90px rgba(21,19,14,.16);padding:24px 24px 20px;overflow:hidden">
+        <div style="display:flex;justify-content:space-between;align-items:center;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.1em;color:#6E675B;margin-bottom:2px"><span>ONE CONNECTED SYSTEM</span><span style="color:#2a6b46">● yours</span></div>
+        <div data-hub-stage style="position:relative;width:100%;height:400px">
+          <svg data-hub-lines width="100%" height="100%" preserveAspectRatio="none" style="position:absolute;inset:0;overflow:visible;z-index:1;pointer-events:none">
+            <line data-hub-line stroke="rgba(21,19,14,.24)" stroke-width="1.5"></line>
+            <line data-hub-line stroke="rgba(21,19,14,.24)" stroke-width="1.5"></line>
+            <line data-hub-line stroke="rgba(21,19,14,.24)" stroke-width="1.5"></line>
+            <line data-hub-line stroke="rgba(21,19,14,.24)" stroke-width="1.5"></line>
+            <line data-hub-line stroke="rgba(21,19,14,.24)" stroke-width="1.5"></line>
+            <line data-hub-line stroke="rgba(21,19,14,.24)" stroke-width="1.5"></line>
+          </svg>
+          <div data-hub-anchor style="position:absolute;left:50%;top:12%;transform:translate(-50%,-50%);z-index:2"><div data-hub-chip style="background:#fff;border:1px solid rgba(21,19,14,.12);border-radius:999px;padding:8px 13px;font-weight:600;font-size:12.5px;display:flex;align-items:center;gap:8px;box-shadow:0 8px 20px rgba(21,19,14,.09);white-space:nowrap"><span style="width:7px;height:7px;border-radius:50%;background:#FF3D23"></span>Customers</div></div>
+          <div data-hub-anchor style="position:absolute;left:85%;top:30%;transform:translate(-50%,-50%);z-index:2"><div data-hub-chip style="background:#fff;border:1px solid rgba(21,19,14,.12);border-radius:999px;padding:8px 13px;font-weight:600;font-size:12.5px;display:flex;align-items:center;gap:8px;box-shadow:0 8px 20px rgba(21,19,14,.09);white-space:nowrap"><span style="width:7px;height:7px;border-radius:50%;background:#FF3D23"></span>Invoices</div></div>
+          <div data-hub-anchor style="position:absolute;left:82%;top:70%;transform:translate(-50%,-50%);z-index:2"><div data-hub-chip style="background:#fff;border:1px solid rgba(21,19,14,.12);border-radius:999px;padding:8px 13px;font-weight:600;font-size:12.5px;display:flex;align-items:center;gap:8px;box-shadow:0 8px 20px rgba(21,19,14,.09);white-space:nowrap"><span style="width:7px;height:7px;border-radius:50%;background:#FF3D23"></span>Reports</div></div>
+          <div data-hub-anchor style="position:absolute;left:50%;top:88%;transform:translate(-50%,-50%);z-index:2"><div data-hub-chip style="background:#fff;border:1px solid rgba(21,19,14,.12);border-radius:999px;padding:8px 13px;font-weight:600;font-size:12.5px;display:flex;align-items:center;gap:8px;box-shadow:0 8px 20px rgba(21,19,14,.09);white-space:nowrap"><span style="width:7px;height:7px;border-radius:50%;background:#FF3D23"></span>Orders</div></div>
+          <div data-hub-anchor style="position:absolute;left:18%;top:70%;transform:translate(-50%,-50%);z-index:2"><div data-hub-chip style="background:#fff;border:1px solid rgba(21,19,14,.12);border-radius:999px;padding:8px 13px;font-weight:600;font-size:12.5px;display:flex;align-items:center;gap:8px;box-shadow:0 8px 20px rgba(21,19,14,.09);white-space:nowrap"><span style="width:7px;height:7px;border-radius:50%;background:#FF3D23"></span>Schedule</div></div>
+          <div data-hub-anchor style="position:absolute;left:15%;top:30%;transform:translate(-50%,-50%);z-index:2"><div data-hub-chip style="background:#fff;border:1px solid rgba(21,19,14,.12);border-radius:999px;padding:8px 13px;font-weight:600;font-size:12.5px;display:flex;align-items:center;gap:8px;box-shadow:0 8px 20px rgba(21,19,14,.09);white-space:nowrap"><span style="width:7px;height:7px;border-radius:50%;background:#FF3D23"></span>Inbox</div></div>
+          <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3"><div data-hub-core style="background:#15130E;color:#F1ECE2;border-radius:16px;padding:16px 22px;text-align:center;box-shadow:0 22px 50px rgba(21,19,14,.34)"><div style="font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:.18em;color:#FF3D23;margin-bottom:9px">OWNED BY YOU</div><div style="display:flex;align-items:center;justify-content:center;gap:9px;font-weight:700;font-size:19px;letter-spacing:-.02em"><span style="width:11px;height:11px;border-radius:50%;background:#FF3D23"></span>Your&nbsp;system</div><div style="font-family:'Space Mono',monospace;font-size:10.5px;color:rgba(241,236,226,.55);margin-top:9px">built around your team</div></div></div>
+        </div>
+        <div style="text-align:center;font-size:13px;color:#5d574c;margin-top:4px;line-height:1.5">One place for the work your team does every day.<br><span style="color:#15130E;font-weight:600">Designed around how you work.</span></div>
+      </div>
+    </div>
+  </header>
+
+  <div style="border-top:1px solid rgba(21,19,14,.12);border-bottom:1px solid rgba(21,19,14,.12);padding:24px 5vw">
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px 26px;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.14em;color:#5d574c">
+      <span>DISCOVERY</span>
+      <span aria-hidden="true" style="color:#BE2D18">/</span>
+      <span>PRODUCT STRATEGY</span>
+      <span aria-hidden="true" style="color:#BE2D18">/</span>
+      <span>UX</span>
+      <span aria-hidden="true" style="color:#BE2D18">/</span>
+      <span>INTERFACE DESIGN</span>
+      <span aria-hidden="true" style="color:#BE2D18">/</span>
+      <span>WEB</span>
+      <span aria-hidden="true" style="color:#BE2D18">/</span>
+      <span>iOS</span>
+      <span aria-hidden="true" style="color:#BE2D18">/</span>
+      <span>ANDROID</span>
+      <span aria-hidden="true" style="color:#BE2D18">/</span>
+      <span>AGENT WORKFLOWS</span>
+    </div>
+  </div>
+
+  <section id="services" style="padding:12vh 5vw">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;margin-bottom:46px">
+      <div>
+        <div data-reveal style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.16em;color:#BE2D18;margin-bottom:16px">(WHAT WE DO)</div>
+        <h2 data-reveal data-delay="60" style="font-size:clamp(32px,4.4vw,62px);font-weight:700;letter-spacing:-.03em;line-height:1.02;margin:0;max-width:20ch">Six things, done <span style="font-family:'Instrument Serif',serif;font-weight:400;font-style:italic">properly.</span></h2>
+      </div>
+      <p data-reveal data-delay="120" style="font-size:15.5px;line-height:1.6;color:#5d574c;max-width:34ch;margin:0;text-wrap:pretty">Strategy, design and engineering in one team — so nothing gets lost in a handoff between three vendors.</p>
+    </div>
+    <div data-reveal data-delay="160" style="border-top:1px solid rgba(21,19,14,.13)">
+      <div style="border-bottom:1px solid rgba(21,19,14,.13)">
+        <button data-svc-item="0" type="button" aria-expanded="true" style="display:grid;grid-template-columns:52px 1fr 26px;align-items:center;gap:18px;width:100%;text-align:left;cursor:pointer;background:transparent;border:0;padding:26px 4px;font:inherit;color:inherit">
+          <span data-svc-num style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.08em;color:#BE2D18;transition:color .2s ease">01</span>
+          <span data-svc-title style="font-size:clamp(21px,2.4vw,32px);font-weight:700;letter-spacing:-.025em;line-height:1.15;color:#15130E;transition:color .2s ease">Discovery &amp; product strategy</span>
+          <span data-svc-sign style="font-family:'Space Mono',monospace;font-size:19px;line-height:1;color:#BE2D18;transform:rotate(45deg);transition:transform .3s cubic-bezier(.22,1,.36,1)">+</span>
+        </button>
+        <div data-svc-body="0" style="display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:start;padding:2px 4px 34px 74px">
+          <div>
+            <p style="margin:0 0 22px;font-size:16.5px;line-height:1.6;color:#5d574c;max-width:52ch;text-wrap:pretty">Interviews with the people doing the work, the process mapped end to end, and a written plan of what to build in what order. Often the highest-value week of the whole engagement.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px"><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(21,19,14,.18);padding:7px 12px;border-radius:999px;color:#3c382f">Stakeholder interviews</span><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(21,19,14,.18);padding:7px 12px;border-radius:999px;color:#3c382f">Process maps</span><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(21,19,14,.18);padding:7px 12px;border-radius:999px;color:#3c382f">Scope &amp; sequencing</span><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(21,19,14,.18);padding:7px 12px;border-radius:999px;color:#3c382f">Written plan</span></div>
+          </div>
+          <div style="height:150px;border-radius:12px;background:repeating-linear-gradient(135deg,#e5dece 0 2px,transparent 2px 12px);border:1px solid rgba(21,19,14,.14);display:flex;align-items:flex-end;padding:14px 16px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.12em;color:#6E675B">RESEARCH ARTEFACTS — DROP IMAGERY</div>
+        </div>
+      </div>
+      <div style="border-bottom:1px solid rgba(21,19,14,.13)">
+        <button data-svc-item="1" type="button" aria-expanded="false" style="display:grid;grid-template-columns:52px 1fr 26px;align-items:center;gap:18px;width:100%;text-align:left;cursor:pointer;background:transparent;border:0;padding:26px 4px;font:inherit;color:inherit">
+          <span data-svc-num style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.08em;color:#6E675B;transition:color .2s ease">02</span>
+          <span data-svc-title style="font-size:clamp(21px,2.4vw,32px);font-weight:500;letter-spacing:-.025em;line-height:1.15;color:#5d574c;transition:color .2s ease">Design &amp; UX</span>
+          <span data-svc-sign style="font-family:'Space Mono',monospace;font-size:19px;line-height:1;color:#BE2D18;transform:rotate(0deg);transition:transform .3s cubic-bezier(.22,1,.36,1)">+</span>
+        </button>
+        <div data-svc-body="1" style="display:none;grid-template-columns:1.1fr .9fr;gap:44px;align-items:start;padding:2px 4px 34px 74px">
+          <div>
+            <p style="margin:0 0 22px;font-size:16.5px;line-height:1.6;color:#5d574c;max-width:52ch;text-wrap:pretty">Flows and interfaces designed for the people who will actually use them — then a design system your team can keep building on long after we hand over.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px"><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(21,19,14,.18);padding:7px 12px;border-radius:999px;color:#3c382f">Research</span><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(21,19,14,.18);padding:7px 12px;border-radius:999px;color:#3c382f">User flows</span><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(21,19,14,.18);padding:7px 12px;border-radius:999px;color:#3c382f">Interface design</span><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(21,19,14,.18);padding:7px 12px;border-radius:999px;color:#3c382f">Design system</span></div>
+          </div>
+          <div style="height:150px;border-radius:12px;background:repeating-linear-gradient(135deg,#e5dece 0 2px,transparent 2px 12px);border:1px solid rgba(21,19,14,.14);display:flex;align-items:flex-end;padding:14px 16px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.12em;color:#6E675B">DESIGN WORK — DROP IMAGERY</div>
+        </div>
+      </div>
+      <div style="border-bottom:1px solid rgba(21,19,14,.13)">
+        <button data-svc-item="2" type="button" aria-expanded="false" style="display:grid;grid-template-columns:52px 1fr 26px;align-items:center;gap:18px;width:100%;text-align:left;cursor:pointer;background:transparent;border:0;padding:26px 4px;font:inherit;color:inherit">
+          <span data-svc-num style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.08em;color:#6E675B;transition:color .2s ease">03</span>
+          <span data-svc-title style="font-size:clamp(21px,2.4vw,32px);font-weight:500;letter-spacing:-.025em;line-height:1.15;color:#5d574c;transition:color .2s ease">Websites</span>
+          <span data-svc-sign style="font-family:'Space Mono',monospace;font-size:19px;line-height:1;color:#BE2D18;transform:rotate(0deg);transition:transform .3s cubic-bezier(.22,1,.36,1)">+</span>
+        </button>
+        <div data-svc-body="2" style="display:none;grid-template-columns:1.1fr .9fr;gap:44px;align-items:start;padding:2px 4px 34px 74px">
+          <div>
+            <p style="margin:0 0 22px;font-size:16.5px;line-height:1.6;color:#5d574c;max-width:52ch;text-wrap:pretty">Marketing sites that load fast, read well, and your team can update without filing a ticket with us. Built for the search and social reality your business lives in.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px"><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(21,19,14,.18);padding:7px 12px;border-radius:999px;color:#3c382f">Copy &amp; structure</span><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(21,19,14,.18);padding:7px 12px;border-radius:999px;color:#3c382f">Responsive build</span><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(21,19,14,.18);padding:7px 12px;border-radius:999px;color:#3c382f">CMS</span><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(21,19,14,.18);padding:7px 12px;border-radius:999px;color:#3c382f">Analytics</span></div>
+          </div>
+          <div style="height:150px;border-radius:12px;background:repeating-linear-gradient(135deg,#e5dece 0 2px,transparent 2px 12px);border:1px solid rgba(21,19,14,.14);display:flex;align-items:flex-end;padding:14px 16px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.12em;color:#6E675B">WEBSITE SCREENS — DROP IMAGERY</div>
+        </div>
+      </div>
+      <div style="border-bottom:1px solid rgba(21,19,14,.13)">
+        <button data-svc-item="3" type="button" aria-expanded="false" style="display:grid;grid-template-columns:52px 1fr 26px;align-items:center;gap:18px;width:100%;text-align:left;cursor:pointer;background:transparent;border:0;padding:26px 4px;font:inherit;color:inherit">
+          <span data-svc-num style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.08em;color:#6E675B;transition:color .2s ease">04</span>
+          <span data-svc-title style="font-size:clamp(21px,2.4vw,32px);font-weight:500;letter-spacing:-.025em;line-height:1.15;color:#5d574c;transition:color .2s ease">Web apps</span>
+          <span data-svc-sign style="font-family:'Space Mono',monospace;font-size:19px;line-height:1;color:#BE2D18;transform:rotate(0deg);transition:transform .3s cubic-bezier(.22,1,.36,1)">+</span>
+        </button>
+        <div data-svc-body="3" style="display:none;grid-template-columns:1.1fr .9fr;gap:44px;align-items:start;padding:2px 4px 34px 74px">
+          <div>
+            <p style="margin:0 0 22px;font-size:16.5px;line-height:1.6;color:#5d574c;max-width:52ch;text-wrap:pretty">Internal tools, dashboards and customer portals — the software your business actually runs on all day, built to survive real use rather than a demo.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px"><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(21,19,14,.18);padding:7px 12px;border-radius:999px;color:#3c382f">Architecture</span><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(21,19,14,.18);padding:7px 12px;border-radius:999px;color:#3c382f">Frontend</span><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(21,19,14,.18);padding:7px 12px;border-radius:999px;color:#3c382f">API &amp; data</span><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(21,19,14,.18);padding:7px 12px;border-radius:999px;color:#3c382f">Auth &amp; roles</span></div>
+          </div>
+          <div style="height:150px;border-radius:12px;background:repeating-linear-gradient(135deg,#e5dece 0 2px,transparent 2px 12px);border:1px solid rgba(21,19,14,.14);display:flex;align-items:flex-end;padding:14px 16px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.12em;color:#6E675B">APP SCREENS — DROP IMAGERY</div>
+        </div>
+      </div>
+      <div style="border-bottom:1px solid rgba(21,19,14,.13)">
+        <button data-svc-item="4" type="button" aria-expanded="false" style="display:grid;grid-template-columns:52px 1fr 26px;align-items:center;gap:18px;width:100%;text-align:left;cursor:pointer;background:transparent;border:0;padding:26px 4px;font:inherit;color:inherit">
+          <span data-svc-num style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.08em;color:#6E675B;transition:color .2s ease">05</span>
+          <span data-svc-title style="font-size:clamp(21px,2.4vw,32px);font-weight:500;letter-spacing:-.025em;line-height:1.15;color:#5d574c;transition:color .2s ease">Mobile apps</span>
+          <span data-svc-sign style="font-family:'Space Mono',monospace;font-size:19px;line-height:1;color:#BE2D18;transform:rotate(0deg);transition:transform .3s cubic-bezier(.22,1,.36,1)">+</span>
+        </button>
+        <div data-svc-body="4" style="display:none;grid-template-columns:1.1fr .9fr;gap:44px;align-items:start;padding:2px 4px 34px 74px">
+          <div>
+            <p style="margin:0 0 22px;font-size:16.5px;line-height:1.6;color:#5d574c;max-width:52ch;text-wrap:pretty">iOS and Android, usually from a single codebase, so you ship once and maintain one thing instead of three. Store submission and release handled.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px"><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(21,19,14,.18);padding:7px 12px;border-radius:999px;color:#3c382f">iOS</span><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(21,19,14,.18);padding:7px 12px;border-radius:999px;color:#3c382f">Android</span><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(21,19,14,.18);padding:7px 12px;border-radius:999px;color:#3c382f">One codebase</span><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(21,19,14,.18);padding:7px 12px;border-radius:999px;color:#3c382f">Store release</span></div>
+          </div>
+          <div style="height:150px;border-radius:12px;background:repeating-linear-gradient(135deg,#e5dece 0 2px,transparent 2px 12px);border:1px solid rgba(21,19,14,.14);display:flex;align-items:flex-end;padding:14px 16px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.12em;color:#6E675B">MOBILE SCREENS — DROP IMAGERY</div>
+        </div>
+      </div>
+      <div style="border-bottom:1px solid rgba(21,19,14,.13)">
+        <button data-svc-item="5" type="button" aria-expanded="false" style="display:grid;grid-template-columns:52px 1fr 26px;align-items:center;gap:18px;width:100%;text-align:left;cursor:pointer;background:transparent;border:0;padding:26px 4px;font:inherit;color:inherit">
+          <span data-svc-num style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.08em;color:#6E675B;transition:color .2s ease">06</span>
+          <span data-svc-title style="font-size:clamp(21px,2.4vw,32px);font-weight:500;letter-spacing:-.025em;line-height:1.15;color:#5d574c;transition:color .2s ease">AI agent workflows</span>
+          <span data-svc-sign style="font-family:'Space Mono',monospace;font-size:19px;line-height:1;color:#BE2D18;transform:rotate(0deg);transition:transform .3s cubic-bezier(.22,1,.36,1)">+</span>
+        </button>
+        <div data-svc-body="5" style="display:none;grid-template-columns:1.1fr .9fr;gap:44px;align-items:start;padding:2px 4px 34px 74px">
+          <div>
+            <p style="margin:0 0 22px;font-size:16.5px;line-height:1.6;color:#5d574c;max-width:52ch;text-wrap:pretty">Agents that take repetitive operational work off your team — running on schedules, inside limits you set, with a human approval on anything that matters.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px"><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(21,19,14,.18);padding:7px 12px;border-radius:999px;color:#3c382f">Task design</span><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(21,19,14,.18);padding:7px 12px;border-radius:999px;color:#3c382f">Approvals &amp; limits</span><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(21,19,14,.18);padding:7px 12px;border-radius:999px;color:#3c382f">Integrations</span><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(21,19,14,.18);padding:7px 12px;border-radius:999px;color:#3c382f">Monitoring</span></div>
+          </div>
+          <div style="height:150px;border-radius:12px;background:repeating-linear-gradient(135deg,#e5dece 0 2px,transparent 2px 12px);border:1px solid rgba(21,19,14,.14);display:flex;align-items:flex-end;padding:14px 16px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.12em;color:#6E675B">AGENT DASHBOARD — DROP IMAGERY</div>
+        </div>
+      </div>
+    </div>
+    <p data-reveal style="margin:40px 0 0;font-family:'Space Mono',monospace;font-size:11.5px;letter-spacing:.06em;color:#6E675B;line-height:1.7">EVERYTHING WE MAKE IS YOURS — CODE, DESIGN FILES AND DATA, IN YOUR ACCOUNTS.</p>
+  </section>
+
+  <section id="work" style="padding:11vh 0 12vh;background:#E9E2D5">
+    <div style="padding:0 5vw;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;margin-bottom:44px">
+      <div>
+        <div data-reveal style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.16em;color:#BE2D18;margin-bottom:16px">(SELECTED WORK)</div>
+        <h2 data-reveal data-delay="60" style="font-size:clamp(32px,4.4vw,64px);font-weight:700;letter-spacing:-.03em;line-height:1;margin:0">Recent work.</h2>
+      </div>
+      <div data-reveal data-delay="120" style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;color:#5d574c">FOUR PROJECTS · KEEP SCROLLING</div>
+    </div>
+    <div data-stack style="padding:0 5vw">
+      <article data-stack-card style="position:sticky;top:96px;margin-bottom:5vh">
+        <button data-case-open="aeroterra" type="button" style="display:block;width:100%;text-align:left;cursor:pointer;padding:0;border:1px solid rgba(21,19,14,.16);background:#0d0c0a;border-radius:22px;overflow:hidden;position:relative;height:min(66vh,560px);color:inherit;font:inherit;box-shadow:0 -22px 50px rgba(21,19,14,.16)">
+          <div style="position:absolute;inset:0;background:repeating-linear-gradient(135deg,#221d15 0 2px,transparent 2px 12px)"></div>
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,12,10,.06),rgba(13,12,10,.88))"></div>
+          <div style="position:absolute;top:26px;left:30px;right:30px;display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap;font-family:'Space Mono',monospace;font-size:11px">
+            <span style="background:#BE2D18;color:#fff;padding:6px 12px;border-radius:999px">GIS · PLATFORM</span>
+            <span style="color:rgba(241,236,226,.62);letter-spacing:.12em">01 / 04</span>
+          </div>
+          <div style="position:absolute;left:30px;right:30px;bottom:30px">
+            <div style="font-family:'Space Mono',monospace;font-size:12px;color:#FF3D23;margin-bottom:10px">A platform their own analysts run</div>
+            <h3 style="font-size:clamp(30px,4.6vw,68px);font-weight:700;letter-spacing:-.03em;line-height:.95;margin:0 0 14px;color:#F1ECE2">Aeroterra USA</h3>
+            <span style="display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.08em;color:#F1ECE2;border-bottom:1px solid rgba(241,236,226,.4);padding-bottom:3px">READ THE CASE STUDY →</span>
+          </div>
+        </button>
+      </article>
+      <article data-stack-card style="position:sticky;top:110px;margin-bottom:5vh">
+        <button data-case-open="pordeporte" type="button" style="display:block;width:100%;text-align:left;cursor:pointer;padding:0;border:1px solid rgba(21,19,14,.16);background:#0d0c0a;border-radius:22px;overflow:hidden;position:relative;height:min(66vh,560px);color:inherit;font:inherit;box-shadow:0 -22px 50px rgba(21,19,14,.16)">
+          <img src="assets/por-el-deporte-crop.png" alt="Por El Deporte storefront and app screens" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.92">
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,12,10,.06),rgba(13,12,10,.88))"></div>
+          <div style="position:absolute;top:26px;left:30px;right:30px;display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap;font-family:'Space Mono',monospace;font-size:11px">
+            <span style="background:#BE2D18;color:#fff;padding:6px 12px;border-radius:999px">COMMERCE + APP</span>
+            <span style="color:rgba(241,236,226,.62);letter-spacing:.12em">02 / 04</span>
+          </div>
+          <div style="position:absolute;left:30px;right:30px;bottom:30px">
+            <div style="font-family:'Space Mono',monospace;font-size:12px;color:#FF3D23;margin-bottom:10px">Web, iOS and Android from one codebase</div>
+            <h3 style="font-size:clamp(30px,4.6vw,68px);font-weight:700;letter-spacing:-.03em;line-height:.95;margin:0 0 14px;color:#F1ECE2">Por El Deporte</h3>
+            <span style="display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.08em;color:#F1ECE2;border-bottom:1px solid rgba(241,236,226,.4);padding-bottom:3px">READ THE CASE STUDY →</span>
+          </div>
+        </button>
+      </article>
+      <article data-stack-card style="position:sticky;top:124px;margin-bottom:5vh">
+        <button data-case-open="spatioterra" type="button" style="display:block;width:100%;text-align:left;cursor:pointer;padding:0;border:1px solid rgba(21,19,14,.16);background:#0d0c0a;border-radius:22px;overflow:hidden;position:relative;height:min(66vh,560px);color:inherit;font:inherit;box-shadow:0 -22px 50px rgba(21,19,14,.16)">
+          <div style="position:absolute;inset:0;background:repeating-linear-gradient(45deg,#1c1810 0 2px,transparent 2px 14px)"></div>
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,12,10,.06),rgba(13,12,10,.88))"></div>
+          <div style="position:absolute;top:26px;left:30px;right:30px;display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap;font-family:'Space Mono',monospace;font-size:11px">
+            <span style="background:#BE2D18;color:#fff;padding:6px 12px;border-radius:999px">DATA</span>
+            <span style="color:rgba(241,236,226,.62);letter-spacing:.12em">03 / 04</span>
+          </div>
+          <div style="position:absolute;left:30px;right:30px;bottom:30px">
+            <div style="font-family:'Space Mono',monospace;font-size:12px;color:#FF3D23;margin-bottom:10px">Millions of spatial records, one source of truth</div>
+            <h3 style="font-size:clamp(30px,4.6vw,68px);font-weight:700;letter-spacing:-.03em;line-height:.95;margin:0 0 14px;color:#F1ECE2">SpatioTerra</h3>
+            <span style="display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.08em;color:#F1ECE2;border-bottom:1px solid rgba(241,236,226,.4);padding-bottom:3px">READ THE CASE STUDY →</span>
+          </div>
+        </button>
+      </article>
+      <article data-stack-card style="position:sticky;top:138px;margin-bottom:5vh">
+        <button data-case-open="bmgkids" type="button" style="display:block;width:100%;text-align:left;cursor:pointer;padding:0;border:1px solid rgba(21,19,14,.16);background:#0d0c0a;border-radius:22px;overflow:hidden;position:relative;height:min(66vh,560px);color:inherit;font:inherit;box-shadow:0 -22px 50px rgba(21,19,14,.16)">
+          <div style="position:absolute;inset:0;background:repeating-linear-gradient(135deg,#211c14 0 2px,transparent 2px 12px)"></div>
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,12,10,.06),rgba(13,12,10,.88))"></div>
+          <div style="position:absolute;top:26px;left:30px;right:30px;display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap;font-family:'Space Mono',monospace;font-size:11px">
+            <span style="background:#BE2D18;color:#fff;padding:6px 12px;border-radius:999px">HEADLESS COMMERCE</span>
+            <span style="color:rgba(241,236,226,.62);letter-spacing:.12em">04 / 04</span>
+          </div>
+          <div style="position:absolute;left:30px;right:30px;bottom:30px">
+            <div style="font-family:'Space Mono',monospace;font-size:12px;color:#FF3D23;margin-bottom:10px">Storefront rebuilt headless, faster on every page</div>
+            <h3 style="font-size:clamp(30px,4.6vw,68px);font-weight:700;letter-spacing:-.03em;line-height:.95;margin:0 0 14px;color:#F1ECE2">BMG Kids</h3>
+            <span style="display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.08em;color:#F1ECE2;border-bottom:1px solid rgba(241,236,226,.4);padding-bottom:3px">READ THE CASE STUDY →</span>
+          </div>
+        </button>
+      </article>
+    </div>
+  </section>
+
+
+  <section id="agents" style="padding:12vh 5vw;overflow-x:clip">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px;flex-wrap:wrap;gap:16px">
+      <div><div data-reveal style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.16em;color:#BE2D18;margin-bottom:16px">(AGENT WORKFLOWS, UP CLOSE)</div><h2 data-reveal data-delay="60" style="font-size:clamp(32px,4.4vw,62px);font-weight:700;letter-spacing:-.03em;line-height:1.02;margin:0">Your AI <span style="font-family:'Instrument Serif',serif;font-weight:400;font-style:italic">workforce.</span></h2></div>
+      <div data-reveal data-delay="100" data-secondhead style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.12em;color:#5d574c;max-width:36ch;text-align:right;line-height:1.6">A team of agents running operations on schedules, budgets and approvals you control.</div>
+    </div>
+    <div data-reveal="scale">
+      <div data-tilt style="position:relative;background:#ffffff;border:1px solid rgba(21,19,14,.12);border-radius:24px;box-shadow:0 26px 70px rgba(21,19,14,.09);overflow:hidden;padding:clamp(30px,5vw,60px) clamp(20px,4vw,54px)">
+        <div style="position:absolute;inset:0;background:radial-gradient(120% 80% at 50% -12%, rgba(255,61,35,.05), transparent 60%);pointer-events:none"></div>
+        <div style="position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:clamp(26px,4vh,46px)"><span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;color:#6E675B">AGENT ORG · yourcompany</span><span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.1em;color:#BE2D18;display:flex;align-items:center;gap:8px"><span style="width:7px;height:7px;border-radius:50%;background:#FF3D23;animation:vc-pulse 1.8s ease-in-out infinite"></span>3 AGENTS ACTIVE</span></div>
+        <div data-org-chart style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:clamp(42px,7vh,76px)">
+          <svg data-org-lines width="100%" height="100%" preserveAspectRatio="none" style="position:absolute;inset:0;z-index:0;overflow:visible;pointer-events:none"></svg>
+          <div data-org-row style="position:relative;z-index:1;display:flex;justify-content:center;gap:clamp(16px,3vw,44px)">
+            <div data-org-node style="position:relative;background:#ffffff;border:1px solid rgba(21,19,14,.13);border-radius:14px;padding:13px 17px;min-width:clamp(148px,15vw,188px);display:flex;align-items:center;gap:12px"><div style="width:38px;height:38px;border-radius:10px;background:#F1ECE2;border:1px solid rgba(21,19,14,.12);display:flex;align-items:center;justify-content:center;color:#3c382f;flex:none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2.2"></circle><circle cx="5" cy="19" r="2.2"></circle><circle cx="19" cy="19" r="2.2"></circle><path d="M12 7.2v3.3M12 10.5L5.6 16.9M12 10.5l6.4 6.4"></path></svg></div><div style="min-width:0"><div style="font-weight:700;font-size:15px;color:#15130E;letter-spacing:-.01em;line-height:1.1">Chief of Staff</div><div style="font-family:'Space Mono',monospace;font-size:11px;color:#6E675B;margin-top:4px;display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:rgba(21,19,14,.32);flex:none"></span>orchestrates the org</div></div></div>
+          </div>
+          <div data-org-row style="position:relative;z-index:1;display:flex;justify-content:center;gap:clamp(16px,3vw,44px);flex-wrap:wrap">
+            <div data-org-node style="position:relative;background:#ffffff;border:1px solid rgba(21,19,14,.13);border-radius:14px;padding:13px 17px;min-width:clamp(148px,15vw,188px);display:flex;align-items:center;gap:12px"><div style="width:38px;height:38px;border-radius:10px;background:#F1ECE2;border:1px solid rgba(21,19,14,.12);display:flex;align-items:center;justify-content:center;color:#3c382f;flex:none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 16 9 10 13 14 21 6"></polyline><polyline points="15 6 21 6 21 12"></polyline></svg></div><div style="min-width:0"><div style="font-weight:700;font-size:15px;color:#15130E;letter-spacing:-.01em;line-height:1.1">Revenue</div><div style="font-family:'Space Mono',monospace;font-size:11px;color:#6E675B;margin-top:4px;display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:rgba(21,19,14,.32);flex:none"></span>leads · outreach</div></div></div>
+            <div data-org-node data-org-active style="position:relative;background:#ffffff;border:1px solid #BE2D18;border-radius:14px;padding:13px 17px;min-width:clamp(148px,15vw,188px);display:flex;align-items:center;gap:12px;animation:vc-glow 2.6s ease-in-out infinite"><div style="position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:#BE2D18;color:#fff;font-family:'Space Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.1em;padding:3px 9px;border-radius:999px;white-space:nowrap;z-index:3">ACTIVE</div><div style="width:38px;height:38px;border-radius:10px;background:#F1ECE2;border:1px solid rgba(21,19,14,.12);display:flex;align-items:center;justify-content:center;color:#3c382f;flex:none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M3 9h18M8 14h5"></path></svg></div><div style="min-width:0"><div style="font-weight:700;font-size:15px;color:#15130E;letter-spacing:-.01em;line-height:1.1">Operations</div><div style="font-family:'Space Mono',monospace;font-size:11px;color:#6E675B;margin-top:4px;display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:#FF3D23;flex:none"></span>orders · scheduling</div></div></div>
+            <div data-org-node style="position:relative;background:#ffffff;border:1px solid rgba(21,19,14,.13);border-radius:14px;padding:13px 17px;min-width:clamp(148px,15vw,188px);display:flex;align-items:center;gap:12px"><div style="width:38px;height:38px;border-radius:10px;background:#F1ECE2;border:1px solid rgba(21,19,14,.12);display:flex;align-items:center;justify-content:center;color:#3c382f;flex:none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M7 7h10M7 12h10M7 17h10"></path></svg></div><div style="min-width:0"><div style="font-weight:700;font-size:15px;color:#15130E;letter-spacing:-.01em;line-height:1.1">Finance</div><div style="font-family:'Space Mono',monospace;font-size:11px;color:#6E675B;margin-top:4px;display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:rgba(21,19,14,.32);flex:none"></span>invoices · reconciliation</div></div></div>
+          </div>
+          <div data-org-row style="position:relative;z-index:1;display:flex;justify-content:center;gap:clamp(16px,3vw,44px);flex-wrap:wrap">
+            <div data-org-node data-org-active style="position:relative;background:#ffffff;border:1px solid #BE2D18;border-radius:14px;padding:13px 17px;min-width:clamp(148px,15vw,188px);display:flex;align-items:center;gap:12px;animation:vc-glow 2.6s ease-in-out infinite"><div style="position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:#BE2D18;color:#fff;font-family:'Space Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.1em;padding:3px 9px;border-radius:999px;white-space:nowrap;z-index:3">ACTIVE</div><div style="width:38px;height:38px;border-radius:10px;background:#F1ECE2;border:1px solid rgba(21,19,14,.12);display:flex;align-items:center;justify-content:center;color:#3c382f;flex:none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H9l-5 4z"></path><path d="M8 9h8M8 12h5"></path></svg></div><div style="min-width:0"><div style="font-weight:700;font-size:15px;color:#15130E;letter-spacing:-.01em;line-height:1.1">Support</div><div style="font-family:'Space Mono',monospace;font-size:11px;color:#6E675B;margin-top:4px;display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:#FF3D23;flex:none"></span>inbox · tickets</div></div></div>
+            <div data-org-node data-org-active style="position:relative;background:#ffffff;border:1px solid #BE2D18;border-radius:14px;padding:13px 17px;min-width:clamp(148px,15vw,188px);display:flex;align-items:center;gap:12px;animation:vc-glow 2.6s ease-in-out infinite"><div style="position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:#BE2D18;color:#fff;font-family:'Space Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.1em;padding:3px 9px;border-radius:999px;white-space:nowrap;z-index:3">ACTIVE</div><div style="width:38px;height:38px;border-radius:10px;background:#F1ECE2;border:1px solid rgba(21,19,14,.12);display:flex;align-items:center;justify-content:center;color:#3c382f;flex:none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4.2-4.2"></path></svg></div><div style="min-width:0"><div style="font-weight:700;font-size:15px;color:#15130E;letter-spacing:-.01em;line-height:1.1">Insight</div><div style="font-family:'Space Mono',monospace;font-size:11px;color:#6E675B;margin-top:4px;display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:#FF3D23;flex:none"></span>reports · alerts</div></div></div>
+          </div>
+        </div>
+        <div style="position:relative;z-index:2;margin-top:clamp(30px,4vh,50px);padding-top:20px;border-top:1px solid rgba(21,19,14,.12);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px"><span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.06em;color:#6E675B">YOU APPROVE HIRES · SET LIMITS · PAUSE ANYONE</span><span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.06em;color:#BE2D18">RUNS THE WHOLE ORG</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" style="padding:12vh 5vw;background:#E9E2D5;overflow-x:clip">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;margin-bottom:52px">
+      <div>
+        <div data-reveal style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.16em;color:#BE2D18;margin-bottom:16px">(HOW AN ENGAGEMENT RUNS)</div>
+        <h2 data-reveal data-delay="60" style="font-size:clamp(32px,4.2vw,60px);font-weight:700;letter-spacing:-.03em;line-height:1.02;margin:0;max-width:22ch">From first call to something <span style="font-family:'Instrument Serif',serif;font-weight:400;font-style:italic;color:#BE2D18">live.</span></h2>
+      </div>
+      <p data-reveal data-delay="120" style="font-size:15.5px;line-height:1.6;color:#5d574c;max-width:34ch;margin:0;text-wrap:pretty">Three to five months end to end for most projects. You are in the room for all of it, and the work lands in your accounts from week one.</p>
+    </div>
+    <div data-proc style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px">
+      <div data-reveal data-delay="0" data-proc-card style="background:#ffffff;border:1px solid rgba(21,19,14,.14);border-radius:16px;padding:32px 28px;display:flex;flex-direction:column">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:24px"><span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.12em;color:#BE2D18">01</span><span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.08em;color:#5d574c">WEEK 1</span></div>
+        <h3 style="margin:0 0 12px;font-size:22px;font-weight:700;letter-spacing:-.02em;color:#15130E">First call</h3>
+        <p style="margin:0;font-size:14.5px;line-height:1.6;color:#5d574c;text-wrap:pretty">Forty-five minutes on what you are trying to build and what is in the way. You leave with a straight answer on whether we are the right studio for it.</p>
+      </div>
+      <div data-reveal data-delay="80" data-proc-card style="background:#ffffff;border:1px solid rgba(21,19,14,.14);border-radius:16px;padding:32px 28px;display:flex;flex-direction:column">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:24px"><span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.12em;color:#BE2D18">02</span><span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.08em;color:#5d574c">2–3 WEEKS</span></div>
+        <h3 style="margin:0 0 12px;font-size:22px;font-weight:700;letter-spacing:-.02em;color:#15130E">Discovery</h3>
+        <p style="margin:0;font-size:14.5px;line-height:1.6;color:#5d574c;text-wrap:pretty">We sit with your team, map the process end to end and pin down scope. You keep the map and the plan whether or not you continue.</p>
+      </div>
+      <div data-reveal data-delay="160" data-proc-card style="background:#ffffff;border:1px solid rgba(21,19,14,.14);border-radius:16px;padding:32px 28px;display:flex;flex-direction:column">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:24px"><span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.12em;color:#BE2D18">03</span><span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.08em;color:#5d574c">8–14 WEEKS</span></div>
+        <h3 style="margin:0 0 12px;font-size:22px;font-weight:700;letter-spacing:-.02em;color:#15130E">Design &amp; build</h3>
+        <p style="margin:0;font-size:14.5px;line-height:1.6;color:#5d574c;text-wrap:pretty">Design and engineering in two-week increments, landing in your accounts. You review working software every fortnight, not slides.</p>
+      </div>
+      <div data-reveal data-delay="240" data-proc-card style="background:#ffffff;border:1px solid rgba(21,19,14,.14);border-radius:16px;padding:32px 28px;display:flex;flex-direction:column">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:24px"><span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.12em;color:#BE2D18">04</span><span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.08em;color:#5d574c">ONGOING</span></div>
+        <h3 style="margin:0 0 12px;font-size:22px;font-weight:700;letter-spacing:-.02em;color:#15130E">Handover</h3>
+        <p style="margin:0;font-size:14.5px;line-height:1.6;color:#5d574c;text-wrap:pretty">Docs, training and a proper handover. Then agent workflows where they help, and we stay on for as long — or as little — as you want us.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:12vh 5vw">
+    <div data-two style="display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start">
+      <div>
+        <div data-reveal style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.16em;color:#BE2D18;margin-bottom:16px">(THE OBVIOUS QUESTIONS)</div>
+        <h2 data-reveal data-delay="60" style="font-size:clamp(30px,3.8vw,54px);font-weight:700;letter-spacing:-.03em;line-height:1.02;margin:0">The questions we <span style="font-family:'Instrument Serif',serif;font-weight:400;font-style:italic">always get.</span></h2>
+      </div>
+      <div data-reveal data-delay="100" style="border-top:1px solid rgba(21,19,14,.14)">
+        <details style="border-bottom:1px solid rgba(21,19,14,.12)">
+          <summary style="display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;font-size:17.5px;font-weight:600;letter-spacing:-.01em">What kinds of projects do you take on?<span data-chev style="font-family:'Space Mono',monospace;color:#BE2D18;transition:transform .25s ease;flex:none">+</span></summary>
+          <p style="margin:0 0 24px;font-size:15px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">Websites, web apps, mobile apps, and the design and discovery work around them — plus agent workflows where they genuinely help. Most projects are a few months with a small senior team. If something is outside what we do well, we will say so and often point you elsewhere.</p>
+        </details>
+        <details style="border-bottom:1px solid rgba(21,19,14,.12)">
+          <summary style="display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;font-size:17.5px;font-weight:600;letter-spacing:-.01em">Can you work alongside our existing team?<span data-chev style="font-family:'Space Mono',monospace;color:#BE2D18;transition:transform .25s ease;flex:none">+</span></summary>
+          <p style="margin:0 0 24px;font-size:15px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">Usually yes — we often work with an in-house developer, a marketing team or an existing designer. We are explicit up front about who owns which decisions so nobody is guessing, and we document as we go so your team can carry it.</p>
+        </details>
+        <details style="border-bottom:1px solid rgba(21,19,14,.12)">
+          <summary style="display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;font-size:17.5px;font-weight:600;letter-spacing:-.01em">What happens when an agent gets it wrong?<span data-chev style="font-family:'Space Mono',monospace;color:#BE2D18;transition:transform .25s ease;flex:none">+</span></summary>
+          <p style="margin:0 0 24px;font-size:15px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">Agents work inside limits you set, and anything consequential waits for a human approval. Every action is logged and reversible, and you can pause any agent instantly. We start them on low-stakes work and widen the remit only once you trust it.</p>
+        </details>
+        <details style="border-bottom:1px solid rgba(21,19,14,.12)">
+          <summary style="display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;font-size:17.5px;font-weight:600;letter-spacing:-.01em">Do we own the code and the design files?<span data-chev style="font-family:'Space Mono',monospace;color:#BE2D18;transition:transform .25s ease;flex:none">+</span></summary>
+          <p style="margin:0 0 24px;font-size:15px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">Yes — all of it, assigned to you in the contract. Code in your repository, design files in your workspace, everything running in your accounts. It is how we prefer to work, not an upsell.</p>
+        </details>
+        <details style="border-bottom:1px solid rgba(21,19,14,.12)">
+          <summary style="display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;font-size:17.5px;font-weight:600;letter-spacing:-.01em">We already have systems. Do we start over?<span data-chev style="font-family:'Space Mono',monospace;color:#BE2D18;transition:transform .25s ease;flex:none">+</span></summary>
+          <p style="margin:0 0 24px;font-size:15px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">Almost never. We usually rebuild the one or two things causing the most friction, integrate cleanly with what is working, and leave the rest alone. Discovery tells us which is which before you commit to anything.</p>
+        </details>
+        <details style="border-bottom:1px solid rgba(21,19,14,.12)">
+          <summary style="display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;font-size:17.5px;font-weight:600;letter-spacing:-.01em">How do we get started?<span data-chev style="font-family:'Space Mono',monospace;color:#BE2D18;transition:transform .25s ease;flex:none">+</span></summary>
+          <p style="margin:0 0 24px;font-size:15px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">Send the form below with a couple of lines about the project. We reply within two working days and set up a short call. You need one person on your side who knows how the business really runs and can make decisions — that is enough to begin.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="padding:12vh 5vw 10vh;border-top:1px solid rgba(21,19,14,.12);overflow-x:clip">
+    <div>
+      <div>
+        <div data-reveal style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.16em;color:#BE2D18;margin-bottom:22px">(START HERE)</div>
+        <h2 data-reveal data-delay="60" style="font-size:clamp(38px,5.4vw,88px);font-weight:700;letter-spacing:-.04em;line-height:.94;margin:0 0 24px">Tell us what you're <span style="font-family:'Instrument Serif',serif;font-weight:400;font-style:italic;color:#FF3D23">building.</span></h2>
+        <p data-reveal data-delay="120" style="font-size:17.5px;line-height:1.55;color:#5d574c;max-width:44ch;margin:0 0 34px;text-wrap:pretty">A couple of lines about the project is plenty to start. We reply within two working days, and the first call is a straight yes or no on fit.</p>
+
+        <form data-lead-form data-reveal data-delay="180">
+          <div data-form-fields style="display:flex;flex-direction:column;gap:14px">
+            <div data-formgrid style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+              <label style="display:flex;flex-direction:column;gap:7px"><span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.1em;color:#5d574c">YOUR NAME *</span><input name="name" type="text" autocomplete="name" required style="font-family:'Space Grotesk',sans-serif;font-size:15px;padding:13px 15px;border:1.5px solid rgba(21,19,14,.2);border-radius:10px;background:#fff;color:#15130E;min-height:48px"></label>
+              <label style="display:flex;flex-direction:column;gap:7px"><span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.1em;color:#5d574c">EMAIL *</span><input name="email" type="email" autocomplete="email" required style="font-family:'Space Grotesk',sans-serif;font-size:15px;padding:13px 15px;border:1.5px solid rgba(21,19,14,.2);border-radius:10px;background:#fff;color:#15130E;min-height:48px"></label>
+            </div>
+            <div data-formgrid style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+              <label style="display:flex;flex-direction:column;gap:7px"><span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.1em;color:#5d574c">COMPANY</span><input name="company" type="text" autocomplete="organization" style="font-family:'Space Grotesk',sans-serif;font-size:15px;padding:13px 15px;border:1.5px solid rgba(21,19,14,.2);border-radius:10px;background:#fff;color:#15130E;min-height:48px"></label>
+              <label style="display:flex;flex-direction:column;gap:7px"><span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.1em;color:#5d574c">TIMELINE</span><input name="stack" type="text" placeholder="e.g. live before Q4" style="font-family:'Space Grotesk',sans-serif;font-size:15px;padding:13px 15px;border:1.5px solid rgba(21,19,14,.2);border-radius:10px;background:#fff;color:#15130E;min-height:48px"></label>
+            </div>
+            <label style="display:flex;flex-direction:column;gap:7px"><span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.1em;color:#5d574c">WHAT YOU'RE BUILDING</span><textarea name="brief" rows="4" placeholder="A website, an internal tool, an app — or the problem you want solved." style="font-family:'Space Grotesk',sans-serif;font-size:15px;padding:13px 15px;border:1.5px solid rgba(21,19,14,.2);border-radius:10px;background:#fff;color:#15130E;resize:vertical"></textarea></label>
+            <div data-form-error style="display:none;font-size:14px;color:#BE2D18;font-weight:500"></div>
+            <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:6px">
+              <button type="submit" style="cursor:pointer;background:#BE2D18;color:#fff;border:0;padding:16px 32px;border-radius:999px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:16px;min-height:52px">Send the brief →</button>
+              <a href="mailto:hello@violacreative.com" style="text-decoration:none;color:#15130E;font-weight:600;font-size:14.5px;border-bottom:1.5px solid rgba(21,19,14,.25);padding-bottom:3px">or email us directly</a>
+            </div>
+            <p style="margin:8px 0 0;font-family:'Space Mono',monospace;font-size:10.5px;line-height:1.6;color:#6E675B">WE USE THIS ONLY TO REPLY TO YOU. NO LISTS, NO SHARING.</p>
+          </div>
+          <div data-form-done style="display:none;flex-direction:column;gap:12px;border:1px solid rgba(21,19,14,.2);border-radius:14px;padding:28px;background:#fff">
+            <div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#BE2D18">BRIEF READY</div>
+            <div style="font-size:19px;font-weight:600;letter-spacing:-.01em">Your email client should be opening.</div>
+            <p style="margin:0;font-size:14.5px;line-height:1.6;color:#5d574c;text-wrap:pretty">If nothing happened, send it straight to <a href="mailto:hello@violacreative.com">hello@violacreative.com</a> and we will pick it up from there.</p>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  </main>
+
+  <footer style="background:#15130E;color:#F1ECE2;padding:64px 5vw 40px">
+    <div data-two style="display:grid;grid-template-columns:1.4fr 1fr;gap:44px;align-items:start;padding-bottom:44px;border-bottom:1px solid rgba(241,236,226,.14)">
+      <div>
+        <img src="assets/logo-light.png" alt="Viola Creative" width="842" height="207" style="height:34px;width:auto;display:block;margin-bottom:18px">
+        <p style="margin:0;font-size:15.5px;line-height:1.6;color:rgba(241,236,226,.6);max-width:38ch;text-wrap:pretty">A design and engineering studio. We build the software businesses run on — and the agent workflows behind it.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px">
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:rgba(241,236,226,.62);margin-bottom:2px">SECTIONS</div>
+          <a href="#services" style="text-decoration:none;color:rgba(241,236,226,.78);font-size:14.5px">Services</a>
+          <a href="#work" style="text-decoration:none;color:rgba(241,236,226,.78);font-size:14.5px">Work</a>
+          <a href="#agents" style="text-decoration:none;color:rgba(241,236,226,.78);font-size:14.5px">Agents</a>
+          <a href="#process" style="text-decoration:none;color:rgba(241,236,226,.78);font-size:14.5px">Process</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:rgba(241,236,226,.62);margin-bottom:2px">GET IN TOUCH</div>
+          <a href="#contact" style="text-decoration:none;color:rgba(241,236,226,.78);font-size:14.5px">Start a project</a>
+          <a href="mailto:hello@violacreative.com" style="text-decoration:none;color:rgba(241,236,226,.78);font-size:14.5px">hello@violacreative.com</a>
+          <a href="#main" style="text-decoration:none;color:#FF3D23;font-size:14.5px">Back to top ↑</a>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;padding-top:24px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.08em;color:rgba(241,236,226,.62)">
+      <span>© 2026 VIOLA CREATIVE</span>
+      <span>DESIGN &amp; ENGINEERING STUDIO</span>
+    </div>
+  </footer>
+
+  <div data-case-overlay role="dialog" aria-modal="true" aria-label="Case study" style="display:none;position:fixed;inset:0;z-index:9000;background:rgba(16,15,12,.82);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);padding:5vh 5vw;overflow-y:auto;justify-content:center;align-items:flex-start">
+    <div style="background:#F1ECE2;color:#15130E;border-radius:20px;max-width:860px;width:100%;padding:clamp(28px,4vw,52px);position:relative;box-shadow:0 40px 120px rgba(0,0,0,.5)">
+      <button data-case-close type="button" aria-label="Close case study" style="position:absolute;top:20px;right:20px;cursor:pointer;width:44px;height:44px;border-radius:50%;background:transparent;border:1.5px solid rgba(21,19,14,.22);color:#15130E;font-family:'Space Mono',monospace;font-size:15px">✕</button>
+
+      <div data-case-panel="aeroterra" style="display:none">
+        <div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;color:#BE2D18;margin-bottom:18px">GIS · PLATFORM</div>
+        <h2 style="margin:0 0 8px;font-size:clamp(30px,4vw,52px);font-weight:700;letter-spacing:-.03em;line-height:1">Aeroterra USA</h2>
+        <p style="margin:0 0 30px;font-size:17px;line-height:1.5;color:#5d574c;max-width:56ch;text-wrap:pretty">A geospatial platform their own analysts operate, replacing a standing queue of consultant engagements.</p>
+        <div style="height:220px;border-radius:14px;background:repeating-linear-gradient(135deg,#e3dccd 0 2px,transparent 2px 12px);border:1px solid rgba(21,19,14,.14);display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.1em;color:#6E675B;margin-bottom:32px">DROP PLATFORM SCREENS HERE</div>
+        <div style="display:flex;flex-direction:column;gap:24px">
+          <div><div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#BE2D18;margin-bottom:8px">THE PROBLEM</div><p style="margin:0;font-size:15.5px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">Every new analysis meant a consultant engagement and another licence seat. Institutional knowledge left with each contract, and nobody internally could answer a spatial question without waiting a week.</p></div>
+          <div><div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#BE2D18;margin-bottom:8px">WHAT WE BUILT</div><p style="margin:0;font-size:15.5px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">A platform their own team operates: ingestion, analysis and reporting in one place, built around the workflows their analysts actually follow rather than a generic GIS suite.</p></div>
+          <div><div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#BE2D18;margin-bottom:8px">WHAT CHANGED</div><p style="margin:0;font-size:15.5px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">Add the outcome you would defend in a room — hours saved per analysis, consultant spend removed, or time-to-answer before and after.</p></div>
+        </div>
+        <a href="#contact" data-case-close style="display:inline-flex;align-items:center;gap:10px;margin-top:36px;text-decoration:none;background:#BE2D18;color:#fff;padding:15px 28px;border-radius:999px;font-weight:600;font-size:15px">Start something like this →</a>
+      </div>
+
+      <div data-case-panel="pordeporte" style="display:none">
+        <div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;color:#BE2D18;margin-bottom:18px">COMMERCE + APP</div>
+        <h2 style="margin:0 0 8px;font-size:clamp(30px,4vw,52px);font-weight:700;letter-spacing:-.03em;line-height:1">Por El Deporte</h2>
+        <p style="margin:0 0 30px;font-size:17px;line-height:1.5;color:#5d574c;max-width:56ch;text-wrap:pretty">Web, iOS and Android from a single codebase, with no inventory to hold.</p>
+        <img src="assets/por-el-deporte-crop.png" alt="Por El Deporte storefront and app screens" style="width:100%;height:220px;object-fit:cover;border-radius:14px;border:1px solid rgba(21,19,14,.14);margin-bottom:32px">
+        <div style="display:flex;flex-direction:column;gap:24px">
+          <div><div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#BE2D18;margin-bottom:8px">THE PROBLEM</div><p style="margin:0;font-size:15.5px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">Reaching fans on every platform without running three separate builds, three release cycles and three sets of bugs — on a team with no appetite for warehousing stock.</p></div>
+          <div><div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#BE2D18;margin-bottom:8px">WHAT WE BUILT</div><p style="margin:0;font-size:15.5px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">One codebase shipping to web and both app stores, wired to on-demand fulfilment so a sale triggers production rather than drawing down inventory.</p></div>
+          <div><div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#BE2D18;margin-bottom:8px">WHAT CHANGED</div><p style="margin:0;font-size:15.5px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">Add the number here — release cadence, conversion, or cost per order versus the previous setup.</p></div>
+        </div>
+        <a href="#contact" data-case-close style="display:inline-flex;align-items:center;gap:10px;margin-top:36px;text-decoration:none;background:#BE2D18;color:#fff;padding:15px 28px;border-radius:999px;font-weight:600;font-size:15px">Start something like this →</a>
+      </div>
+
+      <div data-case-panel="spatioterra" style="display:none">
+        <div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;color:#BE2D18;margin-bottom:18px">DATA</div>
+        <h2 style="margin:0 0 8px;font-size:clamp(30px,4vw,52px);font-weight:700;letter-spacing:-.03em;line-height:1">SpatioTerra</h2>
+        <p style="margin:0 0 30px;font-size:17px;line-height:1.5;color:#5d574c;max-width:56ch;text-wrap:pretty">Millions of spatial records consolidated into one source of truth instead of a scatter of exports.</p>
+        <div style="height:220px;border-radius:14px;background:repeating-linear-gradient(45deg,#e3dccd 0 2px,transparent 2px 14px);border:1px solid rgba(21,19,14,.14);display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.1em;color:#6E675B;margin-bottom:32px">DROP DASHBOARD SCREENS HERE</div>
+        <div style="display:flex;flex-direction:column;gap:24px">
+          <div><div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#BE2D18;margin-bottom:8px">THE PROBLEM</div><p style="margin:0;font-size:15.5px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">The data existed but lived in incompatible exports, so every question became a manual reconciliation job and no two answers agreed.</p></div>
+          <div><div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#BE2D18;margin-bottom:8px">WHAT WE BUILT</div><p style="margin:0;font-size:15.5px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">A single store with a query layer and reporting on top, designed so non-technical staff can ask a question without opening a spreadsheet.</p></div>
+          <div><div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#BE2D18;margin-bottom:8px">WHAT CHANGED</div><p style="margin:0;font-size:15.5px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">Add the real figure — record count, query time, or reporting hours removed each month.</p></div>
+        </div>
+        <a href="#contact" data-case-close style="display:inline-flex;align-items:center;gap:10px;margin-top:36px;text-decoration:none;background:#BE2D18;color:#fff;padding:15px 28px;border-radius:999px;font-weight:600;font-size:15px">Start something like this →</a>
+      </div>
+
+      <div data-case-panel="bmgkids" style="display:none">
+        <div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;color:#BE2D18;margin-bottom:18px">HEADLESS COMMERCE</div>
+        <h2 style="margin:0 0 8px;font-size:clamp(30px,4vw,52px);font-weight:700;letter-spacing:-.03em;line-height:1">BMG Kids</h2>
+        <p style="margin:0 0 30px;font-size:17px;line-height:1.5;color:#5d574c;max-width:56ch;text-wrap:pretty">A storefront rebuilt headless — faster on every page, and no longer bound to a platform's roadmap.</p>
+        <div style="height:220px;border-radius:14px;background:repeating-linear-gradient(135deg,#e3dccd 0 2px,transparent 2px 12px);border:1px solid rgba(21,19,14,.14);display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.1em;color:#6E675B;margin-bottom:32px">DROP STOREFRONT SCREENS HERE</div>
+        <div style="display:flex;flex-direction:column;gap:24px">
+          <div><div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#BE2D18;margin-bottom:8px">THE PROBLEM</div><p style="margin:0;font-size:15.5px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">A hosted storefront that dictated the checkout, throttled the design, and charged more every year for the privilege.</p></div>
+          <div><div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#BE2D18;margin-bottom:8px">WHAT WE BUILT</div><p style="margin:0;font-size:15.5px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">A headless front end over a commerce API, with the merchandising and checkout flow their buyers actually respond to — deployable in minutes.</p></div>
+          <div><div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#BE2D18;margin-bottom:8px">WHAT CHANGED</div><p style="margin:0;font-size:15.5px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">The +38% conversion claim belongs here with the measurement window and the baseline, or it should come off the site.</p></div>
+        </div>
+        <a href="#contact" data-case-close style="display:inline-flex;align-items:center;gap:10px;margin-top:36px;text-decoration:none;background:#BE2D18;color:#fff;padding:15px 28px;border-radius:999px;font-weight:600;font-size:15px">Start something like this →</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:&quot;100%&quot;},&quot;reduceMotion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Behaviour&quot;}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    this.cleanups = [];
+    // Guarantee the head essentials land even if the host strips helmet tags.
+    try {
+      document.documentElement.lang = 'en';
+      if (!document.title) document.title = 'Viola Creative — Design, engineering and AI agent workflows';
+    } catch (e) {}
+    const mq = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+    this.reduce = this.props.reduceMotion === true || !!(mq && mq.matches);
+    this.setupReveals();
+    this.setupScrollLoop();
+    this.setupServices();
+    this.setupCases();
+    this.setupForm();
+    this.setupMagnetic();
+    this.setupTilt();
+    this.drawHub();
+    this.drawOrg();
+    this.setupChart();
+    this.setupNavCondense();
+    this.setupStack();
+    this.setupHovers();
+    this.setupFaqMotion();
+    this.setupFieldFocus();
+    this.animateHero();
+    if (!this.reduce) this.whenAnime(() => this.floatHubChips());
+  }
+
+  /* anime.js is an enhancement — every animated element is already visible
+     without it, so a blocked CDN costs polish, never content. */
+  whenAnime(cb, tries) {
+    tries = tries || 0;
+    if (window.anime) return cb(window.anime);
+    if (tries > 60) return;
+    const t = setTimeout(() => this.whenAnime(cb, tries + 1), 50);
+    this.cleanups.push(() => clearTimeout(t));
+  }
+
+  splitWords(el) {
+    const out = [];
+    [].slice.call(el.childNodes).forEach((k) => {
+      if (k.nodeType === 3) {
+        const frag = document.createDocumentFragment();
+        k.textContent.split(/(\s+)/).forEach((p) => {
+          if (p === '') return;
+          if (/^\s+$/.test(p)) { frag.appendChild(document.createTextNode(p)); return; }
+          const sp = document.createElement('span');
+          sp.textContent = p;
+          sp.style.display = 'inline-block';
+          sp.style.willChange = 'transform,opacity';
+          frag.appendChild(sp);
+          out.push(sp);
+        });
+        el.replaceChild(frag, k);
+      } else if (k.nodeType === 1 && k.nodeName !== 'BR') {
+        k.style.display = 'inline-block';
+        out.push(k);
+      }
+    });
+    return out;
+  }
+
+  /* Word stagger on CSS transitions so the headline cannot be trapped hidden. */
+  animateHero() {
+    const h1 = document.querySelector('[data-hero-h1]');
+    if (!h1 || h1.__done || this.reduce) return;
+    h1.__done = true;
+    const words = this.splitWords(h1);
+    if (!words.length) return;
+    words.forEach((w) => {
+      w.style.opacity = '0';
+      w.style.transform = 'translateY(42px) rotate(3deg)';
+    });
+    const play = () => words.forEach((w, i) => {
+      w.style.transition = 'opacity .62s cubic-bezier(.22,1,.36,1) ' + (90 + i * 46) + 'ms, transform .92s cubic-bezier(.22,1,.36,1) ' + (90 + i * 46) + 'ms';
+      w.style.opacity = '1';
+      w.style.transform = 'none';
+    });
+    requestAnimationFrame(() => requestAnimationFrame(play));
+    const safety = setTimeout(play, 1200);
+    this.cleanups.push(() => clearTimeout(safety));
+  }
+
+  floatHubChips() {
+    const chips = [].slice.call(this.q('[data-hub-chip]'));
+    if (!chips.length) return;
+    const t = setTimeout(() => {
+      chips.forEach((c, i) => {
+        const a = window.anime({ targets: c, translateY: [0, -7], direction: 'alternate', loop: true, duration: 2100 + i * 150, delay: i * 110, easing: 'easeInOutSine' });
+        this.anims = this.anims || [];
+        this.anims.push(a);
+      });
+      this.cleanups.push(() => (this.anims || []).forEach((a) => { try { a.pause(); } catch (e) {} }));
+    }, 900);
+    this.cleanups.push(() => clearTimeout(t));
+  }
+
+  /* Hover states, all transform/colour only — nothing here gates visibility. */
+  setupHovers() {
+    const bind = (el, enter, leave) => {
+      el.addEventListener('pointerenter', (e) => { if (e.pointerType !== 'touch') enter(); });
+      el.addEventListener('pointerleave', leave);
+      el.addEventListener('focusin', enter);
+      el.addEventListener('focusout', leave);
+      this.cleanups.push(() => {
+        el.removeEventListener('pointerleave', leave);
+        el.removeEventListener('focusout', leave);
+      });
+    };
+
+    this.q('[data-stack-card]').forEach((card) => {
+      const btn = card.querySelector('button');
+      if (btn) btn.style.transition = 'border-color .3s ease';
+      bind(card,
+        () => { if (btn) btn.style.borderColor = 'rgba(255,61,35,.55)'; },
+        () => { if (btn) btn.style.borderColor = 'rgba(21,19,14,.16)'; });
+    });
+
+    this.q('[data-svc-item]').forEach((row) => {
+      const title = row.querySelector('[data-svc-title]');
+      bind(row,
+        () => { if (title && row.getAttribute('aria-expanded') !== 'true') title.style.color = '#2c2822'; },
+        () => { if (title && row.getAttribute('aria-expanded') !== 'true') title.style.color = '#5d574c'; });
+    });
+
+    this.q('#process [data-proc-card]').forEach((card) => {
+      card.style.transition = 'transform .4s cubic-bezier(.22,1,.36,1), border-color .3s ease';
+      bind(card,
+        () => { if (!this.reduce) { card.style.transform = 'translateY(-5px)'; card.style.borderColor = 'rgba(255,61,35,.42)'; } },
+        () => { card.style.transform = 'none'; card.style.borderColor = 'rgba(21,19,14,.14)'; });
+    });
+
+    this.q('details summary').forEach((sum) => {
+      sum.style.transition = 'color .22s ease';
+      bind(sum, () => { sum.style.color = '#BE2D18'; }, () => { sum.style.color = ''; });
+    });
+  }
+
+  setupFaqMotion() {
+    if (this.reduce) return;
+    this.q('details').forEach((d) => {
+      const body = d.querySelector('p');
+      if (!body) return;
+      const onToggle = () => {
+        if (!d.open) return;
+        body.style.transition = 'none';
+        body.style.transform = 'translateY(-8px)';
+        body.style.opacity = '0.35';
+        const play = () => { body.style.transition = 'transform .45s cubic-bezier(.22,1,.36,1), opacity .35s ease'; body.style.transform = 'none'; body.style.opacity = '1'; };
+        requestAnimationFrame(() => requestAnimationFrame(play));
+        setTimeout(play, 320);
+      };
+      d.addEventListener('toggle', onToggle);
+      this.cleanups.push(() => d.removeEventListener('toggle', onToggle));
+    });
+  }
+
+  setupFieldFocus() {
+    this.q('[data-lead-form] input, [data-lead-form] textarea').forEach((f) => {
+      f.style.transition = 'border-color .2s ease, box-shadow .2s ease';
+      const on = () => { f.style.borderColor = '#BE2D18'; f.style.boxShadow = '0 0 0 3px rgba(190,45,24,.12)'; };
+      const off = () => { f.style.borderColor = 'rgba(21,19,14,.2)'; f.style.boxShadow = 'none'; };
+      f.addEventListener('focus', on);
+      f.addEventListener('blur', off);
+      this.cleanups.push(() => { f.removeEventListener('focus', on); f.removeEventListener('blur', off); });
+    });
+  }
+
+  /* Each card is sticky, so the next one physically covers it. anime.js holds a
+     paused timeline per card that we seek() to the coverage ratio — the card
+     underneath recedes as the next slides over it. */
+  setupStack() {
+    const cards = this.q('[data-stack-card]');
+    if (cards.length < 2 || this.reduce || !window.anime) return;
+    const anims = [];
+    for (let i = 0; i < cards.length - 1; i++) {
+      const btn = cards[i].querySelector('button');
+      if (!btn) continue;
+      btn.style.transformOrigin = '50% 0%';
+      anims.push({
+        card: cards[i],
+        next: cards[i + 1],
+        top: parseFloat(cards[i].style.top) || 96,
+        a: window.anime({
+          targets: btn,
+          scale: [1, 0.912],
+          translateY: [0, -26],
+          filter: ['brightness(1)', 'brightness(0.55)'],
+          easing: 'linear',
+          autoplay: false,
+          duration: 1000
+        })
+      });
+    }
+    this.stackApply = () => {
+      const vh = window.innerHeight;
+      for (let i = 0; i < anims.length; i++) {
+        const it = anims[i];
+        const nextTop = it.next.getBoundingClientRect().top;
+        const span = vh - it.top;
+        const p = span > 0 ? Math.max(0, Math.min(1, (vh - nextTop) / span)) : 0;
+        it.a.seek(it.a.duration * p);
+      }
+    };
+    this.stackApply();
+  }
+
+  setupNavCondense() {
+    const nav = document.querySelector('nav');
+    if (!nav) return;
+    nav.style.transition = 'padding .3s ease, box-shadow .3s ease';
+    const logo = nav.querySelector('[data-logo]');
+    this.navTick = (y) => {
+      const on = y > 80;
+      nav.style.paddingTop = on ? '11px' : '18px';
+      nav.style.paddingBottom = on ? '11px' : '18px';
+      nav.style.boxShadow = on ? '0 10px 30px rgba(21,19,14,.08)' : 'none';
+      if (logo) logo.style.height = on ? '22px' : '26px';
+    };
+  }
+
+  componentWillUnmount() {
+    (this.cleanups || []).forEach((f) => { try { f(); } catch (e) {} });
+  }
+
+  q(sel) { return document.querySelectorAll(sel); }
+
+  /* Reveals: markup ships visible. JS hides then animates in, so a failed
+     script or a missing IntersectionObserver can never blank the page. */
+  setupReveals() {
+    const els = [].slice.call(this.q('[data-reveal]'));
+    if (!els.length) return;
+    if (this.reduce || !('IntersectionObserver' in window)) return;
+    els.forEach((el) => {
+      el.style.opacity = '0';
+      el.style.transform = el.getAttribute('data-reveal') === 'scale' ? 'scale(.97)' : 'translateY(26px)';
+      el.style.willChange = 'opacity,transform';
+    });
+    const show = (el) => {
+      if (el.__shown) return;
+      el.__shown = true;
+      const d = parseInt(el.getAttribute('data-delay') || '0', 10);
+      // CSS, never anime: transitions still complete in a backgrounded document,
+      // rAF-driven libraries do not — and this is what makes content visible.
+      el.style.transition = 'opacity .7s cubic-bezier(.22,1,.36,1) ' + d + 'ms, transform .85s cubic-bezier(.22,1,.36,1) ' + d + 'ms';
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+    };
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { show(e.target); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -6% 0px', threshold: 0.06 });
+    els.forEach((el) => io.observe(el));
+    this.cleanups.push(() => io.disconnect());
+    const safety = setTimeout(() => els.forEach(show), 4000);
+    this.cleanups.push(() => clearTimeout(safety));
+  }
+
+  /* One rAF loop polling scrollTop — scroll EVENTS do not fire in every
+     embedding context, but reading the value always works. */
+  setupScrollLoop() {
+    const bar = document.querySelector('[data-progress]');
+    let last = -1, raf = 0;
+    const tick = () => {
+      // Reschedule FIRST: one throwing frame must never kill scroll tracking
+      // for the rest of the session.
+      raf = requestAnimationFrame(tick);
+      try {
+        const se = document.scrollingElement || document.documentElement;
+        const y = se.scrollTop;
+        if (y === last) return;
+        last = y;
+        const max = se.scrollHeight - se.clientHeight;
+        if (bar) bar.style.width = (max > 0 ? Math.max(0, Math.min(100, (y / max) * 100)) : 0).toFixed(2) + '%';
+        if (this.hubApply) this.hubApply(y);
+        if (this.navTick) this.navTick(y);
+        if (this.stackApply) this.stackApply();
+      } catch (e) {
+        last = -1;
+      }
+    };
+    raf = requestAnimationFrame(tick);
+    this.cleanups.push(() => cancelAnimationFrame(raf));
+  }
+
+
+
+  /* Delegated so it works regardless of when the rows reach the DOM. */
+  setupServices() {
+    const select = (id) => {
+      this.q('[data-svc-item]').forEach((r) => {
+        const on = r.getAttribute('data-svc-item') === id;
+        r.setAttribute('aria-expanded', on ? 'true' : 'false');
+        const num = r.querySelector('[data-svc-num]');
+        const title = r.querySelector('[data-svc-title]');
+        const sign = r.querySelector('[data-svc-sign]');
+        if (num) num.style.color = on ? '#BE2D18' : '#6E675B';
+        if (title) { title.style.color = on ? '#15130E' : '#5d574c'; title.style.fontWeight = on ? '700' : '500'; }
+        if (sign) sign.style.transform = on ? 'rotate(45deg)' : 'rotate(0deg)';
+      });
+      this.q('[data-svc-body]').forEach((b) => {
+        const on = b.getAttribute('data-svc-body') === id;
+        b.style.display = on ? 'grid' : 'none';
+        if (!on || this.reduce || !window.anime) return;
+        const anime = window.anime;
+        const kids = [].slice.call(b.children);
+        const chips = [].slice.call(b.querySelectorAll('span'));
+        anime.remove(kids);
+        anime.remove(chips);
+        // transform-only, so a stalled rAF can never hide the copy
+        anime({ targets: kids, translateY: [16, 0], duration: 640, delay: anime.stagger(70), easing: 'easeOutExpo' });
+        if (chips.length) anime({ targets: chips, scale: [0.86, 1], duration: 500, delay: anime.stagger(45, { start: 120 }), easing: 'easeOutBack' });
+      });
+    };
+    const hit = (e) => {
+      const t = e.target && e.target.closest ? e.target.closest('[data-svc-item]') : null;
+      if (t) select(t.getAttribute('data-svc-item'));
+    };
+    document.addEventListener('click', hit);
+    document.addEventListener('focusin', hit);
+    this.cleanups.push(() => {
+      document.removeEventListener('click', hit);
+      document.removeEventListener('focusin', hit);
+    });
+  }
+
+  setupCases() {
+    const overlay = document.querySelector('[data-case-overlay]');
+    if (!overlay) return;
+    const panels = {};
+    this.q('[data-case-panel]').forEach((p) => { panels[p.getAttribute('data-case-panel')] = p; });
+    let opener = null;
+    const open = (id) => {
+      Object.keys(panels).forEach((k) => { panels[k].style.display = k === id ? 'block' : 'none'; });
+      overlay.style.display = 'flex';
+      overlay.scrollTop = 0;
+      document.body.style.overflow = 'hidden';
+      const card = overlay.firstElementChild;
+      if (card && !this.reduce) {
+        card.style.transition = 'none';
+        card.style.transform = 'translateY(24px) scale(.99)';
+        const play = () => { card.style.transition = 'transform .58s cubic-bezier(.22,1,.36,1)'; card.style.transform = 'none'; };
+        requestAnimationFrame(() => requestAnimationFrame(play));
+        setTimeout(play, 400);
+      }
+      const c = overlay.querySelector('[data-case-close]');
+      if (c) c.focus();
+    };
+    const close = () => {
+      overlay.style.display = 'none';
+      document.body.style.overflow = '';
+      if (opener) { try { opener.focus(); } catch (e) {} }
+    };
+    this.q('[data-case-open]').forEach((b) => {
+      b.addEventListener('click', () => { opener = b; open(b.getAttribute('data-case-open')); });
+    });
+    overlay.querySelectorAll('[data-case-close]').forEach((b) => b.addEventListener('click', close));
+    overlay.addEventListener('click', (e) => { if (e.target === overlay) close(); });
+    const onKey = (e) => { if (e.key === 'Escape' && overlay.style.display === 'flex') close(); };
+    document.addEventListener('keydown', onKey);
+    this.cleanups.push(() => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; });
+  }
+
+  setupForm() {
+    const form = document.querySelector('[data-lead-form]');
+    if (!form) return;
+    const done = form.querySelector('[data-form-done]');
+    const err = form.querySelector('[data-form-error]');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const get = (n) => { const f = form.querySelector('[name="' + n + '"]'); return f ? f.value.trim() : ''; };
+      const name = get('name'), email = get('email');
+      if (!name || !email || email.indexOf('@') < 1) {
+        if (err) { err.style.display = 'block'; err.textContent = 'Add your name and a valid email so we can reply.'; }
+        return;
+      }
+      if (err) err.style.display = 'none';
+      // No backend yet: hand the qualified brief to email so nothing is lost.
+      const body = ['Name: ' + name, 'Company: ' + get('company'), 'Timeline: ' + get('stack'), '', get('brief')].join('\n');
+      const href = 'mailto:hello@violacreative.com?subject=' + encodeURIComponent('Project enquiry — ' + (get('company') || name)) + '&body=' + encodeURIComponent(body);
+      try { window.location.href = href; } catch (e2) {}
+      if (done) done.style.display = 'flex';
+      form.querySelectorAll('[data-form-fields]').forEach((f) => { f.style.display = 'none'; });
+    });
+  }
+
+  setupMagnetic() {
+    if (this.reduce) return;
+    this.q('[data-magnetic]').forEach((el) => {
+      const s = 0.12;
+      el.style.willChange = 'transform';
+      const move = (ev) => {
+        const r = el.getBoundingClientRect();
+        el.style.transition = 'transform .12s ease-out';
+        el.style.transform = 'translate(' + ((ev.clientX - (r.left + r.width / 2)) * s).toFixed(1) + 'px,' + ((ev.clientY - (r.top + r.height / 2)) * s).toFixed(1) + 'px)';
+      };
+      const leave = () => { el.style.transition = 'transform .5s cubic-bezier(.22,1,.36,1)'; el.style.transform = 'translate(0,0)'; };
+      el.addEventListener('pointermove', move);
+      el.addEventListener('pointerleave', leave);
+      this.cleanups.push(() => { el.removeEventListener('pointermove', move); el.removeEventListener('pointerleave', leave); });
+    });
+  }
+
+  setupTilt() {
+    if (this.reduce) return;
+    this.q('[data-tilt]').forEach((el) => {
+      el.style.willChange = 'transform';
+      const move = (ev) => {
+        const r = el.getBoundingClientRect();
+        const px = (ev.clientX - (r.left + r.width / 2)) / (r.width / 2 || 1);
+        const py = (ev.clientY - (r.top + r.height / 2)) / (r.height / 2 || 1);
+        el.style.transition = 'transform .1s ease-out';
+        el.style.transform = 'perspective(1100px) rotateY(' + (px * 4).toFixed(2) + 'deg) rotateX(' + (-py * 4).toFixed(2) + 'deg)';
+      };
+      const leave = () => { el.style.transition = 'transform .6s cubic-bezier(.22,1,.36,1)'; el.style.transform = 'perspective(1100px)'; };
+      el.addEventListener('pointermove', move);
+      el.addEventListener('pointerleave', leave);
+      this.cleanups.push(() => { el.removeEventListener('pointermove', move); el.removeEventListener('pointerleave', leave); });
+    });
+  }
+
+  setupChart() {
+    const lines = [].slice.call(this.q('[data-chart-line]'));
+    if (!lines.length || this.reduce || !('IntersectionObserver' in window)) return;
+    lines.forEach((p, i) => {
+      p.style.transformBox = 'fill-box';
+      p.style.transformOrigin = '0% 50%';
+      p.style.transform = 'scaleX(0)';
+      p.style.transition = 'transform 1.4s cubic-bezier(.4,0,.2,1) ' + (i * 220) + 'ms';
+    });
+    const io = new IntersectionObserver((es) => {
+      es.forEach((e) => { if (e.isIntersecting) { lines.forEach((p) => { p.style.transform = 'scaleX(1)'; }); io.disconnect(); } });
+    }, { threshold: 0.3 });
+    io.observe(lines[0]);
+    this.cleanups.push(() => io.disconnect());
+  }
+
+  drawHub() {
+    const stage = document.querySelector('[data-hub-stage]');
+    if (!stage) return;
+    const svg = stage.querySelector('[data-hub-lines]');
+    const lines = [].slice.call(stage.querySelectorAll('[data-hub-line]'));
+    const anchors = [].slice.call(stage.querySelectorAll('[data-hub-anchor]'));
+    const core = stage.querySelector('[data-hub-core]');
+    let vecs = [];
+    const measure = () => {
+      const rect = stage.getBoundingClientRect();
+      if (!rect.width || !rect.height) return;
+      if (svg) svg.setAttribute('viewBox', '0 0 ' + rect.width + ' ' + rect.height);
+      const cx = rect.width / 2, cy = rect.height / 2;
+      vecs = anchors.map((a, i) => {
+        const r = a.getBoundingClientRect();
+        const x = r.left - rect.left + r.width / 2;
+        const y = r.top - rect.top + r.height / 2;
+        const ln = lines[i];
+        if (ln) { ln.setAttribute('x1', cx); ln.setAttribute('y1', cy); ln.setAttribute('x2', x); ln.setAttribute('y2', y); }
+        const dx = x - cx, dy = y - cy;
+        return { x: dx, y: dy, R: Math.hypot(dx, dy), th: Math.atan2(dy, dx) };
+      });
+    };
+    measure();
+    const onResize = () => measure();
+    window.addEventListener('resize', onResize, { passive: true });
+    this.cleanups.push(() => window.removeEventListener('resize', onResize));
+    [250, 800].forEach((ms) => { const t = setTimeout(measure, ms); this.cleanups.push(() => clearTimeout(t)); });
+    if (this.reduce) return;
+
+    const wraps = anchors.map((a) => {
+      const chip = a.firstElementChild;
+      const w = document.createElement('div');
+      w.style.willChange = 'transform,opacity';
+      a.insertBefore(w, chip);
+      w.appendChild(chip);
+      return w;
+    });
+    const header = document.querySelector('header[data-hero]');
+    const SPIN = Math.PI * 1.7;
+    this.hubApply = (y) => {
+      if (!header || !vecs.length) return;
+      // a stale/zero measurement would otherwise produce NaN transforms
+      if (!vecs[0] || !isFinite(vecs[0].R) || vecs[0].R === 0) { measure(); if (!vecs[0] || !isFinite(vecs[0].R)) return; }
+      const span = (header.offsetHeight || 700) * 0.7;
+      const p = span > 0 ? Math.max(0, Math.min(1, y / span)) : 0;
+      for (let i = 0; i < wraps.length; i++) {
+        const v = vecs[i];
+        if (!v || !isFinite(v.R) || !isFinite(v.th)) continue;
+        const radius = v.R * (1 - p), ang = v.th + p * SPIN;
+        wraps[i].style.transform = 'translate(' + (radius * Math.cos(ang) - v.x).toFixed(1) + 'px,' + (radius * Math.sin(ang) - v.y).toFixed(1) + 'px) rotate(' + (p * 150).toFixed(1) + 'deg) scale(' + (1 - 0.72 * p).toFixed(3) + ')';
+        wraps[i].style.opacity = (1 - p * 0.95).toFixed(3);
+      }
+      if (svg) svg.style.opacity = Math.max(0, 1 - p * 1.7).toFixed(3);
+      if (core) core.style.transform = 'scale(' + (1 + 0.16 * p).toFixed(3) + ')';
+    };
+  }
+
+  drawOrg() {
+    const board = document.querySelector('[data-org-chart]');
+    if (!board) return;
+    const svg = board.querySelector('[data-org-lines]');
+    const rows = [].slice.call(board.querySelectorAll('[data-org-row]'));
+    const rowNodes = rows.map((r) => [].slice.call(r.querySelectorAll('[data-org-node]')));
+    const NS = 'http://www.w3.org/2000/svg';
+    const groups = [];
+    if (rowNodes[0] && rowNodes[1]) groups.push({ p: rowNodes[0][0], c: rowNodes[1] });
+    if (rowNodes[1] && rowNodes[2] && rowNodes[1][1]) groups.push({ p: rowNodes[1][1], c: rowNodes[2] });
+    const draw = () => {
+      const rect = board.getBoundingClientRect();
+      if (!rect.width || !rect.height || !svg) return;
+      svg.setAttribute('viewBox', '0 0 ' + rect.width + ' ' + rect.height);
+      while (svg.firstChild) svg.removeChild(svg.firstChild);
+      const geo = (el) => { const r = el.getBoundingClientRect(); return { cx: r.left - rect.left + r.width / 2, ty: r.top - rect.top, by: r.bottom - rect.top }; };
+      const mk = (d, active) => {
+        const p = document.createElementNS(NS, 'path');
+        p.setAttribute('d', d);
+        p.setAttribute('fill', 'none');
+        p.setAttribute('stroke', active ? '#BE2D18' : 'rgba(21,19,14,.22)');
+        p.setAttribute('stroke-width', active ? '2' : '1.5');
+        p.setAttribute('stroke-linecap', 'round');
+        if (active && !this.reduce) { p.style.strokeDasharray = '5 7'; p.style.animation = 'vc-flow .6s linear infinite'; }
+        svg.appendChild(p);
+      };
+      groups.forEach((g) => {
+        const P = geo(g.p), kids = g.c.map(geo);
+        const cty = Math.min.apply(null, kids.map((k) => k.ty));
+        const busY = P.by + (cty - P.by) * 0.5;
+        let d = 'M' + P.cx + ' ' + P.by + 'V' + busY + 'M' + Math.min.apply(null, kids.map((k) => k.cx)) + ' ' + busY + 'H' + Math.max.apply(null, kids.map((k) => k.cx));
+        kids.forEach((k) => { d += 'M' + k.cx + ' ' + busY + 'V' + k.ty; });
+        mk(d, false);
+        g.c.forEach((childEl, i) => {
+          if (!childEl.hasAttribute('data-org-active')) return;
+          const k = kids[i];
+          mk('M' + P.cx + ' ' + P.by + 'L' + P.cx + ' ' + busY + 'L' + k.cx + ' ' + busY + 'L' + k.cx + ' ' + k.ty, true);
+        });
+      });
+    };
+    draw();
+    const onResize = () => draw();
+    window.addEventListener('resize', onResize, { passive: true });
+    this.cleanups.push(() => window.removeEventListener('resize', onResize));
+    [300, 900, 1600].forEach((ms) => { const t = setTimeout(draw, ms); this.cleanups.push(() => clearTimeout(t)); });
+
+    // staggered build of the org, once, when it scrolls into view
+    const nodes = rowNodes.reduce((a, b) => a.concat(b), []);
+    if (this.reduce || !nodes.length || !('IntersectionObserver' in window)) return;
+    let fired = false;
+    const io = new IntersectionObserver((es) => {
+      es.forEach((e) => {
+        if (!e.isIntersecting || fired) return;
+        fired = true;
+        io.disconnect();
+        // transform-only: if anime never ticks, the chart is simply already in place
+        this.whenAnime((anime) => {
+          draw();
+          anime({ targets: nodes, scale: [0.84, 1], translateY: [16, 0], duration: 700, delay: anime.stagger(85), easing: 'easeOutExpo' });
+        });
+      });
+    }, { threshold: 0.2 });
+    io.observe(board);
+    this.cleanups.push(() => io.disconnect());
+  }
+
+  renderVals() { return {}; }
+}
+
+</script>
+</body>
+</html>
