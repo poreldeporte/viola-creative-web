@@ -1,0 +1,27 @@
+{
+  "name": "Viola Creative",
+  "short_name": "Viola",
+  "description": "Viola Creative is a design and engineering studio. We build websites, web apps and mobile apps, design them around how your business actually works, and set up AI agent workflows to handle the repetitive operations.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F1ECE2",
+  "theme_color": "#15130E",
+  "icons": [
+    {
+      "src": "/assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
