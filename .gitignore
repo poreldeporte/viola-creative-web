@@ -13,3 +13,4 @@
 # Logs / local scratch
 *.log
 node_modules/
+.env*
