@@ -363,26 +363,64 @@
       this.cleanups.push(() => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; });
     }
 
+    /* POSTs to the /api/lead function. If that is unreachable the brief is
+       handed to a mailto: so a submission is never silently lost. */
     setupForm() {
       const form = document.querySelector('[data-lead-form]');
       if (!form) return;
       const done = form.querySelector('[data-form-done]');
       const err = form.querySelector('[data-form-error]');
+      const btn = form.querySelector('button[type="submit"]');
+      const rendered = Date.now();
+      const get = (n) => { const f = form.querySelector('[name="' + n + '"]'); return f ? f.value.trim() : ''; };
+
+      const showError = (msg) => { if (err) { err.style.display = 'block'; err.textContent = msg; } };
+      const succeed = () => {
+        if (done) done.style.display = 'flex';
+        form.querySelectorAll('[data-form-fields]').forEach((f) => { f.style.display = 'none'; });
+      };
+      const mailtoFallback = (name) => {
+        const body = ['Name: ' + name, 'Company: ' + get('company'), 'Timeline: ' + get('stack'), '', get('brief')].join('\n');
+        const href = 'mailto:hello@violacreative.com?subject='
+          + encodeURIComponent('Project enquiry — ' + (get('company') || name))
+          + '&body=' + encodeURIComponent(body);
+        try { window.location.href = href; } catch (e) {}
+      };
+
       form.addEventListener('submit', (e) => {
         e.preventDefault();
-        const get = (n) => { const f = form.querySelector('[name="' + n + '"]'); return f ? f.value.trim() : ''; };
         const name = get('name'), email = get('email');
         if (!name || !email || email.indexOf('@') < 1) {
-          if (err) { err.style.display = 'block'; err.textContent = 'Add your name and a valid email so we can reply.'; }
+          showError('Add your name and a valid email so we can reply.');
           return;
         }
         if (err) err.style.display = 'none';
-        // No backend yet: hand the qualified brief to email so nothing is lost.
-        const body = ['Name: ' + name, 'Company: ' + get('company'), 'Timeline: ' + get('stack'), '', get('brief')].join('\n');
-        const href = 'mailto:hello@violacreative.com?subject=' + encodeURIComponent('Project enquiry — ' + (get('company') || name)) + '&body=' + encodeURIComponent(body);
-        try { window.location.href = href; } catch (e2) {}
-        if (done) done.style.display = 'flex';
-        form.querySelectorAll('[data-form-fields]').forEach((f) => { f.style.display = 'none'; });
+        if (btn) { btn.disabled = true; btn.style.opacity = '.6'; btn.textContent = 'Sending…'; }
+
+        const restore = () => {
+          if (btn) { btn.disabled = false; btn.style.opacity = ''; btn.textContent = 'Send the brief →'; }
+        };
+
+        fetch('/api/lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: name, email: email, company: get('company'), stack: get('stack'),
+            brief: get('brief'), website: get('website'), elapsed: Date.now() - rendered,
+          }),
+        }).then((r) => r.json().catch(() => ({})).then((d) => ({ ok: r.ok, d: d })))
+          .then((r) => {
+            if (r.ok && r.d && r.d.ok) return succeed();
+            if (r.d && r.d.error && r.d.error !== 'send_failed' && r.d.error !== 'mail_unconfigured') {
+              restore();
+              return showError(r.d.error);
+            }
+            // the backend is up but could not send — do not lose the brief
+            restore();
+            mailtoFallback(name);
+            succeed();
+          })
+          .catch(() => { restore(); mailtoFallback(name); succeed(); });
       });
     }
 

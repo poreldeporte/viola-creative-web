@@ -14,3 +14,8 @@
 *.log
 node_modules/
 .env*
+
+# Agent tooling dropped in by marketplace integrations, not site code
+.agents/
+.claude/
+skills-lock.json
