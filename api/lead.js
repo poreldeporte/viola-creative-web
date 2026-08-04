@@ -8,6 +8,9 @@
 const RESEND_ENDPOINT = 'https://api.resend.com/emails';
 const FROM = 'Viola Creative site <leads@violacreative.com>';
 const TO = 'hello@violacreative.com';
+// Direct copy, so leads land somewhere reachable even while hello@ depends on
+// Cloudflare Email Routing being up.
+const CC = ['franco.viola@live.com'];
 
 // Fluid Compute reuses instances, so this throttles a noisy source for as long
 // as the instance lives. It is a speed bump, not a guarantee — the honeypot and
@@ -88,6 +91,7 @@ module.exports = async function handler(req, res) {
       body: JSON.stringify({
         from: FROM,
         to: [TO],
+        cc: CC,
         reply_to: email,
         subject: `Project enquiry — ${company || name}`,
         html,

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  /* Authored at 1200x630 logical px and captured at deviceScaleFactor 2, so the
+     exported card is 2400x1260. Everything is sized to stay legible when a
+     Slack or iMessage unfurl shrinks it to roughly 340px wide — which is why
+     there is no small type on here at all. */
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{width:1200px;height:630px;background:#15130E;color:#F1ECE2;
+       font-family:'Space Grotesk',sans-serif;overflow:hidden;position:relative}
+  .glow{position:absolute;inset:0;
+        background:radial-gradient(72% 58% at 80% 4%, rgba(255,61,35,.22), transparent 60%)}
+  .grid{position:absolute;inset:0;opacity:.05;
+        background:repeating-linear-gradient(135deg,#F1ECE2 0 1px,transparent 1px 18px)}
+  .wrap{position:relative;z-index:2;height:100%;padding:70px 78px 62px;
+        display:flex;flex-direction:column;justify-content:space-between}
+  .logo{height:124px;width:auto;display:block}
+  h1{font-size:70px;font-weight:700;letter-spacing:-.038em;line-height:1.02;
+     margin:0;max-width:17ch}
+  .ital{font-family:'Instrument Serif',serif;font-weight:400;font-style:italic;
+        color:#FF3D23;letter-spacing:-.01em}
+  .rule{display:flex;align-items:center;gap:18px;
+        font-family:'Space Mono',monospace;font-size:23px;letter-spacing:.14em;
+        color:rgba(241,236,226,.72)}
+  .dot{width:16px;height:16px;border-radius:50%;background:#FF3D23;flex:none}
+</style>
+</head>
+<body>
+<div class="glow"></div>
+<div class="grid"></div>
+<div class="wrap">
+  <img class="logo" src="LOGO_SRC" alt="Viola Creative">
+  <h1>We design and build the software your business <span class="ital">runs on.</span></h1>
+  <div class="rule"><span class="dot"></span>DESIGN · ENGINEERING · AI AGENTS</div>
+</div>
+</body>
+</html>

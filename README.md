@@ -33,7 +33,7 @@ assets/
   logo-dark.webp            wordmark for light backgrounds
   logo-light.webp           wordmark for the dark footer
   por-el-deporte-crop.webp  the one real piece of portfolio art
-  og.png                    1200x630 link-unfurl card (stays PNG — some
+  og.png                    2400x1260 link-unfurl card (stays PNG — some
                             unfurlers still do not accept WebP)
   anime.min.js              anime.js 3.2.1, vendored (see below)
 design/
@@ -65,7 +65,7 @@ them (`data-reveal`, `data-stack-card`, `data-svc-item`, `data-hub-chip`,
 |---|---|
 | `logo-dark.webp`, `logo-light.webp` | Viola Creative wordmark, supplied with the design as PNG |
 | `por-el-deporte-crop.webp` | Por El Deporte project art, supplied with the design as PNG |
-| `og.png` | Generated for this build: the wordmark and hero line on the brand's near-black `#15130E` ground, rendered at 1200x630 |
+| `og.png` | Generated for this build: the wordmark and hero line on the brand's near-black `#15130E` ground. Rendered at 2400x1260 (2x of the 1.91:1 spec) and composed with no small type, so it stays legible when an unfurl shrinks it to ~340px wide. Regenerate by editing the template and re-capturing at `deviceScaleFactor: 2`. |
 | `anime.min.js` | [anime.js 3.2.1](https://github.com/juliangarnier/anime), MIT. Vendored deliberately — the design file hotlinked jsDelivr, and a third-party CDN is an availability and privacy dependency a marketing site does not need. Pinned; re-vendor by hand to change the version. |
 | Fonts | Space Grotesk, Space Mono and Instrument Serif from Google Fonts, loaded via `<link>` with `preconnect` |
 
