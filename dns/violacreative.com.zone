@@ -1,0 +1,38 @@
+;; Viola Creative — DNS records for violacreative.com
+;;
+;; BIND zone file, formatted for Cloudflare's DNS record importer:
+;;   Cloudflare dashboard -> violacreative.com -> DNS -> Records
+;;   -> "Import and Export" -> Import DNS records -> select this file
+;;
+;; IMPORTANT: on the import screen, leave "Proxy imported DNS records"
+;; switched OFF. Vercel issues its own TLS certificate and the ACME
+;; challenge can fail behind Cloudflare's proxy. If the proxy is ever
+;; turned on, SSL/TLS mode must be Full (strict) — with Flexible,
+;; Cloudflare talks HTTP to Vercel, Vercel 308s to HTTPS, and the
+;; request loops forever.
+;;
+;; TTL 1 is Cloudflare's "Auto".
+;;
+;; NOT IN THIS FILE: the apex MX and SPF records for inbound mail.
+;; Enable Cloudflare Email Routing (Email -> Email Routing) and let the
+;; wizard add those itself — the hostnames it assigns are specific to
+;; this zone. Resend's mail records below sit on the "send" subdomain,
+;; so they do not collide with them.
+
+$ORIGIN violacreative.com.
+$TTL 1
+
+;; ---------------------------------------------------------------
+;; Site — points the domain at Vercel.
+;; Apex 308-redirects to www; that redirect is configured in Vercel,
+;; not here.
+;; ---------------------------------------------------------------
+violacreative.com.                    1   IN  A       76.76.21.21
+www.violacreative.com.                1   IN  CNAME   cname.vercel-dns.com.
+
+;; ---------------------------------------------------------------
+;; Outbound mail — lets the contact form deliver through Resend.
+;; ---------------------------------------------------------------
+send.violacreative.com.               1   IN  MX      10 feedback-smtp.us-east-1.amazonses.com.
+send.violacreative.com.               1   IN  TXT     "v=spf1 include:amazonses.com ~all"
+resend._domainkey.violacreative.com.  1   IN  TXT     "p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDGjrb1UnsT7a9adkuubHw0ORY6DCs8oPz0B0OYzrs3RDREzjRBjoiAfjhp2kn+WNU3rDmlsHHwGArL9eeDFfdUNP931MAFfnpEt1EZblpWErBECVw0Iex9tZhoW3a9w6akCoSOO0Huz4zQCr0V1vCicd+5A6r1LhNQlrdVqSDoMwIDAQAB"
