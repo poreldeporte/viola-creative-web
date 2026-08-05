@@ -38,12 +38,16 @@ Googlebot *can* read that text. But you cannot rank a modal, you cannot link to
 one, and a visitor arriving from search lands on the homepage rather than the
 case study that matched their query.
 
-**The fix is `/work/<slug>` pages** — twelve real URLs, each with its own title,
-description, canonical and sitemap entry, each targeting one intent. That turns
-a one-pager into a thirteen-page site. It is the single highest-leverage change
-available, and it is a positioning decision, not a code decision.
+**Done.** Twelve `/work/<slug>` pages, each with its own title, description,
+canonical, OG tags, `BreadcrumbList` and `CreativeWork` node. The homepage cards
+are real anchors to them and the `display:none` overlay is gone — a modal cannot
+rank and cannot be linked to, and keeping it alongside twelve real pages would
+have duplicated every case study across two URLs. Sitemap went from 1 URL to 13.
 
-*Interim step already shipped:* nothing yet. See "next" below.
+**Caveat worth naming:** each page is about 150 words. The structure is right and
+the URLs are rankable, but that is thin against real competition. They need
+depth — engagement dates, scope, the outcome numbers, more detail on what was
+actually built. That is content only you can supply.
 
 ### 2. The domain has a previous life in the index
 
@@ -112,21 +116,26 @@ entry.** Seven placeholders, listed in `HANDOFF.md`.
 **4. Decide on `/work/<slug>` pages.** The structural item above. If the answer
 is yes, the case study content already exists — it needs routing, not writing.
 
-**5. Add an About page and a location.** Registered entity, address, founding
+**5. Google Business Profile.** Setup packet ready in
+`GOOGLE-BUSINESS-PROFILE.md` — name, categories, service areas, a 741-character
+description and the six services, all paste-ready. Service-area type, so your
+address stays hidden. Once it exists I wire `LocalBusiness` schema, `sameAs`,
+and a review link.
+
+**6. Add an About page and a location.** Registered entity, address, founding
 year, named principals. Then `address`, `foundingDate`, `founder` and `sameAs`
 on the Organization node. This is both the E-E-A-T signal Google's
 helpful-content guidance asks for and the geographic signal that unlocks local
 intent.
 
-**6. Get the client links.** Twelve shipped projects and no backlinks from any
+**7. Get the client links.** Twelve shipped projects and no backlinks from any
 of them. A footer credit or a case-study mention on those sites is the most
 natural link profile a studio can have, and it costs an email.
 
-**7. Consider self-hosting the three typefaces.** The render-blocking Google
-Fonts request is the last thing holding mobile performance at ~85, and it would
-also settle the `[TO CONFIRM: WHETHER TO SELF-HOST]` line in the privacy page.
-Left alone deliberately — the original brief said keep the font links as they
-are.
+**7. ~~Self-host the typefaces.~~ Done.** Same woff2 files, latin subset only,
+served from our own origin with preloads. Mobile performance went 85 → 96 and
+first contentful paint 3.1s → 1.6s. It also made the privacy page true: no
+visitor IP is disclosed to Google on page load any more.
 
 ## Deliberately not doing
 
