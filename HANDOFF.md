@@ -7,10 +7,14 @@ Lighthouse on the production domain:
 
 | | Performance | Accessibility | Best Practices | SEO |
 |---|---|---|---|---|
-| Desktop | 98 | 100 | 100 | 100 |
+| Desktop | 100 | 100 | 100 | 100 |
 | Mobile | 85 | 100 | 100 | 100 |
 
-Total page weight 321 KB with all twelve projects. The remaining mobile gap is first contentful paint at
+Total page weight 273 KB. Mobile performance varies run to run between roughly
+79 and 86; one run in four snapshots the page mid reveal-fade and reports both a
+lower performance number and a handful of false contrast failures (it measures
+`#BE2D18` part-way through its fade to opacity 1, not a colour that exists on the
+page). Three consecutive runs: 85 / 86 / 85, accessibility 100 each time. The remaining mobile gap is first contentful paint at
 3.2s, and it is almost entirely the render-blocking Google Fonts stylesheet — a
 cross-origin round trip to `fonts.googleapis.com` before anything can paint.
 Self-hosting the three families would remove it and likely take mobile past 90.
@@ -40,12 +44,16 @@ Every `DROP IMAGERY` placeholder is gone. All twelve work cards, all twelve case
 study panels and all six service rows now carry real imagery, captured headless
 from the live sites.
 
-They are **screenshots, not art direction**. They will drift as those sites
-change, and a couple were captured through cookie banners and newsletter modals
-that had to be dismissed programmatically. If you have designed case-study
-imagery, it should replace these — the files are in `assets/work/` (1400x700 for
-cards and panels) and `assets/work/row/` (900x338 for service rows), same
-filenames.
+The **work cards and case studies** use screenshots — desktop captures at
+`assets/work/`, and portrait mobile captures at `assets/work/m/` served under
+760px through a `<picture>` source. They are screenshots, not art direction:
+they will drift as those sites change, and several were captured through cookie
+banners and newsletter modals dismissed programmatically. If you have designed
+case-study imagery it should replace these, same filenames.
+
+The **six service rows** are not screenshots. They are purpose-drawn SVG panels
+in `assets/svc/`, sharing one visual system. Nothing to replace unless you want
+different art.
 
 **2. Case study "WHAT CHANGED" copy is an instruction to the client — on all twelve.**
 Every case study ends with a note addressed to you, not to a visitor. This is live
