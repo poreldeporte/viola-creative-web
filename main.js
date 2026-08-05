@@ -519,8 +519,18 @@
         if (!header || !vecs.length) return;
         // a stale/zero measurement would otherwise produce NaN transforms
         if (!vecs[0] || !isFinite(vecs[0].R) || vecs[0].R === 0) { measure(); if (!vecs[0] || !isFinite(vecs[0].R)) return; }
-        const span = (header.offsetHeight || 700) * 0.7;
-        const p = span > 0 ? Math.max(0, Math.min(1, y / span)) : 0;
+        let p;
+        if (window.innerWidth <= 980) {
+          // Below 980 the hero grid stacks, so the card sits ~670px down the
+          // page. Driving the collapse off raw scrollTop dissolved the chips
+          // before the card was ever on screen — track the stage itself, so it
+          // only spirals in as the card leaves the top of the viewport.
+          const sr = stage.getBoundingClientRect();
+          p = Math.max(0, Math.min(1, -sr.top / (sr.height * 0.85 || 1)));
+        } else {
+          const span = (header.offsetHeight || 700) * 0.7;
+          p = span > 0 ? Math.max(0, Math.min(1, y / span)) : 0;
+        }
         for (let i = 0; i < wraps.length; i++) {
           const v = vecs[i];
           if (!v || !isFinite(v.R) || !isFinite(v.th)) continue;

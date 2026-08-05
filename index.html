@@ -62,6 +62,28 @@
     [data-formgrid]{grid-template-columns:1fr!important}
     [data-card]{flex:0 0 84vw!important}
   }
+  @media (max-width:760px){
+    /* The discipline strip wrapped into orphaned slashes at 12px/.14em. */
+    [data-strip]{font-size:10.5px!important;letter-spacing:.09em!important;gap:9px 13px!important}
+
+    /* The org chart's SVG connectors are hidden at this width, which left the
+       nodes floating unconnected. Give the column a spine instead, widen the
+       nodes so they line up, and open the row gap enough that the ACTIVE badge
+       stops landing on the card above it. */
+    [data-org-chart]{gap:34px!important}
+    [data-org-chart]::before{content:'';position:absolute;left:50%;top:10px;bottom:10px;width:1.5px;
+      transform:translateX(-50%);z-index:0;pointer-events:none;
+      background:linear-gradient(180deg,transparent,rgba(21,19,14,.2) 10%,rgba(21,19,14,.2) 90%,transparent)}
+    [data-org-row]{gap:26px!important;width:100%}
+    [data-org-node]{width:100%!important;min-width:0!important}
+
+    /* twelve full-height cards is a long scroll on a phone */
+    [data-stack-card]{margin-bottom:3vh!important}
+
+    /* footer links were 19px tall — under any reasonable touch target */
+    [data-footcol]{gap:0!important}
+    [data-footcol] a{display:flex;align-items:center;min-height:44px}
+  }
   @media (prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
     *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
@@ -316,7 +338,7 @@
   </header>
 
   <div style="border-top:1px solid rgba(21,19,14,.12);border-bottom:1px solid rgba(21,19,14,.12);padding:24px 5vw">
-    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px 26px;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.14em;color:#5d574c">
+    <div data-strip style="display:flex;flex-wrap:wrap;align-items:center;gap:12px 26px;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.14em;color:#5d574c">
       <span>DISCOVERY</span>
       <span aria-hidden="true" style="color:#BE2D18">/</span>
       <span>PRODUCT STRATEGY</span>
@@ -355,7 +377,7 @@
             <p style="margin:0 0 22px;font-size:16.5px;line-height:1.6;color:#5d574c;max-width:52ch;text-wrap:pretty">Interviews with the people doing the work, the process mapped end to end, and a written plan of what to build in what order. Often the highest-value week of the whole engagement.</p>
             <div style="display:flex;flex-wrap:wrap;gap:8px"><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(21,19,14,.18);padding:7px 12px;border-radius:999px;color:#3c382f">Stakeholder interviews</span><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(21,19,14,.18);padding:7px 12px;border-radius:999px;color:#3c382f">Process maps</span><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(21,19,14,.18);padding:7px 12px;border-radius:999px;color:#3c382f">Scope &amp; sequencing</span><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(21,19,14,.18);padding:7px 12px;border-radius:999px;color:#3c382f">Written plan</span></div>
           </div>
-          <img src="assets/work/row/aeroterra.webp" loading="lazy" decoding="async" alt="Aeroterra USA platform" style="width:100%;height:150px;object-fit:cover;object-position:50% 0%;border-radius:12px;border:1px solid rgba(21,19,14,.14)">
+          <img src="assets/svc/01-discovery.svg" loading="lazy" decoding="async" alt="Discovery and product strategy" style="width:100%;height:150px;object-fit:cover;border-radius:12px;border:1px solid rgba(21,19,14,.14);display:block">
         </div>
       </div>
       <div style="border-bottom:1px solid rgba(21,19,14,.13)">
@@ -369,7 +391,7 @@
             <p style="margin:0 0 22px;font-size:16.5px;line-height:1.6;color:#5d574c;max-width:52ch;text-wrap:pretty">Flows and interfaces designed for the people who will actually use them — then a design system your team can keep building on long after we hand over.</p>
             <div style="display:flex;flex-wrap:wrap;gap:8px"><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(21,19,14,.18);padding:7px 12px;border-radius:999px;color:#3c382f">Research</span><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(21,19,14,.18);padding:7px 12px;border-radius:999px;color:#3c382f">User flows</span><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(21,19,14,.18);padding:7px 12px;border-radius:999px;color:#3c382f">Interface design</span><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(21,19,14,.18);padding:7px 12px;border-radius:999px;color:#3c382f">Design system</span></div>
           </div>
-          <img src="assets/work/row/grove.webp" loading="lazy" decoding="async" alt="The Grove Art Studio site" style="width:100%;height:150px;object-fit:cover;object-position:50% 0%;border-radius:12px;border:1px solid rgba(21,19,14,.14)">
+          <img src="assets/svc/02-design.svg" loading="lazy" decoding="async" alt="Design and UX" style="width:100%;height:150px;object-fit:cover;border-radius:12px;border:1px solid rgba(21,19,14,.14);display:block">
         </div>
       </div>
       <div style="border-bottom:1px solid rgba(21,19,14,.13)">
@@ -383,7 +405,7 @@
             <p style="margin:0 0 22px;font-size:16.5px;line-height:1.6;color:#5d574c;max-width:52ch;text-wrap:pretty">Marketing sites that load fast, read well, and your team can update without filing a ticket with us. Built for the search and social reality your business lives in.</p>
             <div style="display:flex;flex-wrap:wrap;gap:8px"><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(21,19,14,.18);padding:7px 12px;border-radius:999px;color:#3c382f">Copy &amp; structure</span><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(21,19,14,.18);padding:7px 12px;border-radius:999px;color:#3c382f">Responsive build</span><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(21,19,14,.18);padding:7px 12px;border-radius:999px;color:#3c382f">CMS</span><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(21,19,14,.18);padding:7px 12px;border-radius:999px;color:#3c382f">Analytics</span></div>
           </div>
-          <img src="assets/work/row/champys.webp" loading="lazy" decoding="async" alt="Champy&#x27;s Seafood storefront" style="width:100%;height:150px;object-fit:cover;object-position:50% 0%;border-radius:12px;border:1px solid rgba(21,19,14,.14)">
+          <img src="assets/svc/03-websites.svg" loading="lazy" decoding="async" alt="Websites" style="width:100%;height:150px;object-fit:cover;border-radius:12px;border:1px solid rgba(21,19,14,.14);display:block">
         </div>
       </div>
       <div style="border-bottom:1px solid rgba(21,19,14,.13)">
@@ -397,7 +419,7 @@
             <p style="margin:0 0 22px;font-size:16.5px;line-height:1.6;color:#5d574c;max-width:52ch;text-wrap:pretty">Internal tools, dashboards and customer portals — the software your business actually runs on all day, built to survive real use rather than a demo.</p>
             <div style="display:flex;flex-wrap:wrap;gap:8px"><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(21,19,14,.18);padding:7px 12px;border-radius:999px;color:#3c382f">Architecture</span><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(21,19,14,.18);padding:7px 12px;border-radius:999px;color:#3c382f">Frontend</span><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(21,19,14,.18);padding:7px 12px;border-radius:999px;color:#3c382f">API &amp; data</span><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(21,19,14,.18);padding:7px 12px;border-radius:999px;color:#3c382f">Auth &amp; roles</span></div>
           </div>
-          <img src="assets/work/row/aulagis.webp" loading="lazy" decoding="async" alt="AulaGIS course platform" style="width:100%;height:150px;object-fit:cover;object-position:50% 0%;border-radius:12px;border:1px solid rgba(21,19,14,.14)">
+          <img src="assets/svc/04-web-apps.svg" loading="lazy" decoding="async" alt="Web apps" style="width:100%;height:150px;object-fit:cover;border-radius:12px;border:1px solid rgba(21,19,14,.14);display:block">
         </div>
       </div>
       <div style="border-bottom:1px solid rgba(21,19,14,.13)">
@@ -411,7 +433,7 @@
             <p style="margin:0 0 22px;font-size:16.5px;line-height:1.6;color:#5d574c;max-width:52ch;text-wrap:pretty">iOS and Android, usually from a single codebase, so you ship once and maintain one thing instead of three. Store submission and release handled.</p>
             <div style="display:flex;flex-wrap:wrap;gap:8px"><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(21,19,14,.18);padding:7px 12px;border-radius:999px;color:#3c382f">iOS</span><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(21,19,14,.18);padding:7px 12px;border-radius:999px;color:#3c382f">Android</span><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(21,19,14,.18);padding:7px 12px;border-radius:999px;color:#3c382f">One codebase</span><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(21,19,14,.18);padding:7px 12px;border-radius:999px;color:#3c382f">Store release</span></div>
           </div>
-          <img src="assets/work/row/pordeporte-app.webp" loading="lazy" decoding="async" alt="Por El Deporte app screens" style="width:100%;height:150px;object-fit:cover;object-position:50% 0%;border-radius:12px;border:1px solid rgba(21,19,14,.14)">
+          <img src="assets/svc/05-mobile.svg" loading="lazy" decoding="async" alt="Mobile apps" style="width:100%;height:150px;object-fit:cover;border-radius:12px;border:1px solid rgba(21,19,14,.14);display:block">
         </div>
       </div>
       <div style="border-bottom:1px solid rgba(21,19,14,.13)">
@@ -425,7 +447,7 @@
             <p style="margin:0 0 22px;font-size:16.5px;line-height:1.6;color:#5d574c;max-width:52ch;text-wrap:pretty">Agents that take repetitive operational work off your team — running on schedules, inside limits you set, with a human approval on anything that matters.</p>
             <div style="display:flex;flex-wrap:wrap;gap:8px"><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(21,19,14,.18);padding:7px 12px;border-radius:999px;color:#3c382f">Task design</span><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(21,19,14,.18);padding:7px 12px;border-radius:999px;color:#3c382f">Approvals &amp; limits</span><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(21,19,14,.18);padding:7px 12px;border-radius:999px;color:#3c382f">Integrations</span><span style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(21,19,14,.18);padding:7px 12px;border-radius:999px;color:#3c382f">Monitoring</span></div>
           </div>
-          <img src="assets/work/row/agos.webp" loading="lazy" decoding="async" alt="Agos agent platform" style="width:100%;height:150px;object-fit:cover;object-position:50% 0%;border-radius:12px;border:1px solid rgba(21,19,14,.14)">
+          <img src="assets/svc/06-agents.svg" loading="lazy" decoding="async" alt="AI agent workflows" style="width:100%;height:150px;object-fit:cover;border-radius:12px;border:1px solid rgba(21,19,14,.14);display:block">
         </div>
       </div>
     </div>
@@ -443,7 +465,7 @@
     <div data-stack style="padding:0 5vw">
       <article data-stack-card style="position:sticky;top:96px;margin-bottom:5vh">
         <button data-case-open="aeroterra" type="button" style="display:block;width:100%;text-align:left;cursor:pointer;padding:0;border:1px solid rgba(21,19,14,.16);background:#0d0c0a;border-radius:22px;overflow:hidden;position:relative;height:min(66vh,560px);color:inherit;font:inherit;box-shadow:0 -22px 50px rgba(21,19,14,.16)">
-          <img src="assets/work/aeroterra.webp" loading="lazy" decoding="async" alt="Aeroterra USA geospatial platform homepage" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0%;opacity:.92">
+          <picture><source media="(max-width:760px)" srcset="assets/work/m/aeroterra.webp"><img src="assets/work/aeroterra.webp" loading="lazy" decoding="async" alt="Aeroterra USA geospatial platform homepage" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0%;opacity:.92"></picture>
           <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,12,10,.06),rgba(13,12,10,.88))"></div>
           <div style="position:absolute;top:26px;left:30px;right:30px;display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap;font-family:'Space Mono',monospace;font-size:11px">
             <span style="background:#BE2D18;color:#fff;padding:6px 12px;border-radius:999px">GIS · PLATFORM</span>
@@ -458,7 +480,7 @@
       </article>
       <article data-stack-card style="position:sticky;top:104px;margin-bottom:5vh">
         <button data-case-open="pordeporte" type="button" style="display:block;width:100%;text-align:left;cursor:pointer;padding:0;border:1px solid rgba(21,19,14,.16);background:#0d0c0a;border-radius:22px;overflow:hidden;position:relative;height:min(66vh,560px);color:inherit;font:inherit;box-shadow:0 -22px 50px rgba(21,19,14,.16)">
-          <img src="assets/work/poreldeporte.webp" loading="lazy" decoding="async" alt="Por El Deporte storefront" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0%;opacity:.92">
+          <picture><source media="(max-width:760px)" srcset="assets/work/m/poreldeporte.webp"><img src="assets/work/poreldeporte.webp" loading="lazy" decoding="async" alt="Por El Deporte storefront" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0%;opacity:.92"></picture>
           <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,12,10,.06),rgba(13,12,10,.88))"></div>
           <div style="position:absolute;top:26px;left:30px;right:30px;display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap;font-family:'Space Mono',monospace;font-size:11px">
             <span style="background:#BE2D18;color:#fff;padding:6px 12px;border-radius:999px">COMMERCE + APP</span>
@@ -473,7 +495,7 @@
       </article>
       <article data-stack-card style="position:sticky;top:112px;margin-bottom:5vh">
         <button data-case-open="spatioterra" type="button" style="display:block;width:100%;text-align:left;cursor:pointer;padding:0;border:1px solid rgba(21,19,14,.16);background:#0d0c0a;border-radius:22px;overflow:hidden;position:relative;height:min(66vh,560px);color:inherit;font:inherit;box-shadow:0 -22px 50px rgba(21,19,14,.16)">
-          <img src="assets/work/spatioterra.webp" loading="lazy" decoding="async" alt="SpatioTerra spatiotemporal mesh platform" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0%;opacity:.92">
+          <picture><source media="(max-width:760px)" srcset="assets/work/m/spatioterra.webp"><img src="assets/work/spatioterra.webp" loading="lazy" decoding="async" alt="SpatioTerra spatiotemporal mesh platform" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0%;opacity:.92"></picture>
           <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,12,10,.06),rgba(13,12,10,.88))"></div>
           <div style="position:absolute;top:26px;left:30px;right:30px;display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap;font-family:'Space Mono',monospace;font-size:11px">
             <span style="background:#BE2D18;color:#fff;padding:6px 12px;border-radius:999px">DATA</span>
@@ -488,7 +510,7 @@
       </article>
       <article data-stack-card style="position:sticky;top:120px;margin-bottom:5vh">
         <button data-case-open="bmgkids" type="button" style="display:block;width:100%;text-align:left;cursor:pointer;padding:0;border:1px solid rgba(21,19,14,.16);background:#0d0c0a;border-radius:22px;overflow:hidden;position:relative;height:min(66vh,560px);color:inherit;font:inherit;box-shadow:0 -22px 50px rgba(21,19,14,.16)">
-          <img src="assets/work/bmgkids.webp" loading="lazy" decoding="async" alt="Boy Meets Girl children&#x27;s apparel storefront" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0%;opacity:.92">
+          <picture><source media="(max-width:760px)" srcset="assets/work/m/bmgkids.webp"><img src="assets/work/bmgkids.webp" loading="lazy" decoding="async" alt="Boy Meets Girl children&#x27;s apparel storefront" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0%;opacity:.92"></picture>
           <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,12,10,.06),rgba(13,12,10,.88))"></div>
           <div style="position:absolute;top:26px;left:30px;right:30px;display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap;font-family:'Space Mono',monospace;font-size:11px">
             <span style="background:#BE2D18;color:#fff;padding:6px 12px;border-radius:999px">HEADLESS COMMERCE</span>
@@ -518,7 +540,7 @@
       </article>
       <article data-stack-card style="position:sticky;top:136px;margin-bottom:5vh">
         <button data-case-open="grove" type="button" style="display:block;width:100%;text-align:left;cursor:pointer;padding:0;border:1px solid rgba(21,19,14,.16);background:#0d0c0a;border-radius:22px;overflow:hidden;position:relative;height:min(66vh,560px);color:inherit;font:inherit;box-shadow:0 -22px 50px rgba(21,19,14,.16)">
-          <img src="assets/work/grove.webp" loading="lazy" decoding="async" alt="The Grove Art Studio website" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0%;opacity:.92">
+          <picture><source media="(max-width:760px)" srcset="assets/work/m/grove.webp"><img src="assets/work/grove.webp" loading="lazy" decoding="async" alt="The Grove Art Studio website" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0%;opacity:.92"></picture>
           <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,12,10,.06),rgba(13,12,10,.88))"></div>
           <div style="position:absolute;top:26px;left:30px;right:30px;display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap;font-family:'Space Mono',monospace;font-size:11px">
             <span style="background:#BE2D18;color:#fff;padding:6px 12px;border-radius:999px">BRAND + WEB</span>
@@ -533,7 +555,7 @@
       </article>
       <article data-stack-card style="position:sticky;top:144px;margin-bottom:5vh">
         <button data-case-open="champys" type="button" style="display:block;width:100%;text-align:left;cursor:pointer;padding:0;border:1px solid rgba(21,19,14,.16);background:#0d0c0a;border-radius:22px;overflow:hidden;position:relative;height:min(66vh,560px);color:inherit;font:inherit;box-shadow:0 -22px 50px rgba(21,19,14,.16)">
-          <img src="assets/work/champys.webp" loading="lazy" decoding="async" alt="Champy&#x27;s Seafood storefront" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0%;opacity:.92">
+          <picture><source media="(max-width:760px)" srcset="assets/work/m/champys.webp"><img src="assets/work/champys.webp" loading="lazy" decoding="async" alt="Champy&#x27;s Seafood storefront" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0%;opacity:.92"></picture>
           <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,12,10,.06),rgba(13,12,10,.88))"></div>
           <div style="position:absolute;top:26px;left:30px;right:30px;display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap;font-family:'Space Mono',monospace;font-size:11px">
             <span style="background:#BE2D18;color:#fff;padding:6px 12px;border-radius:999px">COMMERCE</span>
@@ -548,7 +570,7 @@
       </article>
       <article data-stack-card style="position:sticky;top:152px;margin-bottom:5vh">
         <button data-case-open="mindfulnetwork" type="button" style="display:block;width:100%;text-align:left;cursor:pointer;padding:0;border:1px solid rgba(21,19,14,.16);background:#0d0c0a;border-radius:22px;overflow:hidden;position:relative;height:min(66vh,560px);color:inherit;font:inherit;box-shadow:0 -22px 50px rgba(21,19,14,.16)">
-          <img src="assets/work/mindfulnetwork.webp" loading="lazy" decoding="async" alt="The Mindful Network therapist directory" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0%;opacity:.92">
+          <picture><source media="(max-width:760px)" srcset="assets/work/m/mindfulnetwork.webp"><img src="assets/work/mindfulnetwork.webp" loading="lazy" decoding="async" alt="The Mindful Network therapist directory" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0%;opacity:.92"></picture>
           <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,12,10,.06),rgba(13,12,10,.88))"></div>
           <div style="position:absolute;top:26px;left:30px;right:30px;display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap;font-family:'Space Mono',monospace;font-size:11px">
             <span style="background:#BE2D18;color:#fff;padding:6px 12px;border-radius:999px">DIRECTORY</span>
@@ -563,7 +585,7 @@
       </article>
       <article data-stack-card style="position:sticky;top:160px;margin-bottom:5vh">
         <button data-case-open="aulagis" type="button" style="display:block;width:100%;text-align:left;cursor:pointer;padding:0;border:1px solid rgba(21,19,14,.16);background:#0d0c0a;border-radius:22px;overflow:hidden;position:relative;height:min(66vh,560px);color:inherit;font:inherit;box-shadow:0 -22px 50px rgba(21,19,14,.16)">
-          <img src="assets/work/aulagis.webp" loading="lazy" decoding="async" alt="AulaGIS online GIS course portal" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0%;opacity:.92">
+          <picture><source media="(max-width:760px)" srcset="assets/work/m/aulagis.webp"><img src="assets/work/aulagis.webp" loading="lazy" decoding="async" alt="AulaGIS online GIS course portal" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0%;opacity:.92"></picture>
           <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,12,10,.06),rgba(13,12,10,.88))"></div>
           <div style="position:absolute;top:26px;left:30px;right:30px;display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap;font-family:'Space Mono',monospace;font-size:11px">
             <span style="background:#BE2D18;color:#fff;padding:6px 12px;border-radius:999px">E-LEARNING</span>
@@ -578,7 +600,7 @@
       </article>
       <article data-stack-card style="position:sticky;top:168px;margin-bottom:5vh">
         <button data-case-open="moen" type="button" style="display:block;width:100%;text-align:left;cursor:pointer;padding:0;border:1px solid rgba(21,19,14,.16);background:#0d0c0a;border-radius:22px;overflow:hidden;position:relative;height:min(66vh,560px);color:inherit;font:inherit;box-shadow:0 -22px 50px rgba(21,19,14,.16)">
-          <img src="assets/work/moen.webp" loading="lazy" decoding="async" alt="Moen shop homepage" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0%;opacity:.92">
+          <picture><source media="(max-width:760px)" srcset="assets/work/m/moen.webp"><img src="assets/work/moen.webp" loading="lazy" decoding="async" alt="Moen shop homepage" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0%;opacity:.92"></picture>
           <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,12,10,.06),rgba(13,12,10,.88))"></div>
           <div style="position:absolute;top:26px;left:30px;right:30px;display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap;font-family:'Space Mono',monospace;font-size:11px">
             <span style="background:#BE2D18;color:#fff;padding:6px 12px;border-radius:999px">COMMERCE AT SCALE</span>
@@ -593,7 +615,7 @@
       </article>
       <article data-stack-card style="position:sticky;top:176px;margin-bottom:5vh">
         <button data-case-open="agos" type="button" style="display:block;width:100%;text-align:left;cursor:pointer;padding:0;border:1px solid rgba(21,19,14,.16);background:#0d0c0a;border-radius:22px;overflow:hidden;position:relative;height:min(66vh,560px);color:inherit;font:inherit;box-shadow:0 -22px 50px rgba(21,19,14,.16)">
-          <img src="assets/work/agos.webp" loading="lazy" decoding="async" alt="Agos agentic operating system for investment management" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0%;opacity:.92">
+          <picture><source media="(max-width:760px)" srcset="assets/work/m/agos.webp"><img src="assets/work/agos.webp" loading="lazy" decoding="async" alt="Agos agentic operating system for investment management" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0%;opacity:.92"></picture>
           <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,12,10,.06),rgba(13,12,10,.88))"></div>
           <div style="position:absolute;top:26px;left:30px;right:30px;display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap;font-family:'Space Mono',monospace;font-size:11px">
             <span style="background:#BE2D18;color:#fff;padding:6px 12px;border-radius:999px">AGENT PLATFORM</span>
@@ -608,7 +630,7 @@
       </article>
       <article data-stack-card style="position:sticky;top:184px;margin-bottom:5vh">
         <button data-case-open="veia" type="button" style="display:block;width:100%;text-align:left;cursor:pointer;padding:0;border:1px solid rgba(21,19,14,.16);background:#0d0c0a;border-radius:22px;overflow:hidden;position:relative;height:min(66vh,560px);color:inherit;font:inherit;box-shadow:0 -22px 50px rgba(21,19,14,.16)">
-          <img src="assets/work/veia.webp" loading="lazy" decoding="async" alt="Veia agentic underwriting platform" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0%;opacity:.92">
+          <picture><source media="(max-width:760px)" srcset="assets/work/m/veia.webp"><img src="assets/work/veia.webp" loading="lazy" decoding="async" alt="Veia agentic underwriting platform" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0%;opacity:.92"></picture>
           <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,12,10,.06),rgba(13,12,10,.88))"></div>
           <div style="position:absolute;top:26px;left:30px;right:30px;display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap;font-family:'Space Mono',monospace;font-size:11px">
             <span style="background:#BE2D18;color:#fff;padding:6px 12px;border-radius:999px">AGENT PLATFORM</span>
@@ -767,14 +789,14 @@
         <p style="margin:0;font-size:15.5px;line-height:1.6;color:rgba(241,236,226,.6);max-width:38ch;text-wrap:pretty">A design and engineering studio. We build the software businesses run on — and the agent workflows behind it.</p>
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px">
-        <div style="display:flex;flex-direction:column;gap:12px">
+        <div data-footcol style="display:flex;flex-direction:column;gap:12px">
           <div style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:rgba(241,236,226,.62);margin-bottom:2px">SECTIONS</div>
           <a href="#services" style="text-decoration:none;color:rgba(241,236,226,.78);font-size:14.5px">Services</a>
           <a href="#work" style="text-decoration:none;color:rgba(241,236,226,.78);font-size:14.5px">Work</a>
           <a href="#agents" style="text-decoration:none;color:rgba(241,236,226,.78);font-size:14.5px">Agents</a>
           <a href="#process" style="text-decoration:none;color:rgba(241,236,226,.78);font-size:14.5px">Process</a>
         </div>
-        <div style="display:flex;flex-direction:column;gap:12px">
+        <div data-footcol style="display:flex;flex-direction:column;gap:12px">
           <div style="font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:rgba(241,236,226,.62);margin-bottom:2px">GET IN TOUCH</div>
           <a href="#contact" style="text-decoration:none;color:rgba(241,236,226,.78);font-size:14.5px">Start a project</a>
           <a href="mailto:hello@violacreative.com" style="text-decoration:none;color:rgba(241,236,226,.78);font-size:14.5px">hello@violacreative.com</a>

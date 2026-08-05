@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="150" viewBox="0 0 400 150" role="img" aria-label="Mobile apps">
+  <defs>
+    <pattern id="h" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(135)">
+      <line x1="0" y1="0" x2="0" y2="12" stroke="#F1ECE2" stroke-opacity=".07" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="g" cx="50%" cy="6%" r="78%">
+      <stop offset="0" stop-color="#FF3D23" stop-opacity=".26"/>
+      <stop offset="1" stop-color="#FF3D23" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="150" fill="#15130E"/>
+  <rect width="400" height="150" fill="url(#h)"/>
+  <rect width="400" height="150" fill="url(#g)"/>
+  <rect x="96" y="26" width="62" height="98" rx="12" fill="#1d1a13" stroke="#F1ECE2" stroke-opacity="0.16" stroke-width="1.2"/>
+  <rect x="118.0" y="33" width="18" height="3.4" rx="1.7" fill="#F1ECE2" fill-opacity="0.3"/>
+  <rect x="169" y="16" width="70" height="118" rx="12" fill="#BE2D18" stroke="#FF3D23" stroke-opacity="1" stroke-width="2"/>
+  <rect x="195.0" y="23" width="18" height="3.4" rx="1.7" fill="#F1ECE2" fill-opacity="0.8"/>
+  <rect x="250" y="26" width="62" height="98" rx="12" fill="#1d1a13" stroke="#F1ECE2" stroke-opacity="0.16" stroke-width="1.2"/>
+  <rect x="272.0" y="33" width="18" height="3.4" rx="1.7" fill="#F1ECE2" fill-opacity="0.3"/>
+  <rect x="181" y="44" width="46" height="6" rx="3" fill="#F1ECE2" fill-opacity="0.9"/>
+  <rect x="181" y="59" width="36" height="6" rx="3" fill="#F1ECE2" fill-opacity="0.7"/>
+  <rect x="181" y="74" width="26" height="6" rx="3" fill="#F1ECE2" fill-opacity="0.5"/>
+  <rect x="181" y="89" width="16" height="6" rx="3" fill="#F1ECE2" fill-opacity="0.29999999999999993"/>
+  <rect x="181" y="106" width="46" height="12" rx="6" fill="#F1ECE2" fill-opacity=".92"/>
+
+</svg>
