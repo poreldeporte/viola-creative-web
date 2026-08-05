@@ -79,12 +79,22 @@ matches your real scope on that project, particularly Moen and Aeroterra where t
 site is large and your involvement may have been a specific slice of it.
 
 **3. Claims that are yours to confirm.**
-- Process durations on the four process cards: `WEEK 1`, `2–3 WEEKS`, `8–14 WEEKS`,
-  `ONGOING`, and "Three to five months end to end for most projects."
 - "EVERYTHING WE MAKE IS YOURS — CODE, DESIGN FILES AND DATA, IN YOUR ACCOUNTS."
   and the matching FAQ answer ("assigned to you in the contract").
 - "We reply within two working days" — stated twice, in the contact section and
   in the last FAQ answer.
+
+**3b. The process section now contradicts itself.** The lede was changed to "We
+have kicked off full custom platforms in under a month", but the four cards
+directly beneath it still read `WEEK 1` → `2–3 WEEKS` → `8–14 WEEKS` → `ONGOING`.
+A visitor sees both in one screen: the lede promises under a month, the cards add
+up to three or four. The FAQ also still says "Most projects are a few months with
+a small senior team."
+
+Pick one story. Either the cards come down to match the fast path, or the lede
+reads as the exception it probably is — something like "We have kicked off full
+custom platforms in under a month" followed by what the *typical* engagement
+looks like. Both numbers are yours; they just cannot both be the headline.
 
 **4. No social links.** The footer has none, because none were supplied. There is
 space for them under GET IN TOUCH.
