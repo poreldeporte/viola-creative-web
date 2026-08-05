@@ -90,19 +90,9 @@
   }
 </style>
 <noscript><style>
-  /* Everything else already ships visible, but the accordion rows and the case
-     studies are opened by script. Unfold them inline so the page still reads
-     completely with JavaScript off. Has no effect when JS runs. */
+  /* The accordion rows are opened by script; unfold them so the page still
+     reads completely with JavaScript off. No effect when JS runs. */
   [data-svc-body]{display:grid!important}
-  [data-case-overlay]{display:block!important;position:static!important;inset:auto!important;
-    background:#E9E2D5!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
-    overflow:visible!important;padding:0 5vw 12vh!important}
-  [data-case-overlay] > div{box-shadow:none!important;border:1px solid rgba(21,19,14,.14)!important;
-    max-width:none!important;margin-bottom:28px}
-  [data-case-panel]{display:block!important;padding-bottom:44px;margin-bottom:44px;
-    border-bottom:1px solid rgba(21,19,14,.14)}
-  [data-case-panel]:last-of-type{padding-bottom:0;margin-bottom:0;border-bottom:0}
-  [data-case-close]{display:none!important}
 </style></noscript>
 <script type="application/ld+json">
 {
@@ -464,7 +454,7 @@
     </div>
     <div data-stack style="padding:0 5vw">
       <article data-stack-card style="position:sticky;top:96px;margin-bottom:5vh">
-        <button data-case-open="aeroterra" type="button" style="display:block;width:100%;text-align:left;cursor:pointer;padding:0;border:1px solid rgba(21,19,14,.16);background:#0d0c0a;border-radius:22px;overflow:hidden;position:relative;height:min(66vh,560px);color:inherit;font:inherit;box-shadow:0 -22px 50px rgba(21,19,14,.16)">
+        <a href="/work/aeroterra-usa" style="display:block;width:100%;text-align:left;cursor:pointer;padding:0;border:1px solid rgba(21,19,14,.16);background:#0d0c0a;border-radius:22px;overflow:hidden;position:relative;height:min(66vh,560px);box-shadow:0 -22px 50px rgba(21,19,14,.16)text-decoration:none;color:inherit" aria-label="Aeroterra USA — read the case study">
           <picture><source media="(max-width:760px)" srcset="assets/work/m/aeroterra.webp"><img src="assets/work/aeroterra.webp" width="1400" height="700" loading="lazy" decoding="async" alt="Aeroterra USA geospatial platform homepage" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0%;opacity:.92"></picture>
           <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,12,10,.06),rgba(13,12,10,.88))"></div>
           <div style="position:absolute;top:26px;left:30px;right:30px;display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap;font-family:'Space Mono',monospace;font-size:11px">
@@ -476,10 +466,10 @@
             <h3 style="font-size:clamp(30px,4.6vw,68px);font-weight:700;letter-spacing:-.03em;line-height:.95;margin:0 0 14px;color:#F1ECE2">Aeroterra USA</h3>
             <span style="display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.08em;color:#F1ECE2;border-bottom:1px solid rgba(241,236,226,.4);padding-bottom:3px">READ THE CASE STUDY →</span>
           </div>
-        </button>
+        </a>
       </article>
       <article data-stack-card style="position:sticky;top:104px;margin-bottom:5vh">
-        <button data-case-open="pordeporte" type="button" style="display:block;width:100%;text-align:left;cursor:pointer;padding:0;border:1px solid rgba(21,19,14,.16);background:#0d0c0a;border-radius:22px;overflow:hidden;position:relative;height:min(66vh,560px);color:inherit;font:inherit;box-shadow:0 -22px 50px rgba(21,19,14,.16)">
+        <a href="/work/por-el-deporte" style="display:block;width:100%;text-align:left;cursor:pointer;padding:0;border:1px solid rgba(21,19,14,.16);background:#0d0c0a;border-radius:22px;overflow:hidden;position:relative;height:min(66vh,560px);box-shadow:0 -22px 50px rgba(21,19,14,.16)text-decoration:none;color:inherit" aria-label="Por El Deporte — read the case study">
           <picture><source media="(max-width:760px)" srcset="assets/work/m/poreldeporte.webp"><img src="assets/work/poreldeporte.webp" width="1400" height="700" loading="lazy" decoding="async" alt="Por El Deporte storefront" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0%;opacity:.92"></picture>
           <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,12,10,.06),rgba(13,12,10,.88))"></div>
           <div style="position:absolute;top:26px;left:30px;right:30px;display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap;font-family:'Space Mono',monospace;font-size:11px">
@@ -491,10 +481,10 @@
             <h3 style="font-size:clamp(30px,4.6vw,68px);font-weight:700;letter-spacing:-.03em;line-height:.95;margin:0 0 14px;color:#F1ECE2">Por El Deporte</h3>
             <span style="display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.08em;color:#F1ECE2;border-bottom:1px solid rgba(241,236,226,.4);padding-bottom:3px">READ THE CASE STUDY →</span>
           </div>
-        </button>
+        </a>
       </article>
       <article data-stack-card style="position:sticky;top:112px;margin-bottom:5vh">
-        <button data-case-open="spatioterra" type="button" style="display:block;width:100%;text-align:left;cursor:pointer;padding:0;border:1px solid rgba(21,19,14,.16);background:#0d0c0a;border-radius:22px;overflow:hidden;position:relative;height:min(66vh,560px);color:inherit;font:inherit;box-shadow:0 -22px 50px rgba(21,19,14,.16)">
+        <a href="/work/spatioterra" style="display:block;width:100%;text-align:left;cursor:pointer;padding:0;border:1px solid rgba(21,19,14,.16);background:#0d0c0a;border-radius:22px;overflow:hidden;position:relative;height:min(66vh,560px);box-shadow:0 -22px 50px rgba(21,19,14,.16)text-decoration:none;color:inherit" aria-label="SpatioTerra — read the case study">
           <picture><source media="(max-width:760px)" srcset="assets/work/m/spatioterra.webp"><img src="assets/work/spatioterra.webp" width="1400" height="700" loading="lazy" decoding="async" alt="SpatioTerra spatiotemporal mesh platform" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0%;opacity:.92"></picture>
           <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,12,10,.06),rgba(13,12,10,.88))"></div>
           <div style="position:absolute;top:26px;left:30px;right:30px;display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap;font-family:'Space Mono',monospace;font-size:11px">
@@ -506,10 +496,10 @@
             <h3 style="font-size:clamp(30px,4.6vw,68px);font-weight:700;letter-spacing:-.03em;line-height:.95;margin:0 0 14px;color:#F1ECE2">SpatioTerra</h3>
             <span style="display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.08em;color:#F1ECE2;border-bottom:1px solid rgba(241,236,226,.4);padding-bottom:3px">READ THE CASE STUDY →</span>
           </div>
-        </button>
+        </a>
       </article>
       <article data-stack-card style="position:sticky;top:120px;margin-bottom:5vh">
-        <button data-case-open="bmgkids" type="button" style="display:block;width:100%;text-align:left;cursor:pointer;padding:0;border:1px solid rgba(21,19,14,.16);background:#0d0c0a;border-radius:22px;overflow:hidden;position:relative;height:min(66vh,560px);color:inherit;font:inherit;box-shadow:0 -22px 50px rgba(21,19,14,.16)">
+        <a href="/work/bmg-kids" style="display:block;width:100%;text-align:left;cursor:pointer;padding:0;border:1px solid rgba(21,19,14,.16);background:#0d0c0a;border-radius:22px;overflow:hidden;position:relative;height:min(66vh,560px);box-shadow:0 -22px 50px rgba(21,19,14,.16)text-decoration:none;color:inherit" aria-label="BMG Kids — read the case study">
           <picture><source media="(max-width:760px)" srcset="assets/work/m/bmgkids.webp"><img src="assets/work/bmgkids.webp" width="1400" height="700" loading="lazy" decoding="async" alt="Boy Meets Girl children&#x27;s apparel storefront" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0%;opacity:.92"></picture>
           <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,12,10,.06),rgba(13,12,10,.88))"></div>
           <div style="position:absolute;top:26px;left:30px;right:30px;display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap;font-family:'Space Mono',monospace;font-size:11px">
@@ -521,10 +511,10 @@
             <h3 style="font-size:clamp(30px,4.6vw,68px);font-weight:700;letter-spacing:-.03em;line-height:.95;margin:0 0 14px;color:#F1ECE2">BMG Kids</h3>
             <span style="display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.08em;color:#F1ECE2;border-bottom:1px solid rgba(241,236,226,.4);padding-bottom:3px">READ THE CASE STUDY →</span>
           </div>
-        </button>
+        </a>
       </article>
       <article data-stack-card style="position:sticky;top:128px;margin-bottom:5vh">
-        <button data-case-open="pordeporteapp" type="button" style="display:block;width:100%;text-align:left;cursor:pointer;padding:0;border:1px solid rgba(21,19,14,.16);background:#0d0c0a;border-radius:22px;overflow:hidden;position:relative;height:min(66vh,560px);color:inherit;font:inherit;box-shadow:0 -22px 50px rgba(21,19,14,.16)">
+        <a href="/work/por-el-deporte-app" style="display:block;width:100%;text-align:left;cursor:pointer;padding:0;border:1px solid rgba(21,19,14,.16);background:#0d0c0a;border-radius:22px;overflow:hidden;position:relative;height:min(66vh,560px);box-shadow:0 -22px 50px rgba(21,19,14,.16)text-decoration:none;color:inherit" aria-label="Por El Deporte App — read the case study">
           <picture><source media="(max-width:760px)" srcset="assets/work/m/pordeporte-app.webp"><img src="assets/work/pordeporte-app.webp" width="1400" height="700" loading="lazy" decoding="async" alt="Por El Deporte app screens on the App Store" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0%;opacity:.92"></picture>
           <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,12,10,.06),rgba(13,12,10,.88))"></div>
           <div style="position:absolute;top:26px;left:30px;right:30px;display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap;font-family:'Space Mono',monospace;font-size:11px">
@@ -536,10 +526,10 @@
             <h3 style="font-size:clamp(30px,4.6vw,68px);font-weight:700;letter-spacing:-.03em;line-height:.95;margin:0 0 14px;color:#F1ECE2">Por El Deporte App</h3>
             <span style="display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.08em;color:#F1ECE2;border-bottom:1px solid rgba(241,236,226,.4);padding-bottom:3px">READ THE CASE STUDY →</span>
           </div>
-        </button>
+        </a>
       </article>
       <article data-stack-card style="position:sticky;top:136px;margin-bottom:5vh">
-        <button data-case-open="grove" type="button" style="display:block;width:100%;text-align:left;cursor:pointer;padding:0;border:1px solid rgba(21,19,14,.16);background:#0d0c0a;border-radius:22px;overflow:hidden;position:relative;height:min(66vh,560px);color:inherit;font:inherit;box-shadow:0 -22px 50px rgba(21,19,14,.16)">
+        <a href="/work/the-grove-art-studio" style="display:block;width:100%;text-align:left;cursor:pointer;padding:0;border:1px solid rgba(21,19,14,.16);background:#0d0c0a;border-radius:22px;overflow:hidden;position:relative;height:min(66vh,560px);box-shadow:0 -22px 50px rgba(21,19,14,.16)text-decoration:none;color:inherit" aria-label="The Grove Art Studio — read the case study">
           <picture><source media="(max-width:760px)" srcset="assets/work/m/grove.webp"><img src="assets/work/grove.webp" width="1400" height="700" loading="lazy" decoding="async" alt="The Grove Art Studio website" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0%;opacity:.92"></picture>
           <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,12,10,.06),rgba(13,12,10,.88))"></div>
           <div style="position:absolute;top:26px;left:30px;right:30px;display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap;font-family:'Space Mono',monospace;font-size:11px">
@@ -551,10 +541,10 @@
             <h3 style="font-size:clamp(30px,4.6vw,68px);font-weight:700;letter-spacing:-.03em;line-height:.95;margin:0 0 14px;color:#F1ECE2">The Grove Art Studio</h3>
             <span style="display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.08em;color:#F1ECE2;border-bottom:1px solid rgba(241,236,226,.4);padding-bottom:3px">READ THE CASE STUDY →</span>
           </div>
-        </button>
+        </a>
       </article>
       <article data-stack-card style="position:sticky;top:144px;margin-bottom:5vh">
-        <button data-case-open="champys" type="button" style="display:block;width:100%;text-align:left;cursor:pointer;padding:0;border:1px solid rgba(21,19,14,.16);background:#0d0c0a;border-radius:22px;overflow:hidden;position:relative;height:min(66vh,560px);color:inherit;font:inherit;box-shadow:0 -22px 50px rgba(21,19,14,.16)">
+        <a href="/work/champys-seafood" style="display:block;width:100%;text-align:left;cursor:pointer;padding:0;border:1px solid rgba(21,19,14,.16);background:#0d0c0a;border-radius:22px;overflow:hidden;position:relative;height:min(66vh,560px);box-shadow:0 -22px 50px rgba(21,19,14,.16)text-decoration:none;color:inherit" aria-label="Champy's Seafood — read the case study">
           <picture><source media="(max-width:760px)" srcset="assets/work/m/champys.webp"><img src="assets/work/champys.webp" width="1400" height="700" loading="lazy" decoding="async" alt="Champy&#x27;s Seafood storefront" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0%;opacity:.92"></picture>
           <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,12,10,.06),rgba(13,12,10,.88))"></div>
           <div style="position:absolute;top:26px;left:30px;right:30px;display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap;font-family:'Space Mono',monospace;font-size:11px">
@@ -566,10 +556,10 @@
             <h3 style="font-size:clamp(30px,4.6vw,68px);font-weight:700;letter-spacing:-.03em;line-height:.95;margin:0 0 14px;color:#F1ECE2">Champy's Seafood</h3>
             <span style="display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.08em;color:#F1ECE2;border-bottom:1px solid rgba(241,236,226,.4);padding-bottom:3px">READ THE CASE STUDY →</span>
           </div>
-        </button>
+        </a>
       </article>
       <article data-stack-card style="position:sticky;top:152px;margin-bottom:5vh">
-        <button data-case-open="mindfulnetwork" type="button" style="display:block;width:100%;text-align:left;cursor:pointer;padding:0;border:1px solid rgba(21,19,14,.16);background:#0d0c0a;border-radius:22px;overflow:hidden;position:relative;height:min(66vh,560px);color:inherit;font:inherit;box-shadow:0 -22px 50px rgba(21,19,14,.16)">
+        <a href="/work/the-mindful-network" style="display:block;width:100%;text-align:left;cursor:pointer;padding:0;border:1px solid rgba(21,19,14,.16);background:#0d0c0a;border-radius:22px;overflow:hidden;position:relative;height:min(66vh,560px);box-shadow:0 -22px 50px rgba(21,19,14,.16)text-decoration:none;color:inherit" aria-label="The Mindful Network — read the case study">
           <picture><source media="(max-width:760px)" srcset="assets/work/m/mindfulnetwork.webp"><img src="assets/work/mindfulnetwork.webp" width="1400" height="700" loading="lazy" decoding="async" alt="The Mindful Network therapist directory" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0%;opacity:.92"></picture>
           <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,12,10,.06),rgba(13,12,10,.88))"></div>
           <div style="position:absolute;top:26px;left:30px;right:30px;display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap;font-family:'Space Mono',monospace;font-size:11px">
@@ -581,10 +571,10 @@
             <h3 style="font-size:clamp(30px,4.6vw,68px);font-weight:700;letter-spacing:-.03em;line-height:.95;margin:0 0 14px;color:#F1ECE2">The Mindful Network</h3>
             <span style="display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.08em;color:#F1ECE2;border-bottom:1px solid rgba(241,236,226,.4);padding-bottom:3px">READ THE CASE STUDY →</span>
           </div>
-        </button>
+        </a>
       </article>
       <article data-stack-card style="position:sticky;top:160px;margin-bottom:5vh">
-        <button data-case-open="aulagis" type="button" style="display:block;width:100%;text-align:left;cursor:pointer;padding:0;border:1px solid rgba(21,19,14,.16);background:#0d0c0a;border-radius:22px;overflow:hidden;position:relative;height:min(66vh,560px);color:inherit;font:inherit;box-shadow:0 -22px 50px rgba(21,19,14,.16)">
+        <a href="/work/aulagis" style="display:block;width:100%;text-align:left;cursor:pointer;padding:0;border:1px solid rgba(21,19,14,.16);background:#0d0c0a;border-radius:22px;overflow:hidden;position:relative;height:min(66vh,560px);box-shadow:0 -22px 50px rgba(21,19,14,.16)text-decoration:none;color:inherit" aria-label="AulaGIS — read the case study">
           <picture><source media="(max-width:760px)" srcset="assets/work/m/aulagis.webp"><img src="assets/work/aulagis.webp" width="1400" height="700" loading="lazy" decoding="async" alt="AulaGIS online GIS course portal" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0%;opacity:.92"></picture>
           <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,12,10,.06),rgba(13,12,10,.88))"></div>
           <div style="position:absolute;top:26px;left:30px;right:30px;display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap;font-family:'Space Mono',monospace;font-size:11px">
@@ -596,10 +586,10 @@
             <h3 style="font-size:clamp(30px,4.6vw,68px);font-weight:700;letter-spacing:-.03em;line-height:.95;margin:0 0 14px;color:#F1ECE2">AulaGIS</h3>
             <span style="display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.08em;color:#F1ECE2;border-bottom:1px solid rgba(241,236,226,.4);padding-bottom:3px">READ THE CASE STUDY →</span>
           </div>
-        </button>
+        </a>
       </article>
       <article data-stack-card style="position:sticky;top:168px;margin-bottom:5vh">
-        <button data-case-open="moen" type="button" style="display:block;width:100%;text-align:left;cursor:pointer;padding:0;border:1px solid rgba(21,19,14,.16);background:#0d0c0a;border-radius:22px;overflow:hidden;position:relative;height:min(66vh,560px);color:inherit;font:inherit;box-shadow:0 -22px 50px rgba(21,19,14,.16)">
+        <a href="/work/moen" style="display:block;width:100%;text-align:left;cursor:pointer;padding:0;border:1px solid rgba(21,19,14,.16);background:#0d0c0a;border-radius:22px;overflow:hidden;position:relative;height:min(66vh,560px);box-shadow:0 -22px 50px rgba(21,19,14,.16)text-decoration:none;color:inherit" aria-label="Moen — read the case study">
           <picture><source media="(max-width:760px)" srcset="assets/work/m/moen.webp"><img src="assets/work/moen.webp" width="1400" height="700" loading="lazy" decoding="async" alt="Moen shop homepage" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0%;opacity:.92"></picture>
           <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,12,10,.06),rgba(13,12,10,.88))"></div>
           <div style="position:absolute;top:26px;left:30px;right:30px;display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap;font-family:'Space Mono',monospace;font-size:11px">
@@ -611,10 +601,10 @@
             <h3 style="font-size:clamp(30px,4.6vw,68px);font-weight:700;letter-spacing:-.03em;line-height:.95;margin:0 0 14px;color:#F1ECE2">Moen</h3>
             <span style="display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.08em;color:#F1ECE2;border-bottom:1px solid rgba(241,236,226,.4);padding-bottom:3px">READ THE CASE STUDY →</span>
           </div>
-        </button>
+        </a>
       </article>
       <article data-stack-card style="position:sticky;top:176px;margin-bottom:5vh">
-        <button data-case-open="agos" type="button" style="display:block;width:100%;text-align:left;cursor:pointer;padding:0;border:1px solid rgba(21,19,14,.16);background:#0d0c0a;border-radius:22px;overflow:hidden;position:relative;height:min(66vh,560px);color:inherit;font:inherit;box-shadow:0 -22px 50px rgba(21,19,14,.16)">
+        <a href="/work/agos" style="display:block;width:100%;text-align:left;cursor:pointer;padding:0;border:1px solid rgba(21,19,14,.16);background:#0d0c0a;border-radius:22px;overflow:hidden;position:relative;height:min(66vh,560px);box-shadow:0 -22px 50px rgba(21,19,14,.16)text-decoration:none;color:inherit" aria-label="Agos — read the case study">
           <picture><source media="(max-width:760px)" srcset="assets/work/m/agos.webp"><img src="assets/work/agos.webp" width="1400" height="700" loading="lazy" decoding="async" alt="Agos agentic operating system for investment management" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0%;opacity:.92"></picture>
           <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,12,10,.06),rgba(13,12,10,.88))"></div>
           <div style="position:absolute;top:26px;left:30px;right:30px;display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap;font-family:'Space Mono',monospace;font-size:11px">
@@ -626,10 +616,10 @@
             <h3 style="font-size:clamp(30px,4.6vw,68px);font-weight:700;letter-spacing:-.03em;line-height:.95;margin:0 0 14px;color:#F1ECE2">Agos</h3>
             <span style="display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.08em;color:#F1ECE2;border-bottom:1px solid rgba(241,236,226,.4);padding-bottom:3px">READ THE CASE STUDY →</span>
           </div>
-        </button>
+        </a>
       </article>
       <article data-stack-card style="position:sticky;top:184px;margin-bottom:5vh">
-        <button data-case-open="veia" type="button" style="display:block;width:100%;text-align:left;cursor:pointer;padding:0;border:1px solid rgba(21,19,14,.16);background:#0d0c0a;border-radius:22px;overflow:hidden;position:relative;height:min(66vh,560px);color:inherit;font:inherit;box-shadow:0 -22px 50px rgba(21,19,14,.16)">
+        <a href="/work/veia" style="display:block;width:100%;text-align:left;cursor:pointer;padding:0;border:1px solid rgba(21,19,14,.16);background:#0d0c0a;border-radius:22px;overflow:hidden;position:relative;height:min(66vh,560px);box-shadow:0 -22px 50px rgba(21,19,14,.16)text-decoration:none;color:inherit" aria-label="Veia — read the case study">
           <picture><source media="(max-width:760px)" srcset="assets/work/m/veia.webp"><img src="assets/work/veia.webp" width="1400" height="700" loading="lazy" decoding="async" alt="Veia agentic underwriting platform" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0%;opacity:.92"></picture>
           <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,12,10,.06),rgba(13,12,10,.88))"></div>
           <div style="position:absolute;top:26px;left:30px;right:30px;display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap;font-family:'Space Mono',monospace;font-size:11px">
@@ -641,7 +631,7 @@
             <h3 style="font-size:clamp(30px,4.6vw,68px);font-weight:700;letter-spacing:-.03em;line-height:.95;margin:0 0 14px;color:#F1ECE2">Veia</h3>
             <span style="display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.08em;color:#F1ECE2;border-bottom:1px solid rgba(241,236,226,.4);padding-bottom:3px">READ THE CASE STUDY →</span>
           </div>
-        </button>
+        </a>
       </article>
     </div>
   </section>
@@ -809,193 +799,6 @@
       <span>DESIGN &amp; ENGINEERING STUDIO</span>
     </div>
   </footer>
-
-  <div data-case-overlay role="dialog" aria-modal="true" aria-label="Case study" style="display:none;position:fixed;inset:0;z-index:9000;background:rgba(16,15,12,.82);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);padding:5vh 5vw;overflow-y:auto;justify-content:center;align-items:flex-start">
-    <div style="background:#F1ECE2;color:#15130E;border-radius:20px;max-width:860px;width:100%;padding:clamp(28px,4vw,52px);position:relative;box-shadow:0 40px 120px rgba(0,0,0,.5)">
-      <button data-case-close type="button" aria-label="Close case study" style="position:absolute;top:20px;right:20px;cursor:pointer;width:44px;height:44px;border-radius:50%;background:transparent;border:1.5px solid rgba(21,19,14,.22);color:#15130E;font-family:'Space Mono',monospace;font-size:15px">✕</button>
-
-      <div data-case-panel="aeroterra" style="display:none">
-        <div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;color:#BE2D18;margin-bottom:18px">GIS · PLATFORM</div>
-        <h2 style="margin:0 0 8px;font-size:clamp(30px,4vw,52px);font-weight:700;letter-spacing:-.03em;line-height:1">Aeroterra USA</h2>
-        <p style="margin:0 0 30px;font-size:17px;line-height:1.5;color:#5d574c;max-width:56ch;text-wrap:pretty">A geospatial platform their own analysts operate, replacing a standing queue of consultant engagements.</p>
-        <img src="assets/work/aeroterra.webp" width="1400" height="700" loading="lazy" decoding="async" alt="Aeroterra USA geospatial platform homepage" style="width:100%;height:220px;object-fit:cover;object-position:50% 0%;border-radius:14px;border:1px solid rgba(21,19,14,.14);margin-bottom:32px">
-        <div style="display:flex;flex-direction:column;gap:24px">
-          <div><div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#BE2D18;margin-bottom:8px">THE PROBLEM</div><p style="margin:0;font-size:15.5px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">Every new analysis meant a consultant engagement and another licence seat. Institutional knowledge left with each contract, and nobody internally could answer a spatial question without waiting a week.</p></div>
-          <div><div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#BE2D18;margin-bottom:8px">WHAT WE BUILT</div><p style="margin:0;font-size:15.5px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">A platform their own team operates: ingestion, analysis and reporting in one place, built around the workflows their analysts actually follow rather than a generic GIS suite.</p></div>
-          <div><div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#BE2D18;margin-bottom:8px">WHAT CHANGED</div><p style="margin:0;font-size:15.5px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">Add the outcome you would defend in a room — hours saved per analysis, consultant spend removed, or time-to-answer before and after.</p></div>
-        </div>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:36px">
-          <a href="#contact" data-case-close style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;background:#BE2D18;color:#fff;padding:15px 28px;border-radius:999px;font-weight:600;font-size:15px">Start a GIS platform project →</a>
-          <a href="https://aeroterra.com/" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:#15130E;padding:15px 26px;border-radius:999px;font-weight:600;font-size:15px;border:1.5px solid rgba(21,19,14,.22)">Visit aeroterra.com ↗</a>
-        </div>
-      </div>
-      <div data-case-panel="pordeporte" style="display:none">
-        <div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;color:#BE2D18;margin-bottom:18px">COMMERCE + APP</div>
-        <h2 style="margin:0 0 8px;font-size:clamp(30px,4vw,52px);font-weight:700;letter-spacing:-.03em;line-height:1">Por El Deporte</h2>
-        <p style="margin:0 0 30px;font-size:17px;line-height:1.5;color:#5d574c;max-width:56ch;text-wrap:pretty">Web, iOS and Android from a single codebase, with no inventory to hold.</p>
-        <img src="assets/work/poreldeporte.webp" width="1400" height="700" loading="lazy" decoding="async" alt="Por El Deporte storefront" style="width:100%;height:220px;object-fit:cover;object-position:50% 0%;border-radius:14px;border:1px solid rgba(21,19,14,.14);margin-bottom:32px">
-        <div style="display:flex;flex-direction:column;gap:24px">
-          <div><div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#BE2D18;margin-bottom:8px">THE PROBLEM</div><p style="margin:0;font-size:15.5px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">Reaching fans on every platform without running three separate builds, three release cycles and three sets of bugs — on a team with no appetite for warehousing stock.</p></div>
-          <div><div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#BE2D18;margin-bottom:8px">WHAT WE BUILT</div><p style="margin:0;font-size:15.5px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">One codebase shipping to web and both app stores, wired to on-demand fulfilment so a sale triggers production rather than drawing down inventory.</p></div>
-          <div><div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#BE2D18;margin-bottom:8px">WHAT CHANGED</div><p style="margin:0;font-size:15.5px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">Add the number here — release cadence, conversion, or cost per order versus the previous setup.</p></div>
-        </div>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:36px">
-          <a href="#contact" data-case-close style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;background:#BE2D18;color:#fff;padding:15px 28px;border-radius:999px;font-weight:600;font-size:15px">Start a commerce and app project →</a>
-          <a href="https://poreldeporte.com/" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:#15130E;padding:15px 26px;border-radius:999px;font-weight:600;font-size:15px;border:1.5px solid rgba(21,19,14,.22)">Visit poreldeporte.com ↗</a>
-        </div>
-      </div>
-      <div data-case-panel="spatioterra" style="display:none">
-        <div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;color:#BE2D18;margin-bottom:18px">DATA</div>
-        <h2 style="margin:0 0 8px;font-size:clamp(30px,4vw,52px);font-weight:700;letter-spacing:-.03em;line-height:1">SpatioTerra</h2>
-        <p style="margin:0 0 30px;font-size:17px;line-height:1.5;color:#5d574c;max-width:56ch;text-wrap:pretty">Millions of spatial records consolidated into one source of truth instead of a scatter of exports.</p>
-        <img src="assets/work/spatioterra.webp" width="1400" height="700" loading="lazy" decoding="async" alt="SpatioTerra spatiotemporal mesh platform" style="width:100%;height:220px;object-fit:cover;object-position:50% 0%;border-radius:14px;border:1px solid rgba(21,19,14,.14);margin-bottom:32px">
-        <div style="display:flex;flex-direction:column;gap:24px">
-          <div><div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#BE2D18;margin-bottom:8px">THE PROBLEM</div><p style="margin:0;font-size:15.5px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">The data existed but lived in incompatible exports, so every question became a manual reconciliation job and no two answers agreed.</p></div>
-          <div><div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#BE2D18;margin-bottom:8px">WHAT WE BUILT</div><p style="margin:0;font-size:15.5px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">A single store with a query layer and reporting on top, designed so non-technical staff can ask a question without opening a spreadsheet.</p></div>
-          <div><div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#BE2D18;margin-bottom:8px">WHAT CHANGED</div><p style="margin:0;font-size:15.5px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">Add the real figure — record count, query time, or reporting hours removed each month.</p></div>
-        </div>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:36px">
-          <a href="#contact" data-case-close style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;background:#BE2D18;color:#fff;padding:15px 28px;border-radius:999px;font-weight:600;font-size:15px">Start a data platform project →</a>
-          <a href="https://spatioterra.ai/" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:#15130E;padding:15px 26px;border-radius:999px;font-weight:600;font-size:15px;border:1.5px solid rgba(21,19,14,.22)">Visit spatioterra.ai ↗</a>
-        </div>
-      </div>
-      <div data-case-panel="bmgkids" style="display:none">
-        <div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;color:#BE2D18;margin-bottom:18px">HEADLESS COMMERCE</div>
-        <h2 style="margin:0 0 8px;font-size:clamp(30px,4vw,52px);font-weight:700;letter-spacing:-.03em;line-height:1">BMG Kids</h2>
-        <p style="margin:0 0 30px;font-size:17px;line-height:1.5;color:#5d574c;max-width:56ch;text-wrap:pretty">A storefront rebuilt headless — faster on every page, and no longer bound to a platform's roadmap.</p>
-        <img src="assets/work/bmgkids.webp" width="1400" height="700" loading="lazy" decoding="async" alt="Boy Meets Girl children&#x27;s apparel storefront" style="width:100%;height:220px;object-fit:cover;object-position:50% 0%;border-radius:14px;border:1px solid rgba(21,19,14,.14);margin-bottom:32px">
-        <div style="display:flex;flex-direction:column;gap:24px">
-          <div><div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#BE2D18;margin-bottom:8px">THE PROBLEM</div><p style="margin:0;font-size:15.5px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">A hosted storefront that dictated the checkout, throttled the design, and charged more every year for the privilege.</p></div>
-          <div><div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#BE2D18;margin-bottom:8px">WHAT WE BUILT</div><p style="margin:0;font-size:15.5px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">A headless front end over a commerce API, with the merchandising and checkout flow their buyers actually respond to — deployable in minutes.</p></div>
-          <div><div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#BE2D18;margin-bottom:8px">WHAT CHANGED</div><p style="margin:0;font-size:15.5px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">The +38% conversion claim belongs here with the measurement window and the baseline, or it should come off the site.</p></div>
-        </div>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:36px">
-          <a href="#contact" data-case-close style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;background:#BE2D18;color:#fff;padding:15px 28px;border-radius:999px;font-weight:600;font-size:15px">Start a headless commerce project →</a>
-          <a href="https://bmgkids.com/" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:#15130E;padding:15px 26px;border-radius:999px;font-weight:600;font-size:15px;border:1.5px solid rgba(21,19,14,.22)">Visit bmgkids.com ↗</a>
-        </div>
-      </div>
-      <div data-case-panel="pordeporteapp" style="display:none">
-        <div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;color:#BE2D18;margin-bottom:18px">MOBILE APP</div>
-        <h2 style="margin:0 0 8px;font-size:clamp(30px,4vw,52px);font-weight:700;letter-spacing:-.03em;line-height:1">Por El Deporte App</h2>
-        <p style="margin:0 0 30px;font-size:17px;line-height:1.5;color:#5d574c;max-width:56ch;text-wrap:pretty">A community sports app for organising games, drafting teams and keeping score — shipped to the App Store.</p>
-        <img src="assets/work/pordeporte-app.webp" width="1400" height="700" loading="lazy" decoding="async" alt="Por El Deporte app screens on the App Store" style="width:100%;height:220px;object-fit:cover;object-position:50% 0%;border-radius:14px;border:1px solid rgba(21,19,14,.14);margin-bottom:32px">
-        <div style="display:flex;flex-direction:column;gap:24px">
-          <div><div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#BE2D18;margin-bottom:8px">THE PROBLEM</div><p style="margin:0;font-size:15.5px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">Pick-up football runs on group chats. Who is playing, who owes for the pitch, which side you are on and what happened last week all live in a scroll nobody can search.</p></div>
-          <div><div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#BE2D18;margin-bottom:8px">WHAT WE BUILT</div><p style="margin:0;font-size:15.5px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">A native app where players sign up for games, teams get drafted live in a shared draft room, and results, leaderboards and history are tracked automatically instead of being remembered.</p></div>
-          <div><div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#BE2D18;margin-bottom:8px">WHAT CHANGED</div><p style="margin:0;font-size:15.5px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">Add the real numbers — players onboarded, games organised, or retention since launch.</p></div>
-        </div>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:36px">
-          <a href="#contact" data-case-close style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;background:#BE2D18;color:#fff;padding:15px 28px;border-radius:999px;font-weight:600;font-size:15px">Start a mobile app project →</a>
-          <a href="https://apps.apple.com/us/app/por-el-deporte/id6756241207" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:#15130E;padding:15px 26px;border-radius:999px;font-weight:600;font-size:15px;border:1.5px solid rgba(21,19,14,.22)">Por El Deporte on the App Store ↗</a>
-        </div>
-      </div>
-      <div data-case-panel="grove" style="display:none">
-        <div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;color:#BE2D18;margin-bottom:18px">BRAND + WEB</div>
-        <h2 style="margin:0 0 8px;font-size:clamp(30px,4vw,52px);font-weight:700;letter-spacing:-.03em;line-height:1">The Grove Art Studio</h2>
-        <p style="margin:0 0 30px;font-size:17px;line-height:1.5;color:#5d574c;max-width:56ch;text-wrap:pretty">A boutique children's art studio in Coconut Grove, with its programmes and enrolment on one site.</p>
-        <img src="assets/work/grove.webp" width="1400" height="700" loading="lazy" decoding="async" alt="The Grove Art Studio website" style="width:100%;height:220px;object-fit:cover;object-position:50% 0%;border-radius:14px;border:1px solid rgba(21,19,14,.14);margin-bottom:32px">
-        <div style="display:flex;flex-direction:column;gap:24px">
-          <div><div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#BE2D18;margin-bottom:8px">THE PROBLEM</div><p style="margin:0;font-size:15.5px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">A studio running after-school programmes, camps, private celebrations and pop-ups, with the details of each spread across social posts and DMs — and parents asking the same questions every term.</p></div>
-          <div><div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#BE2D18;margin-bottom:8px">WHAT WE BUILT</div><p style="margin:0;font-size:15.5px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">A site that carries the studio’s own visual language and puts every programme, date and enrolment route in one place, so a parent can go from "what is this" to "booked" without messaging anyone.</p></div>
-          <div><div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#BE2D18;margin-bottom:8px">WHAT CHANGED</div><p style="margin:0;font-size:15.5px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">Add what changed — enrolments per term, time saved answering enquiries, or the share of bookings that now arrive without a DM.</p></div>
-        </div>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:36px">
-          <a href="#contact" data-case-close style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;background:#BE2D18;color:#fff;padding:15px 28px;border-radius:999px;font-weight:600;font-size:15px">Start a brand and web project →</a>
-          <a href="https://www.thegroveartstudio.com/" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:#15130E;padding:15px 26px;border-radius:999px;font-weight:600;font-size:15px;border:1.5px solid rgba(21,19,14,.22)">Visit thegroveartstudio.com ↗</a>
-        </div>
-      </div>
-      <div data-case-panel="champys" style="display:none">
-        <div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;color:#BE2D18;margin-bottom:18px">COMMERCE</div>
-        <h2 style="margin:0 0 8px;font-size:clamp(30px,4vw,52px);font-weight:700;letter-spacing:-.03em;line-height:1">Champy's Seafood</h2>
-        <p style="margin:0 0 30px;font-size:17px;line-height:1.5;color:#5d574c;max-width:56ch;text-wrap:pretty">A Miami seafood business selling stone crab and prepared food online, on a storefront it can run itself.</p>
-        <img src="assets/work/champys.webp" width="1400" height="700" loading="lazy" decoding="async" alt="Champy&#x27;s Seafood storefront" style="width:100%;height:220px;object-fit:cover;object-position:50% 0%;border-radius:14px;border:1px solid rgba(21,19,14,.14);margin-bottom:32px">
-        <div style="display:flex;flex-direction:column;gap:24px">
-          <div><div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#BE2D18;margin-bottom:8px">THE PROBLEM</div><p style="margin:0;font-size:15.5px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">A seasonal product, a phone number, and no way to take an order online — every sale needed a person on the other end of the line, and the season is short.</p></div>
-          <div><div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#BE2D18;margin-bottom:8px">WHAT WE BUILT</div><p style="margin:0;font-size:15.5px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">A storefront built around the season: the catch front and centre, the menu and merch shoppable, and ordering that works at two in the morning without anybody picking up.</p></div>
-          <div><div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#BE2D18;margin-bottom:8px">WHAT CHANGED</div><p style="margin:0;font-size:15.5px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">Add the outcome — online orders per season, average order value, or the share of revenue that no longer needs a phone call.</p></div>
-        </div>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:36px">
-          <a href="#contact" data-case-close style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;background:#BE2D18;color:#fff;padding:15px 28px;border-radius:999px;font-weight:600;font-size:15px">Start a commerce project →</a>
-          <a href="https://champysseafood.com/" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:#15130E;padding:15px 26px;border-radius:999px;font-weight:600;font-size:15px;border:1.5px solid rgba(21,19,14,.22)">Visit champysseafood.com ↗</a>
-        </div>
-      </div>
-      <div data-case-panel="mindfulnetwork" style="display:none">
-        <div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;color:#BE2D18;margin-bottom:18px">DIRECTORY</div>
-        <h2 style="margin:0 0 8px;font-size:clamp(30px,4vw,52px);font-weight:700;letter-spacing:-.03em;line-height:1">The Mindful Network</h2>
-        <p style="margin:0 0 30px;font-size:17px;line-height:1.5;color:#5d574c;max-width:56ch;text-wrap:pretty">A curated directory of mental health professionals in South Florida, built to be used by someone having a hard week.</p>
-        <img src="assets/work/mindfulnetwork.webp" width="1400" height="700" loading="lazy" decoding="async" alt="The Mindful Network therapist directory" style="width:100%;height:220px;object-fit:cover;object-position:50% 0%;border-radius:14px;border:1px solid rgba(21,19,14,.14);margin-bottom:32px">
-        <div style="display:flex;flex-direction:column;gap:24px">
-          <div><div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#BE2D18;margin-bottom:8px">THE PROBLEM</div><p style="margin:0;font-size:15.5px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">Finding a therapist means cross-referencing insurance lists, out-of-date directories and personal recommendations — a research project handed to the person least able to take it on.</p></div>
-          <div><div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#BE2D18;margin-bottom:8px">WHAT WE BUILT</div><p style="margin:0;font-size:15.5px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">A curated network with search that filters on what actually narrows the choice, plus routes for students and families, written so the path to a first appointment is short and legible.</p></div>
-          <div><div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#BE2D18;margin-bottom:8px">WHAT CHANGED</div><p style="margin:0;font-size:15.5px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">Add the measure — searches completed, referrals made, or time from first visit to first appointment.</p></div>
-        </div>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:36px">
-          <a href="#contact" data-case-close style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;background:#BE2D18;color:#fff;padding:15px 28px;border-radius:999px;font-weight:600;font-size:15px">Start a directory project →</a>
-          <a href="https://themindfulnetwork.com/" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:#15130E;padding:15px 26px;border-radius:999px;font-weight:600;font-size:15px;border:1.5px solid rgba(21,19,14,.22)">Visit themindfulnetwork.com ↗</a>
-        </div>
-      </div>
-      <div data-case-panel="aulagis" style="display:none">
-        <div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;color:#BE2D18;margin-bottom:18px">E-LEARNING</div>
-        <h2 style="margin:0 0 8px;font-size:clamp(30px,4vw,52px);font-weight:700;letter-spacing:-.03em;line-height:1">AulaGIS</h2>
-        <p style="margin:0 0 30px;font-size:17px;line-height:1.5;color:#5d574c;max-width:56ch;text-wrap:pretty">An online course platform for professional GIS training, in Spanish, with enrolment and accounts built in.</p>
-        <img src="assets/work/aulagis.webp" width="1400" height="700" loading="lazy" decoding="async" alt="AulaGIS online GIS course portal" style="width:100%;height:220px;object-fit:cover;object-position:50% 0%;border-radius:14px;border:1px solid rgba(21,19,14,.14);margin-bottom:32px">
-        <div style="display:flex;flex-direction:column;gap:24px">
-          <div><div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#BE2D18;margin-bottom:8px">THE PROBLEM</div><p style="margin:0;font-size:15.5px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">Professional GIS training delivered as scheduled sessions caps out at the number of people who can attend live, and the material stops existing the moment the session ends.</p></div>
-          <div><div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#BE2D18;margin-bottom:8px">WHAT WE BUILT</div><p style="margin:0;font-size:15.5px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">A course platform with a catalogue, accounts, enrolment and the coursework itself — so the teaching is available on the student’s schedule rather than the instructor’s.</p></div>
-          <div><div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#BE2D18;margin-bottom:8px">WHAT CHANGED</div><p style="margin:0;font-size:15.5px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">Add the figure — students enrolled, courses published, or completion rate versus live sessions.</p></div>
-        </div>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:36px">
-          <a href="#contact" data-case-close style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;background:#BE2D18;color:#fff;padding:15px 28px;border-radius:999px;font-weight:600;font-size:15px">Start an e-learning project →</a>
-          <a href="https://aulagis.com/" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:#15130E;padding:15px 26px;border-radius:999px;font-weight:600;font-size:15px;border:1.5px solid rgba(21,19,14,.22)">Visit aulagis.com ↗</a>
-        </div>
-      </div>
-      <div data-case-panel="moen" style="display:none">
-        <div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;color:#BE2D18;margin-bottom:18px">COMMERCE AT SCALE</div>
-        <h2 style="margin:0 0 8px;font-size:clamp(30px,4vw,52px);font-weight:700;letter-spacing:-.03em;line-height:1">Moen</h2>
-        <p style="margin:0 0 30px;font-size:17px;line-height:1.5;color:#5d574c;max-width:56ch;text-wrap:pretty">Direct-to-consumer commerce across a very large fixtures catalogue.</p>
-        <img src="assets/work/moen.webp" width="1400" height="700" loading="lazy" decoding="async" alt="Moen shop homepage" style="width:100%;height:220px;object-fit:cover;object-position:50% 0%;border-radius:14px;border:1px solid rgba(21,19,14,.14);margin-bottom:32px">
-        <div style="display:flex;flex-direction:column;gap:24px">
-          <div><div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#BE2D18;margin-bottom:8px">THE PROBLEM</div><p style="margin:0;font-size:15.5px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">A catalogue this deep is its own obstacle: finishes, valves, collections and compatibility rules mean the shopper who knows exactly what they want and the one who does not need completely different routes to the same product.</p></div>
-          <div><div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#BE2D18;margin-bottom:8px">WHAT WE BUILT</div><p style="margin:0;font-size:15.5px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">A storefront that leads with the decision rather than the SKU — guided finders for people who are still choosing, direct paths for people who are not, and merchandising that holds up across thousands of products.</p></div>
-          <div><div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#BE2D18;margin-bottom:8px">WHAT CHANGED</div><p style="margin:0;font-size:15.5px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">Add the outcome you can defend — conversion, average order value, or support contacts avoided.</p></div>
-        </div>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:36px">
-          <a href="#contact" data-case-close style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;background:#BE2D18;color:#fff;padding:15px 28px;border-radius:999px;font-weight:600;font-size:15px">Start a commerce project at scale →</a>
-          <a href="https://shop.moen.com/" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:#15130E;padding:15px 26px;border-radius:999px;font-weight:600;font-size:15px;border:1.5px solid rgba(21,19,14,.22)">Visit shop.moen.com ↗</a>
-        </div>
-      </div>
-      <div data-case-panel="agos" style="display:none">
-        <div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;color:#BE2D18;margin-bottom:18px">AGENT PLATFORM</div>
-        <h2 style="margin:0 0 8px;font-size:clamp(30px,4vw,52px);font-weight:700;letter-spacing:-.03em;line-height:1">Agos</h2>
-        <p style="margin:0 0 30px;font-size:17px;line-height:1.5;color:#5d574c;max-width:56ch;text-wrap:pretty">An agentic operating system for institutional asset management — one governed state for the team and its agents.</p>
-        <img src="assets/work/agos.webp" width="1400" height="700" loading="lazy" decoding="async" alt="Agos agentic operating system for investment management" style="width:100%;height:220px;object-fit:cover;object-position:50% 0%;border-radius:14px;border:1px solid rgba(21,19,14,.14);margin-bottom:32px">
-        <div style="display:flex;flex-direction:column;gap:24px">
-          <div><div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#BE2D18;margin-bottom:8px">THE PROBLEM</div><p style="margin:0;font-size:15.5px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">Investment decisions rest on evidence, relationships, models and prior judgement scattered across a firm’s existing systems, so the reasoning behind a position is reconstructed from memory rather than read.</p></div>
-          <div><div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#BE2D18;margin-bottom:8px">WHAT WE BUILT</div><p style="margin:0;font-size:15.5px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">A platform that connects those systems into one governed graph and puts agents to work on top of it, with every action, review and history entry tied back to its source.</p></div>
-          <div><div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#BE2D18;margin-bottom:8px">WHAT CHANGED</div><p style="margin:0;font-size:15.5px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">Add the outcome — analyst hours returned, decisions supported, or time to a defensible answer.</p></div>
-        </div>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:36px">
-          <a href="#contact" data-case-close style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;background:#BE2D18;color:#fff;padding:15px 28px;border-radius:999px;font-weight:600;font-size:15px">Start an agent platform project →</a>
-          <a href="https://iamagos.com/" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:#15130E;padding:15px 26px;border-radius:999px;font-weight:600;font-size:15px;border:1.5px solid rgba(21,19,14,.22)">Visit iamagos.com ↗</a>
-        </div>
-      </div>
-      <div data-case-panel="veia" style="display:none">
-        <div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;color:#BE2D18;margin-bottom:18px">AGENT PLATFORM</div>
-        <h2 style="margin:0 0 8px;font-size:clamp(30px,4vw,52px);font-weight:700;letter-spacing:-.03em;line-height:1">Veia</h2>
-        <p style="margin:0 0 30px;font-size:17px;line-height:1.5;color:#5d574c;max-width:56ch;text-wrap:pretty">An agentic underwriting operating system for venture investment teams.</p>
-        <img src="assets/work/veia.webp" width="1400" height="700" loading="lazy" decoding="async" alt="Veia agentic underwriting platform" style="width:100%;height:220px;object-fit:cover;object-position:50% 0%;border-radius:14px;border:1px solid rgba(21,19,14,.14);margin-bottom:32px">
-        <div style="display:flex;flex-direction:column;gap:24px">
-          <div><div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#BE2D18;margin-bottom:8px">THE PROBLEM</div><p style="margin:0;font-size:15.5px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">Underwriting a venture deal means assembling company evidence, fund context and institutional models by hand, and the resulting memo is only as auditable as whoever wrote it remembers being.</p></div>
-          <div><div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#BE2D18;margin-bottom:8px">WHAT WE BUILT</div><p style="margin:0;font-size:15.5px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">A system that works through the firm’s own logic and ties every result back to its sources, assumptions and model, so the underwriting can be inspected rather than trusted.</p></div>
-          <div><div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#BE2D18;margin-bottom:8px">WHAT CHANGED</div><p style="margin:0;font-size:15.5px;line-height:1.65;color:#5d574c;max-width:70ch;text-wrap:pretty">Add the measure — deals underwritten, cycle time, or the share of a memo that is now traceable to a source.</p></div>
-        </div>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:36px">
-          <a href="#contact" data-case-close style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;background:#BE2D18;color:#fff;padding:15px 28px;border-radius:999px;font-weight:600;font-size:15px">Start an agent platform project →</a>
-          <a href="https://iamveia.com/" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:#15130E;padding:15px 26px;border-radius:999px;font-weight:600;font-size:15px;border:1.5px solid rgba(21,19,14,.22)">Visit iamveia.com ↗</a>
-        </div>
-      </div>
-    </div>
-  </div>
 
 </div>
 </body>

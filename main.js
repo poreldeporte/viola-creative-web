@@ -17,7 +17,6 @@
       this.setupReveals();
       this.setupScrollLoop();
       this.setupServices();
-      this.setupCases();
       this.setupForm();
       this.setupMagnetic();
       this.setupTilt();
@@ -116,7 +115,7 @@
       };
 
       this.q('[data-stack-card]').forEach((card) => {
-        const btn = card.querySelector('button');
+        const btn = card.querySelector('a,button');
         if (btn) btn.style.transition = 'border-color .3s ease';
         bind(card,
           () => { if (btn) btn.style.borderColor = 'rgba(255,61,35,.55)'; },
@@ -181,7 +180,7 @@
       if (cards.length < 2 || this.reduce || !window.anime) return;
       const anims = [];
       for (let i = 0; i < cards.length - 1; i++) {
-        const btn = cards[i].querySelector('button');
+        const btn = cards[i].querySelector('a,button');
         if (!btn) continue;
         btn.style.transformOrigin = '50% 0%';
         anims.push({
@@ -324,43 +323,6 @@
         document.removeEventListener('click', hit);
         document.removeEventListener('focusin', hit);
       });
-    }
-
-    setupCases() {
-      const overlay = document.querySelector('[data-case-overlay]');
-      if (!overlay) return;
-      const panels = {};
-      this.q('[data-case-panel]').forEach((p) => { panels[p.getAttribute('data-case-panel')] = p; });
-      let opener = null;
-      const open = (id) => {
-        Object.keys(panels).forEach((k) => { panels[k].style.display = k === id ? 'block' : 'none'; });
-        overlay.style.display = 'flex';
-        overlay.scrollTop = 0;
-        document.body.style.overflow = 'hidden';
-        const card = overlay.firstElementChild;
-        if (card && !this.reduce) {
-          card.style.transition = 'none';
-          card.style.transform = 'translateY(24px) scale(.99)';
-          const play = () => { card.style.transition = 'transform .58s cubic-bezier(.22,1,.36,1)'; card.style.transform = 'none'; };
-          requestAnimationFrame(() => requestAnimationFrame(play));
-          setTimeout(play, 400);
-        }
-        const c = overlay.querySelector('[data-case-close]');
-        if (c) c.focus();
-      };
-      const close = () => {
-        overlay.style.display = 'none';
-        document.body.style.overflow = '';
-        if (opener) { try { opener.focus(); } catch (e) {} }
-      };
-      this.q('[data-case-open]').forEach((b) => {
-        b.addEventListener('click', () => { opener = b; open(b.getAttribute('data-case-open')); });
-      });
-      overlay.querySelectorAll('[data-case-close]').forEach((b) => b.addEventListener('click', close));
-      overlay.addEventListener('click', (e) => { if (e.target === overlay) close(); });
-      const onKey = (e) => { if (e.key === 'Escape' && overlay.style.display === 'flex') close(); };
-      document.addEventListener('keydown', onKey);
-      this.cleanups.push(() => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; });
     }
 
     /* POSTs to the /api/lead function. If that is unreachable the brief is
