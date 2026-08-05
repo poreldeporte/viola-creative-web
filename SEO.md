@@ -101,41 +101,33 @@ is the one doing real work.
 ## What to do next, in order
 
 **1. Verify Search Console.** Everything measurable depends on it and nothing
-else can substitute. Add a *Domain* property for `violacreative.com`, put the
-TXT record it issues into Cloudflare, mirror it into
-`dns/violacreative.com.zone`, then submit `sitemap.xml` and run URL Inspection
-on `/` to force the recrawl that replaces the old listing.
+else substitutes. Add a *Domain* property for `violacreative.com`, put the TXT
+record it issues into Cloudflare (connect the Cloudflare connector and I'll add
+it), mirror it into `dns/violacreative.com.zone`, then submit `sitemap.xml` and
+run URL Inspection on `/` to force the recrawl that replaces the old listing.
 
-**2. Fill the twelve "WHAT CHANGED" blocks, or delete them.** They are live on
-the page as instructions to you. Beyond looking unfinished, outcome numbers are
-the single most persuasive thing a studio portfolio can carry.
+**2. Create the Google Business Profile.** Packet is paste-ready in
+`GOOGLE-BUSINESS-PROFILE.md`. Needs your Google account and ends in a video
+verification Google runs against you. Once it exists I wire `LocalBusiness`
+schema, `sameAs`, and a review link.
 
-**3. Finish `/privacy`, then remove its `noindex` and restore the sitemap
-entry.** Seven placeholders, listed in `HANDOFF.md`.
+**3. Send me the studio facts.** Legal entity, street address, city, phone,
+founding year, principals and their background. That unblocks the About page,
+the `LocalBusiness` and `founder` schema, and the geographic signal — three
+items in one pass.
 
-**4. Decide on `/work/<slug>` pages.** The structural item above. If the answer
-is yes, the case study content already exists — it needs routing, not writing.
+**4. Give the twelve work pages real depth.** They are ~150 words each. The
+outcome numbers, engagement dates and scope are the difference between a
+rankable URL and a page that actually wins the query.
 
-**5. Google Business Profile.** Setup packet ready in
-`GOOGLE-BUSINESS-PROFILE.md` — name, categories, service areas, a 741-character
-description and the six services, all paste-ready. Service-area type, so your
-address stays hidden. Once it exists I wire `LocalBusiness` schema, `sameAs`,
-and a review link.
+**5. Finish `/privacy`, then tell me.** Six `[TO CONFIRM]` slots left — entity,
+address, jurisdiction, retention, date. I remove the `noindex` and put it back
+in the sitemap the moment they are filled. (The fonts placeholder is already
+resolved.)
 
-**6. Add an About page and a location.** Registered entity, address, founding
-year, named principals. Then `address`, `foundingDate`, `founder` and `sameAs`
-on the Organization node. This is both the E-E-A-T signal Google's
-helpful-content guidance asks for and the geographic signal that unlocks local
-intent.
-
-**7. Get the client links.** Twelve shipped projects and no backlinks from any
-of them. A footer credit or a case-study mention on those sites is the most
+**6. Ask your twelve clients for a link.** Twelve shipped projects and no
+backlinks from any of them. A footer credit or a case-study mention is the most
 natural link profile a studio can have, and it costs an email.
-
-**7. ~~Self-host the typefaces.~~ Done.** Same woff2 files, latin subset only,
-served from our own origin with preloads. Mobile performance went 85 → 96 and
-first contentful paint 3.1s → 1.6s. It also made the privacy page true: no
-visitor IP is disclosed to Google on page load any more.
 
 ## Deliberately not doing
 
