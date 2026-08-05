@@ -1,0 +1,7 @@
+# Repo files that should never be served. design/ in particular was being
+# published with the homepage's own title and h1 and no canonical.
+design/
+dns/
+tools/
+HANDOFF.md
+README.md

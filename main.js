@@ -406,7 +406,7 @@
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             name: name, email: email, company: get('company'), stack: get('stack'),
-            brief: get('brief'), website: get('website'), elapsed: Date.now() - rendered,
+            brief: get('brief'), company_url: get('company_url'), elapsed: Date.now() - rendered,
           }),
         }).then((r) => r.json().catch(() => ({})).then((d) => ({ ok: r.ok, d: d })))
           .then((r) => {

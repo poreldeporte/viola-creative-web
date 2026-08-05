@@ -43,11 +43,11 @@ module.exports = async function handler(req, res) {
 
   // Honeypot: a real person never fills a field they cannot see. Answer 200 so
   // a bot cannot distinguish a rejection from a success and retune.
-  if (clean(body.website, 200)) return res.status(200).json({ ok: true });
+  if (clean(body.company_url, 200)) return res.status(200).json({ ok: true });
 
   // Anything submitted under 2s after the form rendered is not a human typing.
   const elapsed = Number(body.elapsed);
-  if (Number.isFinite(elapsed) && elapsed < 2000) return res.status(200).json({ ok: true });
+  if (Number.isFinite(elapsed) && elapsed < 2500) return res.status(200).json({ ok: true });
 
   const name = clean(body.name, 200);
   const email = clean(body.email, 320);
