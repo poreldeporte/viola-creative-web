@@ -33,10 +33,8 @@ assets/
   svc/                      six abstract SVG panels for the services rows
   work/                     work-card and case-study imagery (1400x700)
   work/m/                   portrait mobile captures, served under 760px
-  work/row/                 (unused — superseded by svc/)
   logo-dark.webp            wordmark for light backgrounds
   logo-light.webp           wordmark for the dark footer
-  por-el-deporte-crop.webp  the one real piece of portfolio art
   og.png                    2400x1260 link-unfurl card (stays PNG — some
                             unfurlers still do not accept WebP)
   anime.min.js              anime.js 3.2.1, vendored (see below)
@@ -68,7 +66,6 @@ them (`data-reveal`, `data-stack-card`, `data-svc-item`, `data-hub-chip`,
 | Asset | Source |
 |---|---|
 | `logo-dark.webp`, `logo-light.webp` | Viola Creative wordmark, supplied with the design as PNG |
-| `por-el-deporte-crop.webp` | Por El Deporte project art, supplied with the design as PNG |
 | `og.png` | Generated for this build: the wordmark and hero line on the brand's near-black `#15130E` ground. Rendered at 2400x1260 (2x of the 1.91:1 spec) and composed with no small type, so it stays legible when an unfurl shrinks it to ~340px wide. Regenerate by editing the template and re-capturing at `deviceScaleFactor: 2`. |
 | `anime.min.js` | [anime.js 3.2.1](https://github.com/juliangarnier/anime), MIT. Vendored deliberately — the design file hotlinked jsDelivr, and a third-party CDN is an availability and privacy dependency a marketing site does not need. Pinned; re-vendor by hand to change the version. |
 | `assets/work/*` | Headless captures of each project's live site, cookie banners and modals dismissed first, cropped 2:1 |
@@ -76,12 +73,11 @@ them (`data-reveal`, `data-stack-card`, `data-svc-item`, `data-hub-chip`,
 | `assets/svc/*` | Drawn for this build. One system: near-black ground, the design's 135deg hairline texture, cream geometry, one red accent each |
 | Fonts | Space Grotesk, Space Mono and Instrument Serif from Google Fonts, loaded via `<link>` with `preconnect` |
 
-The three image assets were converted from the design's PNGs to **lossless**
-WebP: 399 KB down to 198 KB with a verified maximum per-channel difference of
-zero. They are the same pixels, encoded better. The original PNGs are in git
-history and in the design project if they are ever needed. The two below-the-fold
-images carry `loading="lazy" decoding="async"`; the nav wordmark does not, since
-it is in the first paint.
+The two wordmarks were converted from the design's PNGs to **lossless** WebP —
+same pixels, verified maximum per-channel difference of zero, less than half the
+bytes. The originals are in git history and in the design project. Everything
+below the fold carries `loading="lazy" decoding="async"`; the nav wordmark does
+not, since it is in the first paint.
 
 ## How the page behaves
 
