@@ -8,9 +8,9 @@ Lighthouse on the production domain:
 | | Performance | Accessibility | Best Practices | SEO |
 |---|---|---|---|---|
 | Desktop | 98 | 100 | 100 | 100 |
-| Mobile | 84 | 100 | 100 | 100 |
+| Mobile | 85 | 100 | 100 | 100 |
 
-Total page weight 259 KB. The remaining mobile gap is first contentful paint at
+Total page weight 321 KB with all twelve projects. The remaining mobile gap is first contentful paint at
 3.2s, and it is almost entirely the render-blocking Google Fonts stylesheet — a
 cross-origin round trip to `fonts.googleapis.com` before anything can paint.
 Self-hosting the three families would remove it and likely take mobile past 90.
@@ -35,18 +35,24 @@ Nothing here was invented to fill a hole — the gaps are left visible on purpos
 
 ## Visible to visitors right now
 
-**1. Portfolio imagery is placeholder.**
-Three of the four work cards and all six service rows render diagonal CSS stripes
-labelled `DROP IMAGERY` / `DROP … SCREENS HERE`. Only **Por El Deporte** has real
-art (`assets/por-el-deporte-crop.png`).
+**1. Portfolio imagery — now filled, but with live screenshots.**
+Every `DROP IMAGERY` placeholder is gone. All twelve work cards, all twelve case
+study panels and all six service rows now carry real imagery, captured headless
+from the live sites.
 
-Needs real screens for: Aeroterra USA, SpatioTerra, BMG Kids (work cards and case
-study panels), plus the six service rows — research artefacts, design work,
-website screens, app screens, mobile screens, agent dashboard.
+They are **screenshots, not art direction**. They will drift as those sites
+change, and a couple were captured through cookie banners and newsletter modals
+that had to be dismissed programmatically. If you have designed case-study
+imagery, it should replace these — the files are in `assets/work/` (1400x700 for
+cards and panels) and `assets/work/row/` (900x338 for service rows), same
+filenames.
 
-**2. Case study "WHAT CHANGED" copy is an instruction to the client.**
-Each of the four case studies ends with a note addressed to you, not to a visitor.
-These are live text on the page:
+**2. Case study "WHAT CHANGED" copy is an instruction to the client — on all twelve.**
+Every case study ends with a note addressed to you, not to a visitor. This is live
+text on the page. THE PROBLEM and WHAT WE BUILT for the eight new projects were
+written from what those products verifiably are and do; **WHAT CHANGED was left as
+a placeholder on purpose**, because a business outcome is a factual claim about
+your engagement and is not something to generate. The four originals:
 
 | Case study | Current text |
 |---|---|
@@ -55,8 +61,14 @@ These are live text on the page:
 | SpatioTerra | "Add the real figure — record count, query time, or reporting hours removed each month." |
 | BMG Kids | "The +38% conversion claim belongs here with the measurement window and the baseline, or it should come off the site." |
 
-These need real outcomes or the blocks should be removed. They are not written as
-placeholders a visitor would recognise — they read as unfinished copy.
+The eight new ones follow the same pattern ("Add the outcome — …"). All twelve
+need real numbers or the block should come out.
+
+**2b. The eight new case studies need your factual review.** THE PROBLEM and WHAT
+WE BUILT describe what each product is, inferred from the live site — not from any
+record of what you were actually engaged to do. Before launch, confirm each one
+matches your real scope on that project, particularly Moen and Aeroterra where the
+site is large and your involvement may have been a specific slice of it.
 
 **3. Claims that are yours to confirm.**
 - Process durations on the four process cards: `WEEK 1`, `2–3 WEEKS`, `8–14 WEEKS`,
