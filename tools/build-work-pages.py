@@ -79,7 +79,7 @@ PAGE_CSS = """  *{box-sizing:border-box}
   footer{background:#15130E;color:rgba(241,236,226,.62);padding:30px 5vw;
     font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.08em;
     display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
-  footer a{color:rgba(241,236,226,.78);text-decoration:none}
+  footer a{color:rgba(241,236,226,.78);text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(241,236,226,.45)}
   footer a:hover{color:#FF3D23}
   @media (max-width:760px){
     main{padding-top:4vh}
