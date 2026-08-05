@@ -17,13 +17,18 @@ SLUG = {
     'spatioterra': 'spatioterra', 'bmgkids': 'bmg-kids',
     'pordeporteapp': 'por-el-deporte-app', 'grove': 'the-grove-art-studio',
     'champys': 'champys-seafood', 'mindfulnetwork': 'the-mindful-network',
-    'aulagis': 'aulagis', 'moen': 'moen', 'agos': 'agos', 'veia': 'veia',
+    'aulagis': 'aulagis', 'moen': 'moen', 'agos': 'agos', 'veia': 'veia', 'reia': 'reia',
 }
 panels = json.loads(pathlib.Path('/tmp/panels.json').read_text())
-assert len(panels) == 12
+assert len(panels) == 13
 
-HEAD_CSS = (ROOT / 'privacy.html').read_text()
-FONTS = re.search(r'<link rel="preconnect".*?rel="stylesheet">', HEAD_CSS, re.S).group(0)
+# fonts are self-hosted; the faces live beside this script so a regenerate
+# cannot silently drop back to the third-party stylesheet
+FACES = (ROOT / 'tools/fontface.css').read_text().rstrip()
+FONTS = ('<link rel="preload" as="font" type="font/woff2" crossorigin '
+         'href="../assets/fonts/space-grotesk-400.woff2">\n'
+         '<link rel="preload" as="font" type="font/woff2" crossorigin '
+         'href="../assets/fonts/space-grotesk-700.woff2">')
 ICONS = ('<link rel="icon" href="/favicon.ico" sizes="32x32">\n'
          '<link rel="apple-touch-icon" href="/apple-touch-icon.png">\n'
          '<meta name="theme-color" content="#F1ECE2">')
@@ -93,7 +98,7 @@ DISCIPLINE = {
     'pordeporteapp': 'iOS app', 'grove': 'Brand and website',
     'champys': 'Ecommerce storefront', 'mindfulnetwork': 'Directory platform',
     'aulagis': 'E-learning platform', 'moen': 'Ecommerce at scale',
-    'agos': 'AI agent platform', 'veia': 'AI agent platform',
+    'agos': 'AI agent platform', 'veia': 'AI agent platform', 'reia': 'AI agent platform',
 }
 
 def esc(s):
@@ -160,6 +165,7 @@ def page(p, others):
 {ICONS}
 {FONTS}
 <style>
+{FACES.replace("url(assets/", "url(../assets/")}
 {PAGE_CSS}</style>
 <script type="application/ld+json">
 {json.dumps(ld, ensure_ascii=False, indent=1)}
@@ -202,7 +208,7 @@ START = {
     'pordeporteapp': 'a mobile app project', 'grove': 'a brand and web project',
     'champys': 'a commerce project', 'mindfulnetwork': 'a directory project',
     'aulagis': 'an e-learning project', 'moen': 'a commerce project at scale',
-    'agos': 'an agent platform project', 'veia': 'an agent platform project',
+    'agos': 'an agent platform project', 'veia': 'an agent platform project', 'reia': 'an agent platform project',
 }
 
 wd = ROOT / 'work'
