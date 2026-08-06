@@ -23,7 +23,8 @@
   "start": "a GIS platform project",
   "img": "assets/work/aeroterra.webp",
   "mobile": "assets/work/m/aeroterra.webp",
-  "alt": "Aeroterra USA geospatial platform"
+  "alt": "Aeroterra USA geospatial platform",
+  "phone": "assets/work/phone/aeroterra.webp"
  },
  {
   "slug": "por-el-deporte",
@@ -50,7 +51,8 @@
   "start": "a commerce and app project",
   "img": "assets/work/poreldeporte.webp",
   "mobile": "assets/work/m/poreldeporte.webp",
-  "alt": "Por El Deporte storefront"
+  "alt": "Por El Deporte storefront",
+  "phone": "assets/work/phone/poreldeporte.webp"
  },
  {
   "slug": "spatioterra",
@@ -77,7 +79,8 @@
   "start": "a data platform project",
   "img": "assets/work/spatioterra.webp",
   "mobile": "assets/work/m/spatioterra.webp",
-  "alt": "SpatioTerra spatiotemporal mesh platform"
+  "alt": "SpatioTerra spatiotemporal mesh platform",
+  "phone": "assets/work/phone/spatioterra.webp"
  },
  {
   "slug": "bmg-kids",
@@ -103,7 +106,8 @@
   "start": "a headless commerce project",
   "img": "assets/work/bmgkids.webp",
   "mobile": "assets/work/m/bmgkids.webp",
-  "alt": "Boy Meets Girl children's boutique storefront"
+  "alt": "Boy Meets Girl children's boutique storefront",
+  "phone": "assets/work/phone/bmgkids.webp"
  },
  {
   "slug": "por-el-deporte-app",
@@ -130,7 +134,8 @@
   "start": "a mobile app project",
   "img": "assets/work/pordeporte-app.webp",
   "mobile": "assets/work/m/pordeporte-app.webp",
-  "alt": "Por El Deporte app on the App Store"
+  "alt": "Por El Deporte app on the App Store",
+  "phone": null
  },
  {
   "slug": "the-grove-art-studio",
@@ -157,7 +162,8 @@
   "start": "a brand and web project",
   "img": "assets/work/grove.webp",
   "mobile": "assets/work/m/grove.webp",
-  "alt": "The Grove Art Studio website"
+  "alt": "The Grove Art Studio website",
+  "phone": "assets/work/phone/grove.webp"
  },
  {
   "slug": "champys-seafood",
@@ -183,7 +189,8 @@
   "start": "a commerce project",
   "img": "assets/work/champys.webp",
   "mobile": "assets/work/m/champys.webp",
-  "alt": "Champy's Seafood storefront"
+  "alt": "Champy's Seafood storefront",
+  "phone": "assets/work/phone/champys.webp"
  },
  {
   "slug": "the-mindful-network",
@@ -210,7 +217,8 @@
   "start": "a directory project",
   "img": "assets/work/mindfulnetwork.webp",
   "mobile": "assets/work/m/mindfulnetwork.webp",
-  "alt": "The Mindful Network therapist directory"
+  "alt": "The Mindful Network therapist directory",
+  "phone": "assets/work/phone/mindfulnetwork.webp"
  },
  {
   "slug": "aulagis",
@@ -236,7 +244,8 @@
   "start": "an e-learning project",
   "img": "assets/work/aulagis.webp",
   "mobile": "assets/work/m/aulagis.webp",
-  "alt": "AulaGIS online course platform"
+  "alt": "AulaGIS online course platform",
+  "phone": "assets/work/phone/aulagis.webp"
  },
  {
   "slug": "moen",
@@ -263,7 +272,8 @@
   "start": "a commerce project at scale",
   "img": "assets/work/moen.webp",
   "mobile": "assets/work/m/moen.webp",
-  "alt": "Moen direct-to-consumer storefront"
+  "alt": "Moen direct-to-consumer storefront",
+  "phone": "assets/work/phone/moen.webp"
  },
  {
   "slug": "agos",
@@ -290,7 +300,8 @@
   "start": "an agent platform project",
   "img": "assets/work/agos.webp",
   "mobile": "assets/work/m/agos.webp",
-  "alt": "Agos agentic operating system"
+  "alt": "Agos agentic operating system",
+  "phone": "assets/work/phone/agos.webp"
  },
  {
   "slug": "veia",
@@ -317,7 +328,8 @@
   "start": "an agent platform project",
   "img": "assets/work/veia.webp",
   "mobile": "assets/work/m/veia.webp",
-  "alt": "Veia agentic underwriting platform"
+  "alt": "Veia agentic underwriting platform",
+  "phone": "assets/work/phone/veia.webp"
  },
  {
   "slug": "reia",
@@ -344,6 +356,7 @@
   "start": "an agent platform project",
   "img": "assets/work/reia.webp",
   "mobile": "assets/work/m/reia.webp",
-  "alt": "Reia agentic underwriting platform"
+  "alt": "Reia agentic underwriting platform",
+  "phone": "assets/work/phone/reia.webp"
  }
 ]

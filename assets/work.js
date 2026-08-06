@@ -1,10 +1,11 @@
 /* Motion for the project pages.
  *
  * Three moves, all IntersectionObserver-driven:
- *   cover  — a panel sitting over a piece of media slides off it while the
- *            image settles from a slight scale-up. The reveal, not a fade.
+ *   cover  — a panel sitting over a piece of media slides down off it while
+ *            the image settles from a slight scale-up. The reveal sweeps from
+ *            the top edge downwards, matching the reading direction.
  *   rule   — a hairline draws itself across from the left.
- *   line   — a line of type slides up out of a clipped box.
+ *   line   — a line of type drops into place from above, out of a clip.
  *
  * Same safety rule as the homepage: the markup ships visible and this script
  * hides-then-reveals, so a failure here leaves a readable page rather than a
@@ -38,7 +39,7 @@
 
     var lines = q('[data-line]');
     lines.forEach(function (el) {
-      el.style.transform = 'translateY(104%)';
+      el.style.transform = 'translateY(-104%)';
       el.style.opacity = '0';
     });
 
@@ -53,7 +54,7 @@
         var media = el.querySelector('img,video');
         if (panel) {
           panel.style.transition = 'transform 1.05s cubic-bezier(.76,0,.24,1) ' + d + 'ms';
-          panel.style.transform = 'translateY(-101%)';
+          panel.style.transform = 'translateY(101%)';
         }
         if (media) {
           media.style.transition = 'transform 1.5s cubic-bezier(.22,1,.36,1) ' + d + 'ms';
@@ -72,13 +73,29 @@
       el.style.opacity = '1';
     }
 
+    // An element cannot be observed once it is hidden: a line translated out of
+    // its clip, or a rule scaled to zero width, has an intersection ratio of 0
+    // forever and the observer never fires. Watch a stable parent instead and
+    // reveal the child it holds.
     var all = covers.concat(rules, lines);
+    var pairs = covers.map(function (el) { return { watch: el, reveal: el }; })
+      .concat(rules.map(function (el) { return { watch: el.parentElement || el, reveal: el }; }))
+      .concat(lines.map(function (el) { return { watch: el.parentElement || el, reveal: el }; }));
+
+    var byWatch = new Map();
+    pairs.forEach(function (p) {
+      if (!byWatch.has(p.watch)) byWatch.set(p.watch, []);
+      byWatch.get(p.watch).push(p.reveal);
+    });
+
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
-        if (e.isIntersecting) { show(e.target); io.unobserve(e.target); }
+        if (!e.isIntersecting) return;
+        (byWatch.get(e.target) || []).forEach(show);
+        io.unobserve(e.target);
       });
-    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
-    all.forEach(function (el) { io.observe(el); });
+    }, { rootMargin: '0px 0px -2% 0px', threshold: 0.01 });
+    byWatch.forEach(function (_, watch) { io.observe(watch); });
 
     // nothing may stay hidden because an observer never fired
     setTimeout(function () { all.forEach(show); }, 4000);
