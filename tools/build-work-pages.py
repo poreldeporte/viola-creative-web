@@ -62,7 +62,7 @@ CSS = """
   /* the narrative is long; hold the name and the rail alongside it rather than
      leaving a column of dead space */
   .band > .who,.band > .meta{position:sticky;top:104px}
-  /* sized to fit the rail — "The Mindful Network" wraps, "Moen" does not, and
+  /* sized to fit the rail: "The Mindful Network" wraps, "Moen" does not, and
      neither may spill past the column and get clipped by .clip */
   h1{font-size:clamp(38px,4.1vw,68px);font-weight:700;letter-spacing:-.038em;
     line-height:.94;margin:0;overflow-wrap:break-word;hyphens:none}
@@ -191,11 +191,11 @@ def page(p, nxt, index, total):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{txt(name)} — {txt(p['sector'])} | Viola Creative</title>
+<title>{txt(name)}, {txt(p['sector'])} | Viola Creative</title>
 <meta name="description" content="{esc(desc)}">
 <link rel="canonical" href="{url}">
 <meta property="og:type" content="article">
-<meta property="og:title" content="{esc(name)} — {esc(p['sector'])} | Viola Creative">
+<meta property="og:title" content="{esc(name)}, {esc(p['sector'])} | Viola Creative">
 <meta property="og:description" content="{esc(desc)}">
 <meta property="og:url" content="{url}">
 <meta property="og:site_name" content="Viola Creative">
@@ -219,13 +219,13 @@ def page(p, nxt, index, total):
 <body>
   <a href="#main" class="vc-skip">Skip to content</a>
   <nav class="site">
-    <a href="/" aria-label="Viola Creative — home" style="text-decoration:none;display:flex;align-items:center"><img src="../assets/logo-dark.webp" alt="Viola Creative" width="842" height="207" style="height:26px;width:auto;display:block"></a>
+    <a href="/" aria-label="Viola Creative, home" style="text-decoration:none;display:flex;align-items:center"><img src="../assets/logo-dark.webp" alt="Viola Creative" width="842" height="207" style="height:26px;width:auto;display:block"></a>
     <a class="cta" href="/#contact">Start a project</a>
   </nav>
 
   <main id="main">
     <div class="topbar mono">
-      <span>PROJECT &mdash; {index:02d} / {total}</span>
+      <span>PROJECT {index:02d} / {total}</span>
       <span><a href="/">HOME</a> / <a href="/#work">WORK</a> / <span aria-current="page" style="color:#15130E">{esc(name).upper()}</span></span>
     </div>
     <span class="rule"><i data-rule></i></span>
