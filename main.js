@@ -17,6 +17,7 @@
       this.setupReveals();
       this.setupScrollLoop();
       this.setupServices();
+      this.setupSvcArtOnView();
       this.setupForm();
       this.setupMagnetic();
       this.setupTilt();
@@ -311,6 +312,7 @@
           // transform-only, so a stalled rAF can never hide the copy
           anime({ targets: kids, translateY: [16, 0], duration: 640, delay: anime.stagger(70), easing: 'easeOutExpo' });
           if (chips.length) anime({ targets: chips, scale: [0.86, 1], duration: 500, delay: anime.stagger(45, { start: 120 }), easing: 'easeOutBack' });
+          this.animateSvcArt(b);
         });
       };
       const hit = (e) => {
@@ -327,6 +329,77 @@
 
     /* POSTs to the /api/lead function. If that is unreachable the brief is
        handed to a mailto: so a submission is never silently lost. */
+    /* Each service panel is an inline SVG so its parts can be driven directly.
+       The motion says something about the row: evidence resolving into a path,
+       a layout assembling, viewports stacking, a number going up, devices
+       coming apart, an agent tree drawing itself. Nothing here gates
+       visibility — every panel reads fine frozen. */
+    animateSvcArt(body) {
+      if (this.reduce || !window.anime) return;
+      const svg = body.querySelector('[data-svc-art]');
+      if (!svg) return;
+      const anime = window.anime;
+      const pick = (s) => [].slice.call(svg.querySelectorAll(s));
+      const has = (s) => pick(s).length;
+      anime.remove(pick('.a-dot,.a-cell,.a-layer,.a-card,.a-grow,.a-phone,.a-node,.a-bar,.a-pop,.a-ring,.a-draw,.a-flow'));
+      if (svg.__flow) { try { svg.__flow.pause(); } catch (e) {} }
+
+      const t = anime.timeline({ easing: 'easeOutExpo', duration: 620 });
+      if (has('.a-layer'))
+        t.add({ targets: pick('.a-layer'), translateY: [26, 0], opacity: [0, 1], delay: anime.stagger(90) }, 0);
+      if (has('.a-cell'))
+        t.add({ targets: pick('.a-cell'), scale: [0.55, 1], opacity: [0, 1],
+                delay: anime.stagger(45, { grid: [5, 2], from: 'center' }) }, 0);
+      if (has('.a-phone'))
+        t.add({ targets: pick('.a-phone'), translateX: (el, i) => [i === 1 ? 0 : (i === 0 ? 46 : -46), 0],
+                scale: [0.86, 1], opacity: [0, 1], delay: anime.stagger(90, { from: 'center' }) }, 0);
+      if (has('.a-card'))
+        t.add({ targets: pick('.a-card'), translateX: [-14, 0], opacity: [0, 1], delay: anime.stagger(90) }, 60);
+      if (has('.a-dot'))
+        t.add({ targets: pick('.a-dot'), scale: [0, 1], delay: anime.stagger(55), easing: 'easeOutBack' }, 60);
+      if (has('.a-node'))
+        t.add({ targets: pick('.a-node'), scale: [0.7, 1], opacity: [0, 1], delay: anime.stagger(85) }, 120);
+      if (has('.a-draw'))
+        t.add({ targets: pick('.a-draw'), strokeDashoffset: [anime.setDashoffset, 0],
+                duration: 900, easing: 'easeInOutSine' }, 120);
+      if (has('.a-grow'))
+        t.add({ targets: pick('.a-grow'), scaleY: [0, 1], transformOrigin: '50% 100%',
+                delay: anime.stagger(70), duration: 700 }, 180);
+      if (has('.a-bar'))
+        t.add({ targets: pick('.a-bar'), scaleX: [0, 1], transformOrigin: '0% 50%',
+                delay: anime.stagger(60) }, 200);
+      if (has('.a-ring'))
+        t.add({ targets: pick('.a-ring'), scale: [0.6, 1], opacity: [0, 1] }, 420);
+      if (has('.a-pop'))
+        t.add({ targets: pick('.a-pop'), scale: [0.7, 1], opacity: [0, 1], easing: 'easeOutBack' }, 520);
+
+      // the agent panel keeps working once it has landed
+      const flow = pick('.a-flow');
+      if (flow.length) {
+        t.add({ targets: flow, opacity: [0, 1], duration: 400 }, 500);
+        svg.__flow = anime({ targets: flow, strokeDashoffset: [0, -24], duration: 700,
+                             easing: 'linear', loop: true });
+        this.cleanups.push(() => { try { svg.__flow.pause(); } catch (e) {} });
+      }
+    }
+
+    /* Row 01 ships open, so it never fires a select(); play it the first time
+       the section scrolls into view instead. */
+    setupSvcArtOnView() {
+      if (this.reduce || !('IntersectionObserver' in window)) return;
+      const first = document.querySelector('[data-svc-body="0"]');
+      if (!first) return;
+      const io = new IntersectionObserver((es) => {
+        es.forEach((e) => {
+          if (!e.isIntersecting) return;
+          io.disconnect();
+          this.whenAnime(() => this.animateSvcArt(first));
+        });
+      }, { threshold: 0.25 });
+      io.observe(first);
+      this.cleanups.push(() => io.disconnect());
+    }
+
     setupForm() {
       const form = document.querySelector('[data-lead-form]');
       if (!form) return;
